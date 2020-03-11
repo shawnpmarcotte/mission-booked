@@ -18,4 +18,15 @@
   organization.save
 end
 
+600.times do
+  event = Event.new(
+    name: Faker::Company.name,
+    date: Faker::Date.between(from: 3.months.ago, to: 3.months.from_now),
+    about: Faker::Lorem.paragraph,
+    location: Faker::Address.full_address,
+    organization_id: rand(1..300)
+  )
+  event.save
+end
+
 p 'seeded'
