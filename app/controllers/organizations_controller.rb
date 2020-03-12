@@ -7,7 +7,8 @@ class OrganizationsController < ApplicationController
   # GET /organizations
   # GET /organizations.json
   def index
-    @organizations = Organization.all
+    @organizations = Organization.page(params[:page]).per(15)
+    # @organizations = Organization.all
   end
 
   # GET /organizations/1

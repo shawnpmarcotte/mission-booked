@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   authenticated :user do
   end
 
-  root 'organizations#index'
+  root 'events#index'
   resources :events
   resources :organizations
   get 'hello_world', to: 'hello_world#index'
