@@ -24,6 +24,7 @@ end
     date: Faker::Date.between(from: 3.months.ago, to: 3.months.from_now),
     about: Faker::Lorem.paragraph,
     location: Faker::Address.full_address,
+    city_state: Faker::Address.city,
     organization_id: rand(1..300)
   )
   event.save
