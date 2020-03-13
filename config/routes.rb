@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :users
       resources :organizations
       resources :events
+      resources :donate
 
       root to: 'users#index'
     end
@@ -20,6 +21,8 @@ Rails.application.routes.draw do
   root 'events#index'
   resources :events
   resources :organizations
+  resources :events_page
+  resources :donate
   get 'hello_world', to: 'hello_world#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
