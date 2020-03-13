@@ -1,0 +1,5 @@
+$('.events_list').html(
+    '<%= j render('index_table', events: @events) %>'
+)
+
+<%# j is used to tell Ruby to escape javascript%>

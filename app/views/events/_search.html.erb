@@ -1,0 +1,9 @@
+<%= form_with(url: events_path, method: :get) do |form| %>
+  <%= form.search_field :term,
+      placeholder: 'Search',
+      value: params[:term],
+      class: 'search_form'  %>
+
+	<%= form.submit 'find events', class: 'search_submit' %>
+<% end %>
+

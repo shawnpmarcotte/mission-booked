@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.page(params[:page]).per(15)
+    @events = Event.where("name ilike ?", "%#{params[:term]}%").page(params[:page]).per(15)
   end
 
   # GET /events/1
