@@ -1,9 +1,15 @@
+
 <%= form_with(url: events_path, method: :get) do |form| %>
   <%= form.search_field :term,
-      placeholder: 'Search',
+      placeholder: 'City',
+      value: params[:term],
+      class: 'search_form_city'  %>
+<% end %>
+<%= form_with(url: events_path, method: :get) do |form| %>
+  <%= form.search_field :term,
+      placeholder: 'Type of Event',
       value: params[:term],
       class: 'search_form'  %>
 
-	<%= form.submit 'find events', class: 'search_submit' %>
+	<%= form.submit 'Find Events', class: 'search_submit' %>
 <% end %>
-
