@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_03_13_135102) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,8 +23,8 @@ ActiveRecord::Schema.define(version: 2020_03_13_135102) do
     t.bigint "organization_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "category"
     t.string "city_state"
+    t.string "category"
     t.index ["organization_id"], name: "index_events_on_organization_id"
   end
 
