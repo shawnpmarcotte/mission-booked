@@ -10,6 +10,152 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+/* /* 
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self 
+  */
+
+* {
+  font-family: 'Baloo Chettan 2', cursive;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar-logo {
+  color: grey;
+  font-size: 3rem;
+}
+
+.navbar-logo:hover {
+  text-decoration: none;
+}
+
+.top_container {
+  display: flex;
+  justify-content: center;
+}
+
+.video_container {
+  display: flex;
+  justify-content: center;
+}
+
+video {
+  height: 100%;
+  position: fixed;
+  z-index: -999;
+}
+
+.events-container {
+  display: flex;
+  justify-content: space-between;
+  direction: column;
+  background-color: white;
+  width: 100%;
+  z-index: 0;
+}
+
+.call-to-action {
+  background-color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.hero_search_container {
+  display: flex;
+  direction: row;
+  justify-content: center;
+  margin-top: 30%;
+  position: absolute;
+}
+
+.search_submit {
+  background-color: black;
+  color: white;
+  border-radius: 0px 100px 100px 0px;
+  padding-left: 5px;
+  padding-right: 50px;
+  box-shadow: 2px;
+  border: none;
+  margin-right: 0px;
+  float: right;
+  height: 60px;
+}
+.search_form {
+  border: 1px solid grey;
+  border-right: none;
+  margin: none;
+  float: left;
+  height: 60px;
+}
+
+.search_form_city {
+  border: 1px solid grey;
+  border-right: none;
+  margin: none;
+  float: left;
+  border-radius: 100px 0 0 100px;
+  height: 60px;
+}
+
+.search_form_city:focus {
+  outline: none;
+}
+
+.search_form:focus {
+  outline: none;
+}
+
+.types_volunteering_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  direction: row;
+  width: 960px;
+}
+
+.vol_images {
+  background-color: grey;
+  height: 200px;
+  width: 200px;
+}
+
+.events_list {
+  background-color: white;
+  width: 1000px;
+}
+
+.mid-container {
+  margin-top: 40%;
+  background-color: white;
+}
+.other_content {
+  height: 900px;
+  background: white;
+}
