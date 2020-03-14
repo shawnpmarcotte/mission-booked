@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.where('about ilike ?', "%#{params[:term]}%").page(params[:page]).per(15)
+    @events = Event.all
     respond_to do |format|
       format.html do
       end
