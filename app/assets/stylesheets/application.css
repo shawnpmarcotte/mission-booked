@@ -159,3 +159,17 @@ video {
   height: 900px;
   background: white;
 }
+.search_form_city {
+  background-image: url('map_icon');
+  background-repeat: no-repeat;
+  background-size: 10%;
+  background-position: 10pt;
+  padding-left: 30px;
+}
+
+.term.search_form_city {
+  margin-left: 20px;
+}
+.search_form_city::placeholder {
+  padding-left: 10px;
+}
