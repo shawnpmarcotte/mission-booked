@@ -84,6 +84,8 @@ video {
   background-color: white;
   width: 100%;
   text-align: center;
+  padding: 20px;
+  padding-top: 50px;
 }
 
 .hero_search_container {
@@ -92,6 +94,17 @@ video {
   justify-content: center;
   margin-top: 30%;
   position: absolute;
+}
+
+.call_to_action_text {
+  justify-self: flex-start;
+  margin-top: 100px;
+  color: white;
+  font-family: 'Bree Serif', serif;
+  font-size: 3.5rem;
+  z-index: -1;
+  position: absolute;
+  margin-left: 10%;
 }
 
 .search_submit {
@@ -139,15 +152,38 @@ video {
   justify-content: space-between;
   align-items: center;
   direction: row;
-  width: 960px;
+  width: 100%;
+  margin-right: 2%;
+  margin-left: 2%;
 }
 
 .vol_images {
   background-color: grey;
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
+}
+.vol_text {
+  display: flex;
+  justify-content: space-between;
+  direction: row;
+  width: 100%;
+  margin-right: 2%;
+  margin-left: 2%;
+  text-align: center;
 }
 
+.vol {
+  text-align: center;
+  width: 100px;
+}
+.vol_text_container {
+  display: flex;
+  justify-self: center;
+}
+.main_vol {
+  display: flex;
+  justify-self: center;
+}
 .events_list {
   background-color: white;
   width: 1000px;
@@ -202,4 +238,63 @@ input.search_form {
 .navbar-toggler {
   color: black;
   width: 20px;
+}
+
+.did_you_know {
+  background-color: white;
+}
+.fact_title {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  margin-left: 2%;
+}
+.stats1 {
+  display: flex;
+  justify-self: center;
+}
+.stat_box1 {
+  height: 300px;
+  background-color: grey;
+  width: 50%;
+  margin-left: 2%;
+}
+.stat_box2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background-color: white;
+  width: 50%;
+  margin-left: 2%;
+}
+.stats2 {
+  display: flex;
+  justify-self: center;
+  margin-top: 20px;
+}
+.stat_box3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background-color: white;
+  width: 50%;
+  margin-left: 2%;
+}
+.stat_box4 {
+  height: 300px;
+  background-color: grey;
+  width: 50%;
+  margin-right: 2%;
+}
+.our_impact_text {
+  margin-right: 100px;
+}
+
+footer {
+  width: 100%;
+  height: 50px;
+  background-color: grey;
+  margin-right: 2%;
+  margin-left: 2%;
 }
