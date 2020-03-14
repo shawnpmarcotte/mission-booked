@@ -11,12 +11,12 @@ Rails.application.routes.draw do
       resources :users
       resources :organizations
       resources :events
-      resources :donate
+      resources :donations
       resources :gallery
       resources :about
     end
   end
-  
+
   authenticated :user do
   end
 
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   resources :events
   resources :organizations
   resources :events_page
-  resources :donate
+  resources :donations
   resources :gallery
   resources :about
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
