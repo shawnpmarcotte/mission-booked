@@ -104,7 +104,7 @@ video {
   border: none;
   margin-right: 0px;
   float: right;
-  height: 60px;
+  height: 40px;
   box-shadow: black 2px;
 }
 
@@ -121,7 +121,8 @@ video {
   border-right: none;
   margin: none;
   float: left;
-  height: 60px;
+  height: 40px;
+  width: 150px;
 }
 
 .search_form_city {
@@ -130,7 +131,8 @@ video {
   margin: none;
   float: left;
   border-radius: 100px 0 0 100px;
-  height: 60px;
+  height: 40px;
+  width: 150px;
 }
 
 .search_form_city:focus {
