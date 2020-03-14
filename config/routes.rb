@@ -7,26 +7,25 @@ Rails.application.routes.draw do
 
   authenticated :user, ->(u) { u.admin? } do
     namespace :admin do
+      root 'users#index'
       resources :users
       resources :organizations
       resources :events
       resources :donate
       resources :gallery
       resources :about
-
-      root to: 'users#index'
     end
   end
+  
   authenticated :user do
   end
 
-  root 'events#index'
+  root 'homes#index'
   resources :events
   resources :organizations
   resources :events_page
   resources :donate
   resources :gallery
   resources :about
-  get 'hello_world', to: 'hello_world#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
