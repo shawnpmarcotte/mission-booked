@@ -1,7 +1,6 @@
-
 <%= form_with(url: events_path, method: :get) do |form| %>
   <%= form.search_field :term,
-      placeholder: 'City',
+      placeholder:'City',
       value: params[:term],
       class: 'search_form_city'  %>
 <% end %>
