@@ -101,12 +101,21 @@ video {
   border-radius: 0px 100px 100px 0px;
   padding-left: 5px;
   padding-right: 50px;
-  box-shadow: 2px;
   border: none;
   margin-right: 0px;
   float: right;
   height: 60px;
+  box-shadow: black 2px;
 }
+
+.search-submit:focus {
+  outline: none;
+}
+
+.search-submit:focus:hover {
+  outline: none;
+}
+
 .search_form {
   border: 1px solid grey;
   border-right: none;
@@ -170,6 +179,11 @@ video {
 .term.search_form_city {
   margin-left: 20px;
 }
-.search_form_city::placeholder {
-  padding-left: 10px;
+
+input.search_form_city {
+  padding-left: 50px;
+}
+
+input.search_form {
+  padding-left: 30px;
 }
