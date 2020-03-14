@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :events
       resources :donate
       resources :gallery
+      resources :about
 
       root to: 'users#index'
     end
