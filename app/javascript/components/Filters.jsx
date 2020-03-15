@@ -1,69 +1,41 @@
-// import React, { useState } from 'react';
-// import Events from './Events'
-// import uuid from 'react-uuid';
+import React from 'react';
 
-// const filterOptions = [
-//   { label: 'All', reset: true },
-//   { label: 'Date', type: 'Date' },
-//   { value: 'Animals', type: 'Type' },
-//   { value: 'Environment', type: 'Type' },
-//   { value: 'Homeless', type: 'Type' },
-//   { value: 'Rebuilding', type: 'Type' },
-//   { value: 'Youth', type: 'Type' },
-//   { label: 'City', type: 'Location' },
-// ]
-// const Filters = () => { 
-//   const [filters, setFilters] = useState({});
-//   const updateFilters = ({ filterType, filterValue, reset }) =>
-//     setFilters(
-//       reset
-//         ? {} // if reset is true empty the object
-//         : { ...filters, [filterType]: filterValue } // if it's not true maintain the rest of the properties and append/update the new ones
-//     );
-//   const checkFilters = (filterKeys, result) =>
-//     filterKeys.every(key => {
-//       // we loop our filterd keys, and we compared the value of those filters with the values of each pet
-//       const filterValue = filters[key];
-//       return result[key] === filterValue;
-//     });
-//   return (
-//     // the return is what gets rendured
-//     <Container className="cards-container">
-//       <div>
-//         {filterOptions.map(({ value, label, type, reset }) => (
-//           <ButtonGroup toggle className="mt-10">
-//             <ToggleButton
-//               type="radio"
-//               name="radio"
-//               defaultChecked
-//               value="1"
-//               key={uuid()}
-//               onClick={() =>
-//                 updateFilters({ filterType: type, filterValue: value, reset })
-//               }
-//             >
-//               {label || value}
-//             </ToggleButton>
-//           </ButtonGroup>
-//         ))}{' '}
-//         {/* This filter options.map just maps through our options/filters /*/}
-//         <Row>
-//           {events &&
-//            events.reduce((acc, result) => {
-//               // the accumulator is a value that gets carried over after each accumulator
-//               const filterKeys = Object.keys(filters); //array of strings for each key in the object
-//               const hasFilters = !!filterKeys.length; //the !! are optional to further visualize that it's a falsy statement.
-//               if (hasFilters) {
-//                 const isValid = checkFilters(filterKeys, result);
-//                 if (!isValid) return acc; //if the filters aren't "valid", we skip the pet again by returning the accumulator, which is no pet, because we have set it to an empty array
-//               }
-//               acc.push(<Events key={result.id} result={result} />);
-//               return acc;
-//             }, [])}{' '}
-//           {/* this empty braket (empty array) represents the innitial accumulator value*/}
-//         </Row>
-//       </div>
-//     </Container>
-//   );
-// };
-// export default Filters;
+const Filters = (props) => {     //we came here to type props after we typed line 35 in Events
+    console.log('this is the props', props)
+    return (
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <div>
+                <label>Date</label>
+                <select onChange={props.handleFilterSelect("date")}>
+                    <option>Select</option>
+                    <option value="Today">Today</option>
+                    <option value="This Week">This Week</option>
+                    <option value="This Month">This Month</option>
+                </select>
+            </div>
+            <div>
+                <label>Category</label>
+                <select onChange={props.handleFilterSelect("category")}>
+                    <option>Select</option>
+                    <option value="Animals">Animals</option>
+                    <option value="Environment">Environment</option>
+                    <option value="Homelessness">Homelessness</option>
+                    <option value="Rebuilding">Rebuilding</option>
+                    <option value="Youth">Youth</option>
+                </select>
+            </div>
+            <div>
+                <label>Locations</label>
+                <select onChange={props.handleFilterSelect("location")}>
+                    <option>Select</option>
+                    <option value="Miami">Miami</option>
+                    <option value="Doral">Doral</option>
+                    <option value="Ft. Lauderdale">Ft. Lauderdale</option>
+                    <option value="Key Bisayne">Key Bisayne</option>
+                </select>
+            </div>
+        </div>
+    )
+}
+
+export default Filters;

@@ -5,8 +5,11 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.where('about ilike ?', "%#{params[:term]}%").page(params[:page]).per(15)
-    respond_to do |format|
+    @events = Event.all 
+    @events = Event.where('about ilike ?', "%#{params[:term]}%").page(params[:page]).per(15) if params[:term] 
+      #above, the if statement goes at the end because that's a rails thing
+    @events = Event.filter_by_category(params[:category]) if params[:category]
+      respond_to do |format|
       format.html do
       end
       format.json do
