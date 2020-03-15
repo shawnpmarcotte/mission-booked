@@ -28,7 +28,7 @@
   */
 
 * {
-  font-family: "Baloo Chettan 2", cursive;
+  font-family: 'Baloo Chettan 2', cursive;
 }
 html,
 body {
@@ -105,7 +105,7 @@ video {
   justify-self: flex-start;
   margin-top: 100px;
   color: white;
-  font-family: "Bree Serif", serif;
+  font-family: 'Bree Serif', serif;
   font-size: 3.5rem;
   z-index: -1;
   position: absolute;
@@ -203,7 +203,7 @@ video {
   background: white;
 }
 .search_form_city {
-  background-image: url("map_icon");
+  background-image: url('map_icon');
   background-repeat: no-repeat;
   background-size: 10%;
   background-position: 10pt;
@@ -237,7 +237,7 @@ input.search_form {
 }
 
 .account_button:hover {
-  transform: image-url("account_icon_hover");
+  transform: image-url('account_icon_hover');
 }
 
 .navbar-toggler {
@@ -301,5 +301,23 @@ footer {
   height: 50px;
   background-color: grey;
   margin-right: 2%;
+  margin-left: 2%;
+}
+
+/* users/sign-in */
+
+.authentication_body {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+.authentication_image {
+  width: 500px;
+  height: 500px;
+  background-color: grey;
+  margin-right: 2%;
+}
+.authentication_container {
   margin-left: 2%;
 }
