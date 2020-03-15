@@ -202,12 +202,10 @@ GEM
     react-rails (2.6.1)
       babel-transpiler (>= 0.7.0)
       connection_pool
-
       execjs
       railties (>= 3.2)
       tilt
     regexp_parser (1.6.0)
-
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)

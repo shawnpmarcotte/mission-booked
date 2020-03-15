@@ -2,11 +2,17 @@
 
 class DonationsController < ApplicationController
   def index
-    @events = Event.where('about ilike ?', "%#{params[:term]}%").page(params[:page]).per(15)
-  end
-
-  def new
-    @organizations = Organization.for_autocomplete(:name, :id)
-    @donation = Donation.new
+    @organizations = Organization.all
+    respond_to do |format|
+      format.html do
+      end
+      format.json do
+        render json: @organizations
+      end
+    end
   end
 end
+#   def new
+#     @organizations = Organization.pluck(:name, :id)
+#     @donation = Donation.new
+#

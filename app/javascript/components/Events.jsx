@@ -30,9 +30,9 @@ const fetchEventData = () => {
     .then(response => setResults(response.data))
 
   }
-  // spread opperator to map through the filters and mantain them
+  // spread opperator to map through the filters and maintain them
   //"" [filterType]: "" this is known as a dynamic property, you can pass a string or number
-  // and it will assign that property on the object aka firts argument on the rocket train
+  // and it will assign that property on the object aka first argument on the rocket train
   // and the value of that property would be whatever we selected on the select tag.
 
   return(
