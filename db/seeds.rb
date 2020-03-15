@@ -123,7 +123,7 @@ event = Event.new(
   about: "The Pisgah Food Pantry is a 'Choice Pantry' and volunteers are needed to help with serving donated foods, stocking the shelves, and helping clients to collect thier food items.  The items supplied to the clients are picked up from partner agencies.   Volunteers are needed to help with final preparations for, and serving pantry clients, on distribution day. Closed-toe shoes are required for safety! Please wear long pants or jeans, a t-shirt (no strapless shirts or tank tops), and sneakers are preferred (NO Flip Flops, sandals or slippers). Please plan to arrive a few minutes early for a brief orientation about the volunteer opportunity from the Project Leader.",
   location: 'Miami Gardens, FL',
   category: 'People',
-  city_state: 'Miami',
+  city_state: 'Doral',
   organization_id: 5
 )
 event.save

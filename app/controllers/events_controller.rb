@@ -1,15 +1,23 @@
 # frozen_string_literal: true
+
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
 
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all 
-    @events = Event.where('about ilike ?', "%#{params[:term]}%").page(params[:page]).per(15) if params[:term] 
-      #above, the if statement goes at the end because that's a rails thing
+    @events = Event.all
+    if params[:term]
+      @events = Event.where('about ilike ?', "%#{params[:term]}%").page(params[:page]).per(15)
+    end
+    # above, the if statement goes at the end because that's a rails thing
+    if params[:city_state]
+      @events = Event.filter_by_city_state(params[:city_state])
+    end
     @events = Event.filter_by_category(params[:category]) if params[:category]
-      respond_to do |format|
+    @events = Event.filter_by_date(params[:date]) if params[:date]
+
+    respond_to do |format|
       format.html do
       end
       format.json do
@@ -82,4 +90,3 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :date, :about, :location, :organization_id)
   end
 end
-
