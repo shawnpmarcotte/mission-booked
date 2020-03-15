@@ -1,13 +1,5 @@
 # frozen_string_literal: true
 
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 organization = Organization.new(
   name: '4Ocean',
   about: "We're here to clean the ocean and coastlines while working to stop the inflow of plastic by changing consumption habits.",
@@ -63,16 +55,6 @@ organization = Organization.new(
   contact: 'paws4you.org'
 )
 organization.save
-
-# 300.times do
-#   organization = Organization.new(
-#     name: Faker::Company.name,
-#     about: Faker::Lorem.paragraph,
-#     location: Faker::Address.full_address,
-#     contact: Faker::Internet.email
-#   )
-#   organization.save
-# end
 
 event = Event.new(
   name: '4Ocean Beach Cleanup',
@@ -260,6 +242,21 @@ event = Event.new(
 )
 event.save
 
+User.create(email: 'admin@admin.com', password: 'password', admin: true)
+User.create(email: 'some@guy.com', password: 'password')
+
+p 'seeded'
+
+# 300.times do
+#   organization = Organization.new(
+#     name: Faker::Company.name,
+#     about: Faker::Lorem.paragraph,
+#     location: Faker::Address.full_address,
+#     contact: Faker::Internet.email
+#   )
+#   organization.save
+# end
+
 # 600.times do
 #   event = Event.new(
 #     name: Faker::Company.name,
@@ -272,7 +269,12 @@ event.save
 #   event.save
 # end
 
-User.create(email: 'admin@admin.com', password: 'password', admin: true)
-User.create(email: 'some@guy.com', password: 'password')
+# frozen_string_literal: true
 
-p 'seeded'
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
