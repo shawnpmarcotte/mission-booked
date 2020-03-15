@@ -4,7 +4,7 @@ import DonationForm from "./DonationForm";
 
 const Organizations = () => {
   const INITIAL_STATE = {
-    firstname: "",
+    firstName: "",
     lastName: "",
     donation: ""
   };
@@ -27,17 +27,19 @@ const Organizations = () => {
       });
   };
 
-  const handleInputChange = field => e =>
+  const handleInputChange = field => e => {
     setFormData({ ...formData, [field]: e.target.value });
+    console.log(formData);
+  };
 
   const handleChange = event => {
     const fieldTerm = event.target.value.trim();
     setTerm(fieldTerm);
-    console.log(formData);
+    console.log(term);
   };
   return (
-    <React.Fragment>
-      <DonationForm handleInputChange={handleInputChange} />
+    <>
+      <DonationForm handleInputChange={handleInputChange} formData={formData} />
       <div>
         <label htmlFor="term">Search</label>
         <br />
@@ -59,7 +61,7 @@ const Organizations = () => {
               })}
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
