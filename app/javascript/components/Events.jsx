@@ -1,39 +1,47 @@
-import React, { useState } from "react";
+import React, {useState, useEffect } from "react";
 import axios from "axios";
 
-const Events = () => {
-  const [results, setResults] = useState([]);
-  const [term, setTerm] = useState("");
-  const handleChange = event => {
-    const fieldTerm = event.target.value.trim();
-    axios
-      .get(`/events.json?term=${fieldTerm}`)
-      .then(response => {
-        setTerm(fieldTerm);
-        setResults(response.data);
-      })
-      .catch(error => {
-        console.log(error.response);
-      });
-  };
-  return (
-    <div>
-      <label htmlFor="term">Search</label>
-      <input type="search" name="term" value={term} onChange={handleChange} />
-      {results.length > 0 && term.length > 0 && (
-        <div>
-          <h3>Results</h3>
-          {results.map((result, i) => {
-            return (
-              <p key={i}>
-                <a href={result.location}>{result.name}</a>
-              </p>
-            );
-          })}
-        </div>
-      )}
-    </div>
-  );
-};
+const filterOptions = [
+  { label: 'Date', type: 'Date' },
+  { value: 'Animals', type: 'Type' },
+  { value: 'Environment', type: 'Type' },
+  { value: 'Homeless', type: 'Type' },
+  { value: 'Rebuilding', type: 'Type' },
+  { value: 'Youth', type: 'Type' },
+  { label: 'City', type: 'Location' },
 
+]
+
+const Events = () => {
+const [results, setResults]=useState([])
+
+useEffect(() => {
+  fetchEventData()
+}, []) //the empty brakets are dependency arrays, used to break the infinite loop, and only make axios run one
+
+const fetchEventData = () => {
+  axios
+    .get("/events.json")
+    .then(response => {
+      setResults(response.data)
+    })
+    .catch(error => {
+      console.log(error.response);
+    });
+  };
+  return(
+    <div>
+      {
+        results.map((result) => (
+          <div key={result.id}>
+          <p >{result.name}</p>
+          <p>{result.date}</p>
+          <p>{result.about}</p>
+          <p>{result.city_state}</p>
+          </div>
+        ))
+      }
+    </div>
+  ) 
+};
 export default Events;
