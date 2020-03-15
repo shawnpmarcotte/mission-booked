@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "react-credit-cards/es/styles-compiled.css";
 import Cards from "react-credit-cards";
+import validators from "./validators";
 
-const PaymentForm = () => {
+const PaymentForm = ({ results, handleChange, term }) => {
   const INITIAL_STATE = {
     cvc: "",
     expiry: "",
@@ -32,54 +33,8 @@ const PaymentForm = () => {
     console.log("worked");
   };
 
-  const validators = formData => {
-    let errors = {};
-    if (!formData.number) {
-      errors.number = "Card Number is required";
-    } else if (formData.number.length < 15 || formData.number.length > 16) {
-      errors.number = "Card Number is invalid";
-    }
-    if (!formData.name) {
-      errors.name = "Name must not be empty";
-    }
-    if (!formData.cvc) {
-      errors.cvc = "CVC must not be empty";
-    } else if (formData.cvc < 3 && formData.cvc > 3) {
-      errors.cvc = "CVC is invalid";
-    }
-
-    if (!formData.expiry) {
-      errors.expiry = "expiration date must not be empty";
-    } else if (
-      !/^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/.test(formData.expiry)
-    ) {
-      errors.expiry = "Invalid Expiration Date";
-    }
-    if (!formData.firstName) {
-      errors.firstName = "First name must not be empty";
-    }
-    if (!formData.lastName) {
-      errors.lastName = "Last name must not be empty";
-    }
-    if (!formData.donation) {
-      errors.donation = "Donation Amount must not be empty";
-    }
-    return errors;
-  };
-
   return (
     <div id="PaymentForm">
-      <h1>Donate</h1>
-      <div>
-        <p>
-          "No time to spare? You can still make a difference!
-          <br />
-          Donate any amount you are comfortable with to a partner organization
-          of your choice.
-          <br />
-          No gift is too small to make an impact on your community."
-        </p>
-      </div>
       <Cards
         cvc={formData.cvc}
         expiry={formData.expiry}
@@ -87,7 +42,6 @@ const PaymentForm = () => {
         name={formData.name}
         number={formData.number}
       />
-
       <form onSubmit={handleSubmit}>
         <input
           type="number"
@@ -153,6 +107,32 @@ const PaymentForm = () => {
         <br />
         {errors.donation && <p>{errors.donation}</p>}
         <br />
+        <div>
+          <label htmlFor="term">Search</label>
+          <br />
+          <input
+            type="search"
+            name="term"
+            value={term}
+            onChange={handleChange}
+          />
+          <br />
+          <div>
+            <h3>Results</h3>
+            {results &&
+              results
+                .filter(result =>
+                  result.name.toLowerCase().includes(term.toLowerCase())
+                )
+                .map((result, i) => {
+                  return (
+                    <p key={i}>
+                      <h1>{result.name}</h1>
+                    </p>
+                  );
+                })}
+          </div>
+        </div>
         <button type="submit">Submit</button>
       </form>
     </div>
