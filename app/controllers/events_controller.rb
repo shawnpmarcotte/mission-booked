@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
 
@@ -80,3 +79,4 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :date, :about, :location, :organization_id)
   end
 end
+
