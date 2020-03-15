@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import DonationForm from "./DonationForm";
+import PaymentForm from "./PaymentForm";
 
 const Organizations = () => {
   const INITIAL_STATE = {
@@ -39,7 +39,7 @@ const Organizations = () => {
   };
   return (
     <>
-      <DonationForm handleInputChange={handleInputChange} formData={formData} />
+      <PaymentForm />
       <div>
         <label htmlFor="term">Search</label>
         <br />
