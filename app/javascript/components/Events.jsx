@@ -72,7 +72,7 @@ const fetchEventData = () => {
             </>
         ) : 
           <>
-          <Filters handleFilterSelect={handleFilterSelect} /> 
+           <Filters handleFilterSelect={handleFilterSelect} /> 
            <p>Calendar View</p>
           </>
       }
