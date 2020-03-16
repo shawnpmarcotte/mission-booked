@@ -321,3 +321,11 @@ footer {
 .authentication_container {
   margin-left: 2%;
 }
+/* event filters */
+
+.active_filter_button {
+  width: 120px;
+  height: 30px;
+  border-radius: 20px;
+  background: url('close') no-repeat;
+}
