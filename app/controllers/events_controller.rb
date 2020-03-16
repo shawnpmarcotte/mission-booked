@@ -6,7 +6,9 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    p 'terms'
+    p params
+    @events = Event.order(:date)
     if params[:term]
       @events = Event.where('about ilike ?', "%#{params[:term]}%").filter_by_date.page(params[:page]).per(15)
     end
@@ -15,7 +17,6 @@ class EventsController < ApplicationController
       @events = Event.filter_by_city_state(params[:city_state])
     end
     @events = Event.filter_by_category(params[:category]) if params[:category]
-    @events = Event.order(:date)
 
     respond_to do |format|
       format.html do
