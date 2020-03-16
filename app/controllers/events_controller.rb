@@ -8,14 +8,14 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     if params[:term]
-      @events = Event.where('about ilike ?', "%#{params[:term]}%").page(params[:page]).per(15)
+      @events = Event.where('about ilike ?', "%#{params[:term]}%").filter_by_date.page(params[:page]).per(15)
     end
     # above, the if statement goes at the end because that's a rails thing
     if params[:city_state]
       @events = Event.filter_by_city_state(params[:city_state])
     end
     @events = Event.filter_by_category(params[:category]) if params[:category]
-    @events = Event.filter_by_date(params[:date]) if params[:date]
+    @events = Event.order(:date)
 
     respond_to do |format|
       format.html do
