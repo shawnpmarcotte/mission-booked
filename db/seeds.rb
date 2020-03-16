@@ -79,7 +79,7 @@ event.save
 
 event = Event.new(
   name: 'BEE-cause Flea',
-  date: '2020-04-06 08:00:00 -0500',
+  date: Time.new(2020, 4, 12, 2, 2, 2, '+02:00'),
   about: "BEE-cause Flea MISSION: Raise community awareness of, and on-site support for, increasingly threatened South Florida pollinators. Shop Tropical Audubon Society's 4th Annual BEE-cause Flea and help support the pollinators who feed our planet. Net event proceeds support onsite Steinberg Nature Center Pollinator Habitat Initiatives.",
   location: 'Tropical Audubon Society, 5530 Sunset Drive, Miami, FL 33143',
   category: 'Animals',
