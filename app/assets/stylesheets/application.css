@@ -329,3 +329,31 @@ footer {
   border-radius: 20px;
   background: url('close') no-repeat;
 }
+
+/* Event cards */
+
+.cards_container {
+  /* width: 300px;
+  height: 300px;
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px; */
+
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  overflow: hidden;
+}
+.event_about {
+  height: 50px;
+  font-size: 8px;
+  overflow: hidden;
+}
+.cards {
+  width: 200px;
+}
