@@ -330,22 +330,36 @@ footer {
   background: url('close') no-repeat;
 }
 
+/* Event page */
+
+.hero_image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url('events_hero');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 500px;
+}
+
+.filters_bar {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: absolute;
+  width: 800px;
+  height: 100px;
+  background-color: white;
+  z-index: 1;
+  box-shadow: 2px 4px 10px darkgrey;
+}
 /* Event cards */
 
 .cards_container {
-  /* width: 300px;
-  height: 300px;
-
-  display: grid;
-
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-gap: 20px; */
-
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   overflow: hidden;
 }
@@ -354,6 +368,14 @@ footer {
   font-size: 8px;
   overflow: hidden;
 }
-.cards {
+.card {
   width: 200px;
+  border-radius: 0px;
+}
+.view_state {
+  background: green;
+}
+
+.view_button {
+  font-size: 12px;
 }
