@@ -1,4 +1,5 @@
-const validators = formData => {
+const validators = (formData, term) => {
+  console.log(term);
   let errors = {};
   if (!formData.number) {
     errors.number = "Card Number is required";
@@ -27,6 +28,9 @@ const validators = formData => {
   }
   if (!formData.donation) {
     errors.donation = "Donation Amount must not be empty";
+  }
+  if (!term) {
+    errors.term = "Organization must not be empty";
   }
   return errors;
 };

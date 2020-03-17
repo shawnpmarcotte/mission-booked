@@ -14,6 +14,7 @@ const Organizations = () => {
     axios
       .get(`/donations.json`)
       .then(response => {
+        console.log(response);
         setResults(response.data);
       })
       .catch(error => {

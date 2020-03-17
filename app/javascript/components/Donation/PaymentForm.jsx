@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "react-credit-cards/es/styles-compiled.css";
 import Cards from "react-credit-cards";
 import validators from "./validators";
+import ThankPage from "./ThankPage";
 
 const PaymentForm = ({ results, handleChange, term }) => {
   const INITIAL_STATE = {
@@ -29,7 +30,7 @@ const PaymentForm = ({ results, handleChange, term }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    setErrors(validators(formData));
+    setErrors(validators(formData, term));
     console.log("worked");
   };
 
@@ -118,7 +119,6 @@ const PaymentForm = ({ results, handleChange, term }) => {
           />
           <br />
           <div>
-            <h3>Results</h3>
             {results &&
               results
                 .filter(result =>
@@ -131,9 +131,12 @@ const PaymentForm = ({ results, handleChange, term }) => {
                     </p>
                   );
                 })}
+            {errors.term && <p>{errors.term}</p>}
           </div>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" onSubmit={ThankPage}>
+          Submit
+        </button>
       </form>
     </div>
   );
