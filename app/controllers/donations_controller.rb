@@ -11,6 +11,16 @@ class DonationsController < ApplicationController
       end
     end
   end
+
+  # def create
+  # organizations = Organization.new
+
+  # if organizations.save
+  #   redirect_to root_path, notice: 'Task was successfully created.'
+  # else
+  # # redirect_to root_path, alert: organization.errors.full_messages.join(', ')
+  # end
+  # end
 end
 #   def new
 #     @organizations = Organization.pluck(:name, :id)
