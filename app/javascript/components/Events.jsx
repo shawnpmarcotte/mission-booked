@@ -1,14 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Filters from './Filters'
+import EventModal from './EventModal'
+
 const Events = () => {
   const [results, setResults] = useState([]) // order matters in arrays
   const [filters, setFilters] = useState({}) //Object BC it holds a lot of keys and orders don't matter
   const [calendarView, setCalendarView] = useState(false)
+  const [modalInfo, setModalInfo] = useState({})
 
   useEffect(() => {
     fetchEventData()
   }, []) //the empty brakets are dependency arrays, used to break the infinite loop, and only make axios run one
+
+  const openModalToggle = (result) => {
+    setModalInfo(result)
+  }
+
+  const closeModalToggle = () => {
+    setModalInfo({})
+  }
 
   const fetchEventData = () => {
     axios
@@ -81,19 +92,20 @@ const Events = () => {
           </div>
         </div>
       </div>
-      <div class="cards_container">
+      <div class="cards_container" >
         {results.map(result => (
-          <div class="card" key={result.id}>
+          <div class="card" key={result.id} data-toggle="modal" data-target="#exampleModal" onClick={() => openModalToggle(result)}>
             <p>{result.name}</p>
             <p>{result.date}</p>
             <p>{result.city_state}</p>
             <p class="event_about">{result.about} </p>
             <p>
-              <a href="#">View More</a>
+              <a href={`/events/${result.id}`}>View More</a>
             </p>
           </div>
-        ))}{' '}
-      </div>{' '}
+        ))}
+          <EventModal  name={modalInfo.name} about={modalInfo.about} closeModalToggle={closeModalToggle}/>                           
+      </div>
     </>
   )
 }
