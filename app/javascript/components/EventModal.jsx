@@ -1,6 +1,26 @@
 import React from 'react'
+import axios from 'axios'
 
 const EventModal = props => {
+
+  const token = document
+                .querySelector('meta[name="csrf-token"]')
+                .getAttribute("content")
+
+  const csrfHeaders = {
+    'X-Requested-With': 'XMLHttpRequest',
+    'X-CSRF-Token': token
+  }
+
+  const handleAddFavorite = event => {
+    const event_id = props.id
+    event.preventDefault();
+    axios
+      .post("/favorites", { event_id }, { headers: csrfHeaders })
+      .then(response => {
+        console.log("favorite added")     
+  })}
+
   return (
     <div
       class="modal fade"
@@ -28,7 +48,9 @@ const EventModal = props => {
               </button>
             </div>
             <div class="modal-header-mid">{props.name}</div>
-            <div class="modal-header-bottom">Bookmark event</div>
+            <div class="modal-header-bottom" onClick={handleAddFavorite}>
+              Bookmark event
+            </div>
           </div>
           <div class="modal-body">
             <div class="modal-col-1">{props.about}</div>

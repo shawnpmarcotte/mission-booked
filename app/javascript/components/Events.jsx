@@ -136,6 +136,7 @@ const Events = () => {
         <EventModal
           name={modalInfo.name}
           about={modalInfo.about}
+          id = {modalInfo.id}
           handleViewMore={() => handleViewMore(modalInfo)}
           closeModalToggle={closeModalToggle}
         />

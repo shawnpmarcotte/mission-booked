@@ -1,0 +1,7 @@
+<h1>Favorites</h1>
+
+<ul>
+<% @favorites.each do |favorite|%>
+  <li><%= link_to favorite.event.name, event_path(favorite.event.id)%></li>
+<% end %>
+</ul>
