@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Filters from "./Filters";
-import EventModal from "./EventModal";
+
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import Filters from './Filters'
+import EventModal from './EventModal'
+import EventCalentar from './EventCalenar'
 
 const Events = () => {
   const initalQueryParams = new URLSearchParams(location.search);
@@ -94,6 +96,7 @@ const Events = () => {
                 setFilters={setFilters}
               />
               <p>Calendar View</p>
+              <EventCalentar />
             </>
           )}{" "}
           <div class="viewTypes">
