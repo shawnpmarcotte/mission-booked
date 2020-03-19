@@ -12,6 +12,7 @@
     "bootstrap-select": "^1.13.12",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
+    "react-calendar": "^3.0.0",
     "react-credit-cards": "^0.8.0",
     "react-dom": "^16.13.0",
     "react-on-rails": "11.3.0",
