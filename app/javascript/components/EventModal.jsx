@@ -18,21 +18,8 @@ const EventModal = props => {
     axios
       .post("/favorites", { event_id }, { headers: csrfHeaders })
       .then(response => {
-        if (tasks[selectedDate]) {
-          tasks[selectedDate].push(response.data);
-        } else {
-          tasks[selectedDate] = [response.data];
-        }
-        this.setState({
-          tasks,
-          task: { description: "", due_date: "", errors: [] }
-        });
-      })
-      .catch(error => {
-        if (error.response.status === 422) {
-          task.errors = error.response.data.errors;
-          this.setState({ task });
-  }})}
+        console.log("favorite added")     
+  })}
 
   return (
     <div

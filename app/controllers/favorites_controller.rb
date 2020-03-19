@@ -5,13 +5,13 @@ class FavoritesController < ApplicationController
     @favorite = current_user.favorites.find_or_create_by(event: @event)
     respond_to do |format|
       if @favorite.save
-        format.html { redirect_to root_url }
-        format.json { render :show, status: :created, location: @event }
-      else
-        format.html { render :new }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
+        format.html { redirect_to events_path }
       end
     end
+  end
+
+  def index
+    @favorites = current_user.favorites.all
   end
 
   private
