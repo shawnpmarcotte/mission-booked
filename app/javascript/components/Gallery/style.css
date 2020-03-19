@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   overscroll-behavior-y: contain;
@@ -14,6 +15,7 @@ body {
   position: fixed;
   overflow: hidden;
 }
+
 #root {
   position: fixed;
   overflow: hidden;
@@ -23,12 +25,14 @@ body {
       39 39,
     auto;
 }
+
 #root > div {
   position: absolute;
   width: 100vw;
   height: 100vh;
   will-change: transform;
 }
+
 #root > div > div {
   background-size: cover;
   background-repeat: no-repeat;
