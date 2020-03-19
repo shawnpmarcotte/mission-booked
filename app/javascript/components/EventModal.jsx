@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const EventModal = props => {
   return (
@@ -13,23 +13,29 @@ const EventModal = props => {
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              {props.name}
-            </h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-              onClick={props.closeModalToggle}
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <div class="modal-header-top">
+              <h5 class="modal-title" id="exampleModalLabel">
+                {props.date}
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                onClick={props.closeModalToggle}
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-header-mid">{props.name}</div>
+            <div class="modal-header-bottom">Bookmark event</div>
           </div>
-          <div class="modal-body">{props.about}</div>
+          <div class="modal-body">
+            <div class="modal-col-1">{props.about}</div>
+            <div class="modal-col-2">date, location, info</div>
+          </div>
           <div>Stuff goes here!</div>
           <div class="modal-footer">
-            <button onClick={props.handleViewMore}>View More</button>
             <button
               type="button"
               class="btn btn-secondary"
@@ -42,7 +48,7 @@ const EventModal = props => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default EventModal;
+export default EventModal
