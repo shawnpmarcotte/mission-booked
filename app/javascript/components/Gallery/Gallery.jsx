@@ -1,14 +1,16 @@
 import React, { useRef } from "react";
 import clamp from "lodash-es/clamp";
 import { useSprings, animated } from "react-spring";
-import { useGesture } from "react-use-gesture";
+import { useDrag } from "react-use-gesture";
 import "./style.css";
 const pages = [
-  "https://images.pexels.com/photos/240040/pexels-photo-240040.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  "https://images.pexels.com/photos/296878/pexels-photo-296878.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://images.pexels.com/photos/1509428/pexels-photo-1509428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://images.pexels.com/photos/351265/pexels-photo-351265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://images.pexels.com/photos/924675/pexels-photo-924675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+  "https://news.miami.edu/rsmas/_assets/images/images-stories/2018/09/ocean-clean-up-940x529.jpg",
+  "https://www.pmo.ir/pso_content/media/image/2020/01/109770_orig.jpg",
+  "https://indonesiaexpat.biz/wp-content/uploads/2019/10/aoc.jpg",
+  "https://churchhealth.org/wp-content/uploads/2016/09/Perea-Volunteer-for-Kids.png",
+  "https://sanfranciscoparksalliance.org/wp-content/uploads/2019/10/gardening-2518377_1920.jpg",
+  "https://s26643.pcdn.co/wp-content/uploads/2018/07/FTLAUDERDALE07-23-18-3.jpg",
+  "https://images2.minutemediacdn.com/image/upload/c_crop,h_1190,w_2121,x_0,y_33/f_auto,q_auto,w_1100/v1583164013/shape/mentalfloss/546495-gettyimages-1094085668.jpg"
 ];
 const Gallery = () => {
   const index = useRef(0);
@@ -17,7 +19,7 @@ const Gallery = () => {
     sc: 1,
     display: "block"
   }));
-  const bind = useGesture(
+  const bind = useDrag(
     ({ down, delta: [xDelta], direction: [xDir], distance, cancel }) => {
       if (down && distance > window.innerWidth / 2)
         cancel(
@@ -59,4 +61,5 @@ const GalleryWrapper = () => (
     <Gallery />
   </div>
 );
+
 export default GalleryWrapper;
