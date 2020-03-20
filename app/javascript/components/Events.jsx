@@ -3,6 +3,7 @@ import axios from 'axios'
 import Filters from './Filters'
 import EventModal from './EventModal'
 import EventCalentar from './EventCalenar'
+import volunteer_placeholder from '../../assets/images/volunteer_placeholder'
 
 const Events = () => {
   const initalQueryParams = new URLSearchParams(location.search)
@@ -120,14 +121,26 @@ const Events = () => {
             <div class="flip-card">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
-                  <div class="event-card-photo"></div>
-                  <p>{result.name}</p>
-                  <p>{result.date}</p>
-                  <p>{result.city_state}</p>
-                  <p class="event_about">{result.about} </p>
+                  <div class="event-card-photo">
+                    <img
+                      src={volunteer_placeholder}
+                      className="volunteer_placeholder"
+                    />
+                  </div>
+                  <div class="card_text">
+                    <div class="card_event_date">{result.date}</div>
+                    <div class="card_event_name">{result.name}</div>
+                    <div class="card_footer">
+                      <div class="card_event_city">{result.city_state}</div>
+                    </div>
+                  </div>
                 </div>
+
                 <div class="flip-card-back">
-                  <p>back of card</p>
+                  <div class="card-back-text">
+                    <p class="card_event_about">{result.about} </p>
+                    <div class="card_back_footer">Read More</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -136,7 +149,7 @@ const Events = () => {
         <EventModal
           name={modalInfo.name}
           about={modalInfo.about}
-          id = {modalInfo.id}
+          id={modalInfo.id}
           handleViewMore={() => handleViewMore(modalInfo)}
           closeModalToggle={closeModalToggle}
         />

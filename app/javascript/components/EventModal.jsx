@@ -2,10 +2,9 @@ import React from 'react'
 import axios from 'axios'
 
 const EventModal = props => {
-
   const token = document
-                .querySelector('meta[name="csrf-token"]')
-                .getAttribute("content")
+    .querySelector('meta[name="csrf-token"]')
+    .getAttribute('content')
 
   const csrfHeaders = {
     'X-Requested-With': 'XMLHttpRequest',
@@ -14,12 +13,13 @@ const EventModal = props => {
 
   const handleAddFavorite = event => {
     const event_id = props.id
-    event.preventDefault();
+    event.preventDefault()
     axios
-      .post("/favorites", { event_id }, { headers: csrfHeaders })
+      .post('/favorites', { event_id }, { headers: csrfHeaders })
       .then(response => {
-        console.log("favorite added")     
-  })}
+        console.log('favorite added')
+      })
+  }
 
   return (
     <div
