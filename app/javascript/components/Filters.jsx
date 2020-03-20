@@ -38,7 +38,7 @@ const Filters = props => {
             <label>Category</label>
             <select
               onChange={props.handleFilterSelect("category")}
-              class="filter_select"
+              className="filter_select"
             >
               <option>Select</option>
               <option value="Animals">Animals</option>
@@ -61,7 +61,7 @@ const Filters = props => {
             <label>Locations</label>
             <select
               onChange={props.handleFilterSelect("city_state")}
-              class="filter_select"
+              className="filter_select"
             >
               <option>Select</option>
               <option value="Miami">Miami</option>
