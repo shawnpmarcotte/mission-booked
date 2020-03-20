@@ -56,7 +56,7 @@ const Events = () => {
     const queryParams = getQueryParams(updatedFilter)
     axios
       .get(`/events.json?${queryParams}`)
-      .then(response => setResults(response.data))
+      .then(response => setResults(response.data.all_data.events))
   }
   const handleThumbnailView = () => {
     setCalendarView(false)
