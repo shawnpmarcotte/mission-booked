@@ -158,6 +158,14 @@ const Events = () => {
         </div>
       </div>
       <p>Calendar view</p>
+      <div>
+        style={{
+          width:"100%",
+          display:"flex",
+          justification:"center",
+          alignItems:"center"
+        }}
+      </div>
       <EventCalendar/>
       </>
       )}
