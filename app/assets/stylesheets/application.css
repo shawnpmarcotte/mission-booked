@@ -440,22 +440,54 @@ footer {
 .modal-header-top {
   display: flex;
   justify-content: space-between;
-  background-color: lightgrey;
+  background-color: white;
   width: 100%;
 }
 .modal-header-mid {
   display: flex;
   align-items: center;
   font-size: 30px;
-  height: 200px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.modal_main_photo {
+  background-color: lightgrey;
+  height: 300px;
+  width: 300px;
+  padding: 5px;
+}
+
+.modal_body_photos {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+.modal_photo_1 {
+  background-color: lightgrey;
+  width: 288px;
+  height: 94px;
+  margin: 5px;
+}
+
+.modal_photo_2 {
+  background-color: lightgrey;
+  width: 288px;
+  height: 94px;
+  margin: 5px;
+}
+.modal_photo_3 {
+  background-color: lightgrey;
+  width: 288px;
+  height: 94px;
+  margin: 5px;
 }
 .modal-header-bottom {
-  background-color: lightgrey;
   width: 100%;
 }
 .modal-content {
-  height: 600px;
-  width: 500px;
+  height: 700px;
+  width: 600px;
 }
 .modal-body {
   display: flex;
