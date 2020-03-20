@@ -6,9 +6,9 @@ const ActiveFilterButton = props => {
   };
 
   return (
-    <button onClick={handleResetFilter} class="active_filter_button">
+    <button onClick={handleResetFilter} className="active_filter_button">
       {props.display}
-      <i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i>
+      <i className="remove glyphicon glyphicon-remove-sign glyphicon-white"></i>
     </button>
   );
 };
