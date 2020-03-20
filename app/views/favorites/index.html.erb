@@ -2,6 +2,9 @@
 
 <ul>
 <% @favorites.each do |favorite|%>
-  <li><%= link_to favorite.event.name, event_path(favorite.event.id)%></li>
+  <li>
+    <%= link_to favorite.event.name, event_path(favorite.event.id)%>
+    <%= link_to "❌", favorite_path(favorite.event.id), method: :delete, data: { confirm: "Are you sure?" } %>
+  </li>
 <% end %>
 </ul>
