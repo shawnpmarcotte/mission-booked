@@ -4,7 +4,6 @@ import Filters from './Filters'
 import EventModal from './EventModal'
 import EventCalendar from './EventCalendar'
 import volunteer_placeholder from '../../assets/images/volunteer_placeholder'
-
 const Events = () => {
   const initalQueryParams = new URLSearchParams(location.search)
   const [results, setResults] = useState([]) // order matters in arrays
@@ -18,19 +17,15 @@ const Events = () => {
   }) //Object BC it holds a lot of keys and orders don't matter
   const [calendarView, setCalendarView] = useState(false)
   const [modalInfo, setModalInfo] = useState({})
-
   useEffect(() => {
     fetchEventData()
   }, []) //the empty brakets are dependency arrays, used to break the infinite loop, and only make axios run one
-
   const openModalToggle = result => {
     setModalInfo(result)
   }
-
   const closeModalToggle = result => {
     setModalInfo({})
   }
-
   const getQueryParams = filters =>
     Object.keys(filters).reduce(
       (acc, param) =>
@@ -39,7 +34,6 @@ const Events = () => {
           : `${param}=${filters[param]}`,
       ''
     )
-
   const fetchEventData = () => {
     const queryParams = getQueryParams(filters)
     axios
@@ -51,13 +45,11 @@ const Events = () => {
         console.log(error.response)
       })
   }
-
   // partial applycation = type of function
   // curried = partial application + the other partial application aka double rockets
   const handleFilterSelect = filterType => event => {
     const updatedFilter = { ...filters, [filterType]: event.target.value }
     setFilters(updatedFilter)
-
     const queryParams = getQueryParams(updatedFilter)
     axios
       .get(`/events.json?${queryParams}`)
@@ -69,7 +61,6 @@ const Events = () => {
   const handleCalendarView = () => {
     setCalendarView(true)
   }
-
   const handleViewMore = event => Turbolinks.visit(`/events/${event.id}`)
   // spread opperator to map through the filters and maintain them
   //"" [filterType]: "" this is known as a dynamic property, you can pass a string or number
@@ -124,7 +115,6 @@ const Events = () => {
                         </div>
                       </div>
                     </div>
-
                     <div class="flip-card-back">
                       <div class="card-back-text">
                         <p class="card_event_about">{result.about} </p>
@@ -173,5 +163,4 @@ const Events = () => {
     </>
   )
 }
-
 export default Events
