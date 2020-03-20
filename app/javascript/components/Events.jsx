@@ -3,7 +3,9 @@ import axios from 'axios'
 import Filters from './Filters'
 import EventModal from './EventModal'
 import EventCalendar from './EventCalendar'
+import styled from 'styled-components'
 import volunteer_placeholder from '../../assets/images/volunteer_placeholder'
+
 const Events = () => {
   const initalQueryParams = new URLSearchParams(location.search)
   const [results, setResults] = useState([]) // order matters in arrays
@@ -160,6 +162,20 @@ const Events = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div
+        style={{
+          width:"100%",
+          display:"flex",
+          justifyContent:"center",
+          alignItems:"center"
+        }}>
+      
+      <EventCalendar modal={modalInfo} />
+      </div>
+      </>
           <p>Calendar view</p>
           <EventCalendar />
         </>
