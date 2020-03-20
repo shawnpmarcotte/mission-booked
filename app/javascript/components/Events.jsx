@@ -4,6 +4,7 @@ import Filters from './Filters'
 import EventModal from './EventModal'
 import EventCalendar from './EventCalendar'
 
+
 const Events = () => {
   const initalQueryParams = new URLSearchParams(location.search)
   const [results, setResults] = useState([]) // order matters in arrays
