@@ -9,6 +9,13 @@ class EventsController < ApplicationController
     p 'terms'
     p params
     @events = Event.order(:date)
+
+    if current_user
+      @user = current_user
+    else
+      @user = {id: nil}
+    end
+
     if params[:term]
       @events = Event.where('about ilike ?', "%#{params[:term]}%").filter_by_date.page(params[:page]).per(15)
     end
@@ -21,9 +28,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html do
       end
-      format.json do
-        render json: @events
-      end
+        format.json { render json: {all_data: {user: @user, events: @events}}}
     end
   end
 
