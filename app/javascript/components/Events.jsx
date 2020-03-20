@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Filters from "./Filters";
-import EventModal from "./EventModal";
-import EventCalentar from "./EventCalenar";
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import Filters from './Filters'
+import EventModal from './EventModal'
+import EventCalentar from './EventCalenar'
+import volunteer_placeholder from '../../assets/images/volunteer_placeholder'
+
 
 const Events = () => {
   const initalQueryParams = new URLSearchParams(location.search);
@@ -117,17 +119,30 @@ const Events = () => {
             data-target="#exampleModal"
             onClick={() => openModalToggle(result)}
           >
-            <div className="flip-card">
-              <div className="flip-card-inner">
-                <div className="flip-card-front">
-                  <div className="event-card-photo"></div>
-                  <p>{result.name}</p>
-                  <p>{result.date}</p>
-                  <p>{result.city_state}</p>
-                  <p className="event_about">{result.about} </p>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div class="event-card-photo">
+                    <img
+                      src={volunteer_placeholder}
+                      className="volunteer_placeholder"
+                    />
+                  </div>
+                  <div class="card_text">
+                    <div class="card_event_date">{result.date}</div>
+                    <div class="card_event_name">{result.name}</div>
+                    <div class="card_footer">
+                      <div class="card_event_city">{result.city_state}</div>
+                    </div>
+                  </div>
                 </div>
-                <div className="flip-card-back">
-                  <p>back of card</p>
+
+                <div class="flip-card-back">
+                  <div class="card-back-text">
+                    <p class="card_event_about">{result.about} </p>
+                    <div class="card_back_footer">Read More</div>
+                  </div>
+
                 </div>
               </div>
             </div>

@@ -302,6 +302,7 @@ footer {
   background-color: grey;
   margin-right: 2%;
   margin-left: 2%;
+  align-items: baseline;
 }
 
 /* users/sign-in */
@@ -310,7 +311,7 @@ footer {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  align-items: center;
+  align-self: baseline;
 }
 .authentication_image {
   width: 500px;
@@ -350,8 +351,9 @@ footer {
   width: 800px;
   height: 100px;
   background-color: white;
-  z-index: 1;
-  box-shadow: 2px 4px 10px darkgrey;
+  z-index: 0;
+  -webkit-box-shadow: 0px 3px 5px -3px rgba(0, 0, 0, 0.64);
+  box-shadow: 0px 3px 5px -3px rgba(0, 0, 0, 0.64);
 }
 /* Event cards */
 
@@ -364,16 +366,52 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   overflow: hidden;
 }
-.event_about {
+.card_event_date {
+  font-size: 10px;
+  text-align: left;
+  padding-left: 10px;
+  height: 10px;
+}
+.card_event_name {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   height: 50px;
-  font-size: 8px;
   overflow: hidden;
+}
+.card_event_city {
+  font-size: 10px;
+  text-align: left;
+}
+
+.card_footer {
+  bottom: 0;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+.card_event_about {
+  height: 170px;
+  font-size: 12px;
+  overflow: hidden;
+  padding: 10px;
 }
 .card {
   width: 200px;
+  height: 250px;
+  margin: 10px;
   border-radius: 0px;
+  border: none;
+  -webkit-box-shadow: 0px 3px 5px -3px rgba(0, 0, 0, 0.64);
+  box-shadow: 0px 3px 5px -3px rgba(0, 0, 0, 0.64);
 }
 
+.card_text {
+  padding: 10px;
+}
 .card:hover {
   cursor: pointer;
 }
@@ -387,9 +425,11 @@ footer {
 }
 
 .event-card-photo {
-  height: 100px;
+  height: 150px;
+  overflow: hidden;
   background-color: lightgrey;
 }
+
 /* modal */
 .modal-header {
   display: flex;
@@ -438,8 +478,8 @@ footer {
 .flip-card {
   background-color: transparent;
   width: 200px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
+  height: 250px;
+  border: none;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
@@ -448,6 +488,7 @@ footer {
   position: relative;
   width: 100%;
   height: 100%;
+  border: none;
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
@@ -456,11 +497,13 @@ footer {
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
+  border: none;
 }
 
 /* Position the front and back side */
 .flip-card-front,
 .flip-card-back {
+  border: none;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -468,13 +511,22 @@ footer {
   backface-visibility: hidden;
 }
 
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-  color: black;
-}
-
 /* Style the back side */
 .flip-card-back {
-  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: white;
   transform: rotateY(180deg);
+  border: none;
+}
+.card-back-text {
+  font-size: 12px;
+}
+
+.card_back_footer {
+  bottom: 0;
+  font-size: 10px;
+  color: blue;
+  font-weight: bold;
 }

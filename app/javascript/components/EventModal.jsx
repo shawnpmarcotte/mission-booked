@@ -4,7 +4,8 @@ import axios from "axios";
 const EventModal = props => {
   const token = document
     .querySelector('meta[name="csrf-token"]')
-    .getAttribute("content");
+    .getAttribute('content')
+
 
   const csrfHeaders = {
     "X-Requested-With": "XMLHttpRequest",
@@ -16,11 +17,13 @@ const EventModal = props => {
     axios.get("/users/sign_in");
   };
   const handleAddFavorite = event => {
-    const event_id = props.id;
-    event.preventDefault();
+    const event_id = props.id
+    event.preventDefault()
+
     axios
-      .post("/favorites", { event_id }, { headers: csrfHeaders })
+      .post('/favorites', { event_id }, { headers: csrfHeaders })
       .then(response => {
+
         console.log("favorite added");
       });
   };
