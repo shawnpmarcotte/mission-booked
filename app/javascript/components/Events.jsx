@@ -3,6 +3,7 @@ import axios from 'axios'
 import Filters from './Filters'
 import EventModal from './EventModal'
 import EventCalendar from './EventCalendar'
+import styled from 'styled-components'
 
 const Events = () => {
   const initalQueryParams = new URLSearchParams(location.search)
@@ -157,16 +158,17 @@ const Events = () => {
           </div>
         </div>
       </div>
-      <p>Calendar view</p>
-      <div>
+
+      <div
         style={{
           width:"100%",
           display:"flex",
-          justification:"center",
+          justifyContent:"center",
           alignItems:"center"
-        }}
+        }}>
+      
+      <EventCalendar modal={modalInfo} />
       </div>
-      <EventCalendar/>
       </>
       )}
     </>

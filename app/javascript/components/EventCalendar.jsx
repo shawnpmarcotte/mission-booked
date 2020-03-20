@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
+
 /**
  * CALENDAR
  */
@@ -115,11 +116,6 @@ const Day = styled.div`
 		background-color: rgba(0, 0, 0, 0.05);
 	}
 `
-const AddDateForm = styled.form`
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
-	padding-top: 1rem;
-	margin-top: 1rem;
-`
 class EventCalendar extends Component {
 	state = {
 		today: new Date(),
@@ -152,7 +148,8 @@ class EventCalendar extends Component {
 	selectDate = date => {
 		this.setState(state => ({
 			date: new Date(state.date.setDate(date))
-		}))
+    }))
+    
 	}
 	renderWeekdays = () =>
 		this.weekdays.map((weekday, i) => (
