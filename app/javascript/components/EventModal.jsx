@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import bookmark from '../../assets/images/bookmark'
 
@@ -52,46 +52,65 @@ const EventModal = props => {
                 className="close"
                 data-dismiss="modal"
                 aria-label="Close"
-                onClick={props.closeModalToggle, ()=>setAdded(false)}
+                onClick={(props.closeModalToggle, () => setAdded(false))}
               >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div className="modal-header-mid">
-              <div className="modal_main_photo"></div>
+              <div className="modal_main_photo">
+                <img src={props.mainphoto} />
+              </div>
               <div className="modal_body_photos">
-                <div className="modal_photo_1"></div>
-                <div className="modal_photo_2"></div>
-                <div className="modal_photo_3"></div>
+                <div className="modal_photo_1">
+                  <img src={props.photo1} />
+                </div>
+                <div className="modal_photo_2">
+                  <img src={props.photo2} />
+                </div>
+                <div className="modal_photo_3">
+                  <img src={props.photo3} />
+                </div>
               </div>
             </div>
             {props.user_id ? (
               <button
-              type="button"
-              aria-label="Add to Favorites"
-              onClick={handleAddFavorite}>Add to Favorites</button>
+                type="button"
+                aria-label="Add to Favorites"
+                onClick={handleAddFavorite}
+              >
+                Add to Favorites
+              </button>
             ) : (
               <a href="/users/sign_in">
-              <button
-              type="button"
-              aria-label="Sign In / UP"
-              >Log in or Sign Up to bookmark events!</button></a>
+                <button type="button" aria-label="Sign In / UP">
+                  Log in or Sign Up to bookmark events!
+                </button>
+              </a>
             )}
           </div>
           <div className="modal-body">
-            <div className="modal-col-1">{props.about}</div>
-            <div className="modal-col-2">date, location, info</div>
+            <div className="modal-col-1">
+              {props.about}
+              {props.facebook}
+            </div>
+            <div className="modal-col-2">
+              {props.moreinfo}
+              {props.instagram}
+            </div>
           </div>
           <div className="modal-footer">
             <button
               type="button"
               className="btn btn-secondary"
               data-dismiss="modal"
-              onClick={props.closeModalToggle, ()=>setAdded(false)}
+              onClick={(props.closeModalToggle, () => setAdded(false))}
             >
               Close
             </button>
-            { added ? <p> This event has been added to your favorites!</p> :  null }
+            {added ? (
+              <p> This event has been added to your favorites!</p>
+            ) : null}
           </div>
         </div>
       </div>

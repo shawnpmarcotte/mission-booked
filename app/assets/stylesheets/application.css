@@ -100,7 +100,7 @@ video {
   margin-top: 30%;
   position: absolute;
 }
-.test{
+.test {
   font: 300;
 }
 .call_to_action_text {
@@ -501,7 +501,7 @@ footer {
   font-size: 10px;
 }
 .modal-col-2 {
-  background-color: lightgrey;
+  background-color: none;
   padding: 0px;
   width: 50%;
 }
@@ -597,11 +597,9 @@ footer {
   padding: 40px;
   margin: 30px 50px 40px 0px;
   box-shadow: 20px 20px 50px 4px grey;
-
 }
 
-.notices-user-edit{
+.notices-user-edit {
   color: grey;
   font-size: 10px;
-  
 }
