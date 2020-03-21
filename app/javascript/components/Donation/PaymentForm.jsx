@@ -17,7 +17,7 @@ const PaymentForm = ({ results, handleChange, term }) => {
   };
   const [formData, setFormData] = useState(INITIAL_STATE);
   const [errors, setErrors] = useState({});
-  const [donation, setDonation] = useState(false);
+  const [valid, setValid] = useState(false);
 
   const handleInputFocus = field => e => {
     setFormData({ ...formData, [field]: e.target.name });
@@ -34,7 +34,7 @@ const PaymentForm = ({ results, handleChange, term }) => {
     setErrors(validators(formData, term));
     console.log("worked");
 
-    setDonation(true);
+    setValid(true);
   };
 
   return (
@@ -46,111 +46,109 @@ const PaymentForm = ({ results, handleChange, term }) => {
         name={formData.name}
         number={formData.number}
       />
-      {donation === false ? (
-        <form onSubmit={handleSubmit}>
-          <input
-            type="number"
-            name="number"
-            placeholder="Card Number"
-            onChange={handleInputChange}
-            onFocus={handleInputFocus}
-            required
-          />
-          {errors.number ? <p>{errors.number}</p> : ""}
-          <input
-            type="text"
-            name="name"
-            placeholder="Full Name"
-            onChange={handleInputChange}
-            onFocus={handleInputFocus}
-            required
-          />
-          {errors.name && <p>{errors.name}</p>}
-          <input
-            type="text"
-            name="expiry"
-            placeholder="Valid thru"
-            onChange={handleInputChange}
-            onFocus={handleInputFocus}
-            required
-          />
-          {errors && <p>{errors.expiry}</p>}
-          <input
-            type="number"
-            name="cvc"
-            placeholder="CVC"
-            onChange={handleInputChange}
-            onFocus={handleInputFocus}
-            required
-          />
+
+      <form onSubmit={handleSubmit}>
+        <input
+          type="number"
+          name="number"
+          placeholder="Card Number"
+          onChange={handleInputChange}
+          onFocus={handleInputFocus}
+        />
+        {errors.number ? <p>{errors.number}</p> : ""}
+        <input
+          type="text"
+          name="name"
+          placeholder="Full Name"
+          onChange={handleInputChange}
+          onFocus={handleInputFocus}
+        />
+        {errors.name && <p>{errors.name}</p>}
+        <input
+          type="text"
+          name="expiry"
+          placeholder="Valid thru"
+          onChange={handleInputChange}
+          onFocus={handleInputFocus}
+        />
+        {errors && <p>{errors.expiry}</p>}
+        <input
+          type="number"
+          name="cvc"
+          placeholder="CVC"
+          onChange={handleInputChange}
+          onFocus={handleInputFocus}
+        />
+        <br />
+        {errors.cvc && <p>{errors.cvc}</p>}
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First Name"
+          onChange={handleInputChange}
+          value={formData.firstName}
+        />
+        <br />
+        {errors.firstName && <p>{errors.firstName}</p>}
+        <br />
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last Name"
+          onChange={handleInputChange}
+          value={formData.lastName}
+        />
+        <br />
+        {errors.lastName && <p>{errors.lastName}</p>}
+        <br />
+        <input
+          type="number"
+          name="donation"
+          placeholder="$ Donation Amount"
+          onChange={handleInputChange}
+          value={formData.donation}
+          step="0.01"
+        />
+        <br />
+        {errors.donation && <p>{errors.donation}</p>}
+        <br />
+        <div>
+          <label htmlFor="term">Search</label>
           <br />
-          {errors.cvc && <p>{errors.cvc}</p>}
           <input
-            type="text"
-            name="firstName"
-            placeholder="First Name"
-            onChange={handleInputChange}
-            value={formData.firstName}
-            required
+            type="search"
+            name="term"
+            value={term}
+            onChange={handleChange}
           />
-          <br />
-          {errors.firstName && <p>{errors.firstName}</p>}
-          <br />
-          <input
-            type="text"
-            name="lastName"
-            placeholder="Last Name"
-            onChange={handleInputChange}
-            value={formData.lastName}
-            required
-          />
-          <br />
-          {errors.firstName && <p>{errors.firstName}</p>}
-          <br />
-          <input
-            type="number"
-            name="donation"
-            placeholder="$ Donation Amount"
-            onChange={handleInputChange}
-            value={formData.donation}
-            step="0.01"
-            required
-          />
-          <br />
-          {errors.donation && <p>{errors.donation}</p>}
           <br />
           <div>
-            <label htmlFor="term">Search</label>
-            <br />
-            <input
-              type="search"
-              name="term"
-              value={term}
-              onChange={handleChange}
-              required
-            />
-            <br />
-            <div>
-              {results &&
-                results
-                  .filter(result =>
-                    result.name.toLowerCase().includes(term.toLowerCase())
-                  )
-                  .map((result, i) => {
-                    return (
-                      <p key={i}>
-                        <h1>{result.name}</h1>
-                      </p>
-                    );
-                  })}
-              {errors.term && <p>{errors.term}</p>}
-            </div>
+            {results &&
+              results
+                .filter(result =>
+                  result.name.toLowerCase().includes(term.toLowerCase())
+                )
+                .map((result, i) => {
+                  return (
+                    <p key={i}>
+                      <h1>{result.name}</h1>
+                    </p>
+                  );
+                })}
+            {errors.term && <p>{errors.term}</p>}
           </div>
-          <button type="submit">Submit</button>
-        </form>
-      ) : (
-        <ThankYou donation={donation} />
-      )}
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      {valid === true &&
+        !errors.number &&
+        !errors.term &&
+        !errors.name &&
+        !errors.expiry &&
+        !errors.cvc &&
+        !errors.lastName &&
+        !errors.firstName &&
+        !errors.donation && <ThankYou />}
     </div>
   );
 };
