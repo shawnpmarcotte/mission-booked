@@ -45,7 +45,7 @@ const EventModal = props => {
             <div className="modal-header-top">
               <h5 className="modal-title" id="exampleModalLabel">
                 {props.name}
-                {props.date}
+                {props.displaydate}
               </h5>
               <button
                 type="button"
@@ -95,8 +95,8 @@ const EventModal = props => {
               {props.facebook}
             </div>
             <div className="modal-col-2">
+              {props.displaydate}
               {props.moreinfo}
-              {props.instagram}
             </div>
           </div>
           <div className="modal-footer">

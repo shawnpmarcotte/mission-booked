@@ -52,13 +52,12 @@ const Events = () => {
   // curried = partial application + the other partial application aka double rockets
 
   const handleFilterSelect = filterType => event => {
-    const { value } = event.target;
+    const { value } = event.target
     const updatedFilter = { ...filters, [filterType]: value }
     if (!value) delete updatedFilter[filterType]
     setFilters(updatedFilter)
     const queryParams = getQueryParams(updatedFilter)
     axios
-
 
       .get(`/events.json?${queryParams}`)
       .then(response => setResults(response.data.all_data.events))
@@ -113,16 +112,17 @@ const Events = () => {
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
                       <div className="event-card-photo">
-                        <img
-                          src={result.mainphoto}
-                          class="resized-photo"
-                        />
+                        <img src={result.mainphoto} class="resized-photo" />
                       </div>
                       <div className="card_text">
-                        <div className="card_event_date">{result.date}</div>
+                        <div className="card_event_date">
+                          {result.displaydate}
+                        </div>
                         <div className="card_event_name">{result.name}</div>
                         <div className="card_footer">
-                          <div className="card_event_city">{result.city_state}</div>
+                          <div className="card_event_city">
+                            {result.city_state}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -141,6 +141,14 @@ const Events = () => {
               name={modalInfo.name}
               about={modalInfo.about}
               id={modalInfo.id}
+              mainphoto={modalInfo.mainphoto}
+              displaydate={modalInfo.displaydate}
+              moreinfo={modalInfo.moreinfo}
+              instagram={modalInfo.instagram}
+              facebook={modalInfo.facebook}
+              photo1={modalInfo.photo1}
+              photo2={modalInfo.photo2}
+              photo3={modalInfo.photo3}
               user_id={user.id}
               handleViewMore={() => handleViewMore(modalInfo)}
               closeModalToggle={closeModalToggle}
@@ -148,39 +156,39 @@ const Events = () => {
           </div>
         </>
       ) : (
-          <>
-            <div className="hero_image">
-              <div className="filters_bar">
-                {' '}
-                <>
-                  <Filters
-                    handleFilterSelect={handleFilterSelect}
-                    filters={filters}
-                    setFilters={setFilters}
-                  />
-                </>{' '}
-                <div className="viewTypes">
-                  <button id="thumbnailView" onClick={handleThumbnailView}>
-                    <h2 className="view_button">Thumbnail View</h2>
-                  </button>
-                  <button onClick={handleCalendarView} id="calendarView">
-                    <h2 className="view_button">Calendar View </h2>
-                  </button>
-                </div>
+        <>
+          <div className="hero_image">
+            <div className="filters_bar">
+              {' '}
+              <>
+                <Filters
+                  handleFilterSelect={handleFilterSelect}
+                  filters={filters}
+                  setFilters={setFilters}
+                />
+              </>{' '}
+              <div className="viewTypes">
+                <button id="thumbnailView" onClick={handleThumbnailView}>
+                  <h2 className="view_button">Thumbnail View</h2>
+                </button>
+                <button onClick={handleCalendarView} id="calendarView">
+                  <h2 className="view_button">Calendar View </h2>
+                </button>
               </div>
             </div>
-            <div
-              style={{
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-              }}
-            >
-              <EventCalendar modal={modalInfo} />
-            </div>
-          </>
-        )}
+          </div>
+          <div
+            style={{
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}
+          >
+            <EventCalendar modal={modalInfo} />
+          </div>
+        </>
+      )}
     </>
   )
 }

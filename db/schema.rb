@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_21_133600) do
+ActiveRecord::Schema.define(version: 2020_03_21_213509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_03_21_133600) do
     t.string "photo3"
     t.string "instagram"
     t.string "facebook"
+    t.string "displaydate"
     t.index ["organization_id"], name: "index_events_on_organization_id"
   end
 
