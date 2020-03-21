@@ -7,6 +7,7 @@ import volunteer_placeholder from '../../assets/images/volunteer_placeholder'
 const Events = () => {
   const initalQueryParams = new URLSearchParams(location.search)
   const [results, setResults] = useState([]) // order matters in arrays
+  const [user, setUser] = useState({})
   const [filters, setFilters] = useState({
     ...(initalQueryParams.get('location') && {
       city_state: initalQueryParams.get('location')
@@ -41,6 +42,7 @@ const Events = () => {
       .then(response => {
         console.log('response data', response.data)
         setResults(response.data.all_data.events)
+        setUser(response.data.all_data.user)
       })
       .catch(error => {
         console.log(error.response)
@@ -139,6 +141,7 @@ const Events = () => {
               name={modalInfo.name}
               about={modalInfo.about}
               id={modalInfo.id}
+              user_id={user.id}
               handleViewMore={() => handleViewMore(modalInfo)}
               closeModalToggle={closeModalToggle}
             />
