@@ -1,13 +1,3 @@
-html,
-body,
-#root {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: white;
-}
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
     helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
@@ -22,42 +12,40 @@ body {
 }
 
 #root {
+  background-position: center;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #f0f0f0;
+  align-items: inherit;
+  justify-content: space-between;
 }
 
 .Shawn {
   width: 45ch;
   height: 45ch;
-  background: grey;
+  background: white;
   border-radius: 5px;
   background-image: url(http://wynpics.herokuapp.com/C36_Headshots/MarcotteShawn.jpg);
   background-size: cover;
-  background-position: center center;
+  background-position: inherit;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.5s;
   will-change: transform;
-  border: 15px solid white;
 }
 
 .Shawn:hover {
   box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
 }
+
 .Rene {
   width: 45ch;
   height: 45ch;
-  background: grey;
+  background: white;
   border-radius: 5px;
   background-image: url(http://wynpics.herokuapp.com/C36_Headshots/BreslauerRene.jpg);
   background-size: cover;
-  background-position: center center;
+  background-position: inherit;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.5s;
   will-change: transform;
-  border: 15px solid white;
 }
 
 .Rene:hover {
@@ -66,15 +54,14 @@ body {
 .Jose {
   width: 45ch;
   height: 45ch;
-  background: grey;
+  background: white;
   border-radius: 5px;
   background-image: url(http://wynpics.herokuapp.com/C36_Headshots/RangelJose.jpg);
   background-size: cover;
-  background-position: center center;
+  background-position: inherit;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.5s;
   will-change: transform;
-  border: 15px solid white;
 }
 
 .Jose:hover {
@@ -83,17 +70,37 @@ body {
 .Carolina {
   width: 45ch;
   height: 45ch;
-  background: grey;
+  background: white;
   border-radius: 5px;
   background-image: url(http://wynpics.herokuapp.com/C36_Headshots/KleinCarolina.jpg);
   background-size: cover;
-  background-position: center center;
+  background-position: inherit;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.5s;
   will-change: transform;
-  border: 15px solid white;
 }
 
 .Carolina:hover {
   box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+}
+
+.linkedin-logo {
+  height: 42px;
+  width: 42px;
+  padding: 3px;
+}
+.linkedin-logo:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+.github-logo {
+  height: 35px;
+  width: 35px;
+  margin: 5px;
+  border-radius: 10%;
+  margin-top: 5.5px;
+}
+.github-logo:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
 }
