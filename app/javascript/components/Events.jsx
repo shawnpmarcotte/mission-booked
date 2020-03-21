@@ -6,7 +6,6 @@ import EventCalendar from './EventCalendar'
 import volunteer_placeholder from '../../assets/images/volunteer_placeholder'
 const Events = () => {
   const initalQueryParams = new URLSearchParams(location.search)
-  const [user, setUser] = useState({})
   const [results, setResults] = useState([]) // order matters in arrays
   const [user, setUser] = useState({})
   const [filters, setFilters] = useState({
