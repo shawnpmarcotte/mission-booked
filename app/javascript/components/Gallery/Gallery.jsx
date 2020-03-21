@@ -1,8 +1,6 @@
-
 import React, { Component } from 'react'
-
 import DztImageGalleryComponent from 'reactjs-image-gallery'
-
+import "./styles.css";
 class Gallery extends Component {
 
   render() {
@@ -111,7 +109,7 @@ class Gallery extends Component {
     ];
 
     return (
-      <div>
+      <div className="Gallery">
         <DztImageGalleryComponent
           images={data} />
       </div>
