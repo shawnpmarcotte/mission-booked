@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 2020_03_21_133600) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "city_state"
     t.string "category"
-    t.text "MoreInfo"
     t.text "moreinfo"
     t.string "mainphoto"
     t.string "photo1"
