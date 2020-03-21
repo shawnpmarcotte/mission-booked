@@ -139,39 +139,39 @@ const Events = () => {
           </div>
         </>
       ) : (
-        <>
-          <div class="hero_image">
-            <div class="filters_bar">
-              {' '}
-              <>
-                <Filters
-                  handleFilterSelect={handleFilterSelect}
-                  filters={filters}
-                  setFilters={setFilters}
-                />
-              </>{' '}
-              <div class="viewTypes">
-                <button id="thumbnailView" onClick={handleThumbnailView}>
-                  <h2 class="view_button">Thumbnail View</h2>
-                </button>
-                <button onClick={handleCalendarView} id="calendarView">
-                  <h2 class="view_button">Calendar View </h2>
-                </button>
+          <>
+            <div class="hero_image">
+              <div class="filters_bar">
+                {' '}
+                <>
+                  <Filters
+                    handleFilterSelect={handleFilterSelect}
+                    filters={filters}
+                    setFilters={setFilters}
+                  />
+                </>{' '}
+                <div class="viewTypes">
+                  <button id="thumbnailView" onClick={handleThumbnailView}>
+                    <h2 class="view_button">Thumbnail View</h2>
+                  </button>
+                  <button onClick={handleCalendarView} id="calendarView">
+                    <h2 class="view_button">Calendar View </h2>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            style={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}
-          >
-            <EventCalendar modal={modalInfo} />
-          </div>
-        </>
-      )}
+            <div
+              style={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <EventCalendar modal={modalInfo} />
+            </div>
+          </>
+        )}
     </>
   )
 }
