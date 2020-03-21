@@ -49,7 +49,9 @@ class Search extends React.Component {
             { value: "Miami", label: "Miami" },
             { value: "Doral", label: "Doral" },
             { value: "Key Biscayne", label: "Key Biscayne" },
-            { value: "Fort Lauderdale", label: "Fort Lauderdale" }
+            { value: "Boca Raton", label: "Boca Raton" },
+            { value: "Miramar", label: "Miramar" },
+            { value: "Homestead", label: "Homestead" }
           ]}
           value={this.state.location}
         />
