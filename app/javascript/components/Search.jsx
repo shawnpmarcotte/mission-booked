@@ -48,7 +48,10 @@ class Search extends React.Component {
           options={[
             { value: "Miami", label: "Miami" },
             { value: "Doral", label: "Doral" },
-            { value: "Key Biscayne", label: "Key Biscayne" }
+            { value: "Key Biscayne", label: "Key Biscayne" },
+            { value: "Boca Raton", label: "Boca Raton" },
+            { value: "Miramar", label: "Miramar" },
+            { value: "Homestead", label: "Homestead" }
           ]}
           value={this.state.location}
         />
@@ -58,7 +61,9 @@ class Search extends React.Component {
           options={[
             { value: "Animals", label: "Animals" },
             { value: "Environment", label: "Environment" },
-            { value: "Youth", label: "Youth" }
+            { value: "Youth", label: "Youth" },
+            { value: "People", label: "People" },
+            { value: "Rebuild", label: "Rebuild" }
           ]}
           onChange={this.setCategory}
           value={this.state.category}
