@@ -6,6 +6,7 @@ import EventCalendar from './EventCalendar'
 import volunteer_placeholder from '../../assets/images/volunteer_placeholder'
 const Events = () => {
   const initalQueryParams = new URLSearchParams(location.search)
+  const [user, setUser] = useState({})
   const [results, setResults] = useState([]) // order matters in arrays
   const [filters, setFilters] = useState({
     ...(initalQueryParams.get('location') && {
@@ -41,6 +42,7 @@ const Events = () => {
       .then(response => {
         console.log('response data', response.data)
         setResults(response.data.all_data.events)
+        setUser(response.data.all_data.user)
       })
       .catch(error => {
         console.log(error.response)
@@ -112,8 +114,8 @@ const Events = () => {
                     <div className="flip-card-front">
                       <div className="event-card-photo">
                         <img
-                          src={volunteer_placeholder}
-                          className="volunteer_placeholder"
+                          src={result.mainphoto}
+                          class="resized-photo"
                         />
                       </div>
                       <div className="card_text">
@@ -139,6 +141,7 @@ const Events = () => {
               name={modalInfo.name}
               about={modalInfo.about}
               id={modalInfo.id}
+              user_id = {user.id}
               handleViewMore={() => handleViewMore(modalInfo)}
               closeModalToggle={closeModalToggle}
             />
