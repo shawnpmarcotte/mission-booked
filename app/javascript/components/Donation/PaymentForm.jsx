@@ -101,7 +101,7 @@ const PaymentForm = ({ results, handleChange, term }) => {
         <TextField id="outlined-basic" label="Card Number" variant="outlined" 
           type="number"
           name="number"
-          placeholder="Card Number"
+          placeholder="xxxx-xxxx-xxxx-4142"
           onChange={handleInputChange}
           onFocus={handleInputFocus}
           error={errors.number ? true : false}
