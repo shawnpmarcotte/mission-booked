@@ -100,7 +100,9 @@ video {
   margin-top: 30%;
   position: absolute;
 }
-
+.test{
+  font: 300;
+}
 .call_to_action_text {
   justify-self: flex-start;
   margin-top: 100px;
