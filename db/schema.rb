@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_210544) do
+ActiveRecord::Schema.define(version: 2020_03_21_133600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 2020_03_19_210544) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "city_state"
     t.string "category"
+    t.text "MoreInfo"
+    t.text "moreinfo"
+    t.string "mainphoto"
+    t.string "photo1"
+    t.string "photo2"
+    t.string "photo3"
+    t.string "instagram"
+    t.string "facebook"
     t.index ["organization_id"], name: "index_events_on_organization_id"
   end
 

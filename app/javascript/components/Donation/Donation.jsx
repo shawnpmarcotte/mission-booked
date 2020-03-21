@@ -23,7 +23,7 @@ const Organizations = () => {
   };
 
   const handleChange = event => {
-    const fieldTerm = event.target.value.trim();
+    const fieldTerm = event.target.value;
     setTerm(fieldTerm);
   };
   return (

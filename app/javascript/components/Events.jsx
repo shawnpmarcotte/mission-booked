@@ -38,7 +38,8 @@ const Events = () => {
     axios
       .get(`/events.json?${queryParams}`)
       .then(response => {
-        setResults(response.data)
+        console.log("response data", response.data)
+        setResults(response.data.all_data.events)
       })
       .catch(error => {
         console.log(error.response)
@@ -162,4 +163,4 @@ const Events = () => {
     </>
   )
 }
-export default Events
+export default Events;
