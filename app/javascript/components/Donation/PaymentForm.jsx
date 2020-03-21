@@ -3,8 +3,47 @@ import "react-credit-cards/es/styles-compiled.css";
 import Cards from "react-credit-cards";
 import validators from "./validators";
 import ThankYou from "./ThankPage";
+import TextField from '@material-ui/core/TextField';
+import Container from "@material-ui/core/Container"
+import { makeStyles } from "@material-ui/core/styles"
+
+
+const useStyles = makeStyles(theme => ({
+  form: {
+    textAlign: "center",
+    width: "100%", // Fix IE 11 issue.
+    marginTop: theme.spacing(1),
+    position: "relative"
+  },
+  logo: {
+    width: 80,
+    margin: "20px auto 20px auto"
+  },
+  paper: {
+    marginTop: theme.spacing(8),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+    position: "relative"
+  },
+  progress: {
+    position: "absolute"
+  },
+  customError: {
+    color: "red",
+    fontSize: "0.8rem",
+    width: "100%",
+    position: "absolute"
+  }
+}))
+
 
 const PaymentForm = ({ results, handleChange, term }) => {
+  const classes = useStyles()
+
   const INITIAL_STATE = {
     cvc: "",
     expiry: "",
@@ -46,8 +85,32 @@ const PaymentForm = ({ results, handleChange, term }) => {
         name={formData.name}
         number={formData.number}
       />
-
-      <form onSubmit={handleSubmit}>
+     <Container component='main' maxWidth='xs'>
+      <form onSubmit={handleSubmit} className={classes.form}> 
+        <TextField id="outlined-basic" label="Card Number" variant="outlined" 
+          type="number"
+          name="number"
+          placeholder="Card Number"
+          onChange={handleInputChange}
+          onFocus={handleInputFocus}
+          error={errors.number ? true : false}
+          helperText={errors.number}
+          fullWidth
+          
+          />
+             <TextField id="outlined-basic" label="Full Name" variant="outlined" 
+           type="text"
+           name="name"
+           placeholder="Full Name"
+           onChange={handleInputChange}
+           onFocus={handleInputFocus}
+        
+           error={errors.name ? true : false}
+           helperText={errors.name}
+          fullWidth
+          
+          />
+      
         <input
           type="number"
           name="number"
@@ -138,17 +201,9 @@ const PaymentForm = ({ results, handleChange, term }) => {
             {errors.term && <p>{errors.term}</p>}
           </div>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit"  className={classes.submit}>Submit</button>
       </form>
-      {valid === true &&
-        !errors.number &&
-        !errors.term &&
-        !errors.name &&
-        !errors.expiry &&
-        !errors.cvc &&
-        !errors.lastName &&
-        !errors.firstName &&
-        !errors.donation && <ThankYou />}
+      </Container>
     </div>
   );
 };

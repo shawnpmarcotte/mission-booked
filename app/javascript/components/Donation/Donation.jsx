@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PaymentForm from "./PaymentForm";
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
 const Organizations = () => {
   const [results, setResults] = useState(null);
@@ -27,7 +29,7 @@ const Organizations = () => {
     setTerm(fieldTerm);
   };
   return (
-    <>
+    <div class="content-donation">
       <h1>Donate</h1>
       <div>
         <p>
@@ -40,7 +42,7 @@ const Organizations = () => {
         </p>
       </div>
       <PaymentForm results={results} handleChange={handleChange} term={term} />
-    </>
+    </div>
   );
 };
 
