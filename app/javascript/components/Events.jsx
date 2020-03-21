@@ -141,6 +141,14 @@ const Events = () => {
               name={modalInfo.name}
               about={modalInfo.about}
               id={modalInfo.id}
+              mainphoto={modalInfo.mainphoto}
+              displaydate={modalInfo.displaydate}
+              moreinfo={modalInfo.moreinfo}
+              instagram={modalInfo.instagram}
+              facebook={modalInfo.facebook}
+              photo1={modalInfo.photo1}
+              photo2={modalInfo.photo2}
+              photo3={modalInfo.photo3}
               user_id={user.id}
               handleViewMore={() => handleViewMore(modalInfo)}
               closeModalToggle={closeModalToggle}
