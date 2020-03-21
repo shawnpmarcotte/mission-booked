@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PaymentForm from "./PaymentForm";
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import "./Donation.css"
 
 const Organizations = () => {
   const [results, setResults] = useState(null);
@@ -30,8 +29,10 @@ const Organizations = () => {
   };
   return (
     <div class="content-donation">
-      <h1>Donate</h1>
       <div>
+      <div id="placehoderForImage"></div>
+      <h1>Donate</h1>
+      <div class="donation-text">
         <p>
           "No time to spare? You can still make a difference!
           <br />
@@ -40,6 +41,7 @@ const Organizations = () => {
           <br />
           No gift is too small to make an impact on your community."
         </p>
+      </div>
       </div>
       <PaymentForm results={results} handleChange={handleChange} term={term} />
     </div>

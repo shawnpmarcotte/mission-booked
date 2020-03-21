@@ -142,7 +142,6 @@ const PaymentForm = ({ results, handleChange, term }) => {
               fullWidth
               style={{marginBottom: "20px"}}
               />
-              <br />
               {errors.cvc && <p>{errors.cvc}</p>}
               <TextField id="outlined-basic" label="First Name" variant="outlined" 
               type="text"
@@ -154,30 +153,33 @@ const PaymentForm = ({ results, handleChange, term }) => {
               fullWidth
               style={{marginBottom: "20px"}}
               />
-              <br />
               {errors.firstName && <p>{errors.firstName}</p>}
-              <br />
-              <input
+              <TextField id="outlined-basic" label="Last Name" variant="outlined" 
               type="text"
               name="lastName"
               placeholder="Last Name"
-              onChange={handleInputChange}
               value={formData.lastName}
+              placeholder="Last Name"
+              onChange={handleInputChange}
+              onFocus={handleInputFocus}
+              fullWidth
+              style={{marginBottom: "20px"}}
               />
               <br />
-        {errors.lastName && <p>{errors.lastName}</p>}
-        <br />
-        <input
-          type="number"
-          name="donation"
-          placeholder="$ Donation Amount"
-          onChange={handleInputChange}
-          value={formData.donation}
-          step="0.01"
-        />
-        <br />
-        {errors.donation && <p>{errors.donation}</p>}
-        <br />
+              {errors.lastName && <p>{errors.lastName}</p>}
+              <TextField id="outlined-basic" label="Donation Amount" variant="outlined" 
+              type="number"
+              name="donation"
+              placeholder="$ Donation Amount"
+              value={formData.donation}
+              step="0.01"
+              onChange={handleInputChange}
+              onFocus={handleInputFocus}
+              fullWidth
+              style={{marginBottom: "20px"}}
+              />
+              {errors.donation && <p>{errors.donation}</p>}
+              <br />
         <div>
           <label htmlFor="term">Search</label>
           <br />
@@ -197,14 +199,14 @@ const PaymentForm = ({ results, handleChange, term }) => {
                 .map((result, i) => {
                   return (
                     <p key={i}>
-                      <h1>{result.name}</h1>
+                      <h1 class="orgDonationCards">{result.name}</h1>
                     </p>
                   );
                 })}
+                <button type="submit"  className={classes.submit}>Submit</button>
             {errors.term && <p>{errors.term}</p>}
           </div>
         </div>
-        <button type="submit"  className={classes.submit}>Submit</button>
       </form>
       </Container>
       </div>
