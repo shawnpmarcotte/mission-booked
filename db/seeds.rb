@@ -68,7 +68,7 @@ event = Event.new(
 
 event = Event.new(
   name: 'Food Drive',
-  date: '2020-04-06 08:00:00 -0500'bu
+  date: '2020-04-06 08:00:00 -0500'
   about: 'Lighthouse Self-Storage has partnered up with Move For Hunger for a spring food drive. Join us to feed the hungry, to raise awareness about hunger, and inspire others to take action.',
   location: 'Lighthouse Self Storage - Cooper City 11060 Griffin Road Cooper City, FL 33328',
   category: 'People',
