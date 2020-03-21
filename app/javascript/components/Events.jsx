@@ -3,6 +3,7 @@ import axios from 'axios'
 import Filters from './Filters'
 import EventModal from './EventModal'
 import EventCalendar from './EventCalendar'
+import volunteer_placeholder from '../../assets/images/volunteer_placeholder'
 const Events = () => {
   const initalQueryParams = new URLSearchParams(location.search)
   const [results, setResults] = useState([]) // order matters in arrays
@@ -38,7 +39,7 @@ const Events = () => {
     axios
       .get(`/events.json?${queryParams}`)
       .then(response => {
-        console.log("response data",response.data)
+        console.log('response data', response.data)
         setResults(response.data.all_data.events)
       })
       .catch(error => {
@@ -68,99 +69,110 @@ const Events = () => {
   // and the value of that property would be whatever we selected on the select tag.
   return (
     <>
-      {
-        calendarView === false ? (
-          <>
-            <div class="hero_image">
-              <div class="filters_bar">
-                {/* {' '} */}
-                <>
-                  <Filters
-                    handleFilterSelect={handleFilterSelect}
-                    filters={filters}
-                    setFilters={setFilters}
-                  />
-                </>
-                {/* {' '} */}
-                <div class="viewTypes">
-                  <button id="thumbnailView" onClick={handleThumbnailView}>
-                    <h2 class="view_button">Thumbnail View</h2>
-                  </button>
-                  <button onClick={handleCalendarView} id="calendarView">
-                    <h2 class="view_button">Calendar View </h2>
-                  </button>
-                </div>
+      {calendarView === false ? (
+        <>
+          <div class="hero_image">
+            <div class="filters_bar">
+              {/* {' '} */}
+              <>
+                <Filters
+                  handleFilterSelect={handleFilterSelect}
+                  filters={filters}
+                  setFilters={setFilters}
+                />
+              </>
+              {/* {' '} */}
+              <div class="viewTypes">
+                <button id="thumbnailView" onClick={handleThumbnailView}>
+                  <h2 class="view_button">Thumbnail View</h2>
+                </button>
+                <button onClick={handleCalendarView} id="calendarView">
+                  <h2 class="view_button">Calendar View </h2>
+                </button>
               </div>
             </div>
-            <div class="cards_container">
-              {results.map(result => (
-                <div
-                  class="card"
-                  key={result.id}
-                  data-toggle="modal"
-                  data-target="#exampleModal"
-                  onClick={() => openModalToggle(result)}
-                >
-                  <div class="flip-card">
-                    <div class="flip-card-inner">
-                      <div class="flip-card-front">
-                        <div class="event-card-photo"></div>
-                        <p>{result.name}</p>
-                        <p>{result.date}</p>
-                        <p>{result.city_state}</p>
-                        <p class="event_about">{result.about} </p>
+          </div>
+          <div class="cards_container">
+            {results.map(result => (
+              <div
+                class="card"
+                key={result.id}
+                data-toggle="modal"
+                data-target="#exampleModal"
+                onClick={() => openModalToggle(result)}
+              >
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <div class="event-card-photo">
+                        <img
+                          src={volunteer_placeholder}
+                          className="volunteer_placeholder"
+                        />
                       </div>
-                      <div class="flip-card-back">
-                        <p>back of card</p>
+                      <div class="card_text">
+                        <div class="card_event_date">{result.date}</div>
+                        <div class="card_event_name">{result.name}</div>
+                        <div class="card_footer">
+                          <div class="card_event_city">{result.city_state}</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="flip-card-back">
+                      <div class="card-back-text">
+                        <p class="card_event_about">{result.about} </p>
+                        <div class="card_back_footer">Read More</div>
                       </div>
                     </div>
                   </div>
                 </div>
-              ))}
-              <EventModal
-                name={modalInfo.name}
-                about={modalInfo.about}
-                id={modalInfo.id}
-                handleViewMore={() => handleViewMore(modalInfo)}
-                closeModalToggle={closeModalToggle}
-              />
+              </div>
+            ))}
+            <EventModal
+              name={modalInfo.name}
+              about={modalInfo.about}
+              id={modalInfo.id}
+              handleViewMore={() => handleViewMore(modalInfo)}
+              closeModalToggle={closeModalToggle}
+            />
+          </div>
+        </>
+      ) : (
+        <>
+          <div class="hero_image">
+            <div class="filters_bar">
+              {' '}
+              <>
+                <Filters
+                  handleFilterSelect={handleFilterSelect}
+                  filters={filters}
+                  setFilters={setFilters}
+                />
+              </>{' '}
+              <div class="viewTypes">
+                <button id="thumbnailView" onClick={handleThumbnailView}>
+                  <h2 class="view_button">Thumbnail View</h2>
+                </button>
+                <button onClick={handleCalendarView} id="calendarView">
+                  <h2 class="view_button">Calendar View </h2>
+                </button>
+              </div>
             </div>
-          </>
-        ) : (
-            <>
-              <div class="hero_image">
-                <div class="filters_bar">
-                  {' '}
-                  <>
-                    <Filters
-                      handleFilterSelect={handleFilterSelect}
-                      filters={filters}
-                      setFilters={setFilters}
-                    />
-                  </>
-                  {' '}
-                  <div class="viewTypes">
-                    <button id="thumbnailView" onClick={handleThumbnailView}>
-                      <h2 class="view_button">Thumbnail View</h2>
-                    </button>
-                    <button onClick={handleCalendarView} id="calendarView">
-                      <h2 class="view_button">Calendar View </h2>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center"
-                }}>
-                <EventCalendar modal={modalInfo} />
-              </div>
-            </>
-          )}
+          </div>
+          <div
+            style={{
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}
+          >
+            <EventCalendar modal={modalInfo} />
+          </div>
+        </>
+      )}
     </>
   )
 }
-export default Events;
+export default Events
