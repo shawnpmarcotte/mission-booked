@@ -114,8 +114,8 @@ const Events = () => {
                     <div className="flip-card-front">
                       <div className="event-card-photo">
                         <img
-                          src={volunteer_placeholder}
-                          className="volunteer_placeholder"
+                          src={result.mainphoto}
+                          class="resized-photo"
                         />
                       </div>
                       <div className="card_text">

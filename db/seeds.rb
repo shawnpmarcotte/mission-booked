@@ -59,10 +59,17 @@ organization.save
 event = Event.new(
   name: '4Ocean Beach Cleanup',
   date: '2020-04-08 11:00:00 -0500',
-  about: 'Meet us just south of the pier for a beach cleanup featuring the 4ocean Pop-Up Shop & 4ocean Village from 11am -1pm. Cleanup supplies will be provided for everyone. Please a reusable water bottle to help keep single-use plastic off beach. Register today with your Eventbrite ticket! If you have group of 10 or more attending, please email the Volunteer Coordinator at outreach@4ocean.com to ensure proper sign up.',
+  about: 'Meet us just south of the pier for a beach cleanup featuring the 4ocean Pop-Up Shop & 4ocean Village from 11am -1pm.',
+  moreinfo: 'Please a reusable water bottle to help keep single-use plastic off beach. Register today with your Eventbrite ticket! If you have group of 10 or more attending, please email the Volunteer Coordinator at outreach@4ocean.com to ensure proper sign up. Cleanup supplies will be provided for everyone.',
   location: 'Daytona Beach Main Street Pier',
   category: 'Environment',
   city_state: 'Miami',
+  instagram: 'https://www.instagram.com/4ocean/?hl=en',
+  facebook: 'https://www.facebook.com/4oceanBracelets/',
+  mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/Adopt+a+Dog.jpg',
+  photo1: 's3://bettertogetherbucket/GettyImages-1145403089.jpg',
+  photo2: 's3://bettertogetherbucket/GettyImages-1038239732.jpg',
+  photo3: 's3://bettertogetherbucket/GettyImages-1143084022.jpg',
   organization_id: 1
 )
 
@@ -70,9 +77,16 @@ event = Event.new(
   name: 'Food Drive',
   date: '2020-04-06 08:00:00 -0500',
   about: 'Lighthouse Self-Storage has partnered up with Move For Hunger for a spring food drive. Join us to feed the hungry, to raise awareness about hunger, and inspire others to take action.',
+  moreinfo: 'Please a reusable water bottle to help keep single-use plastic off beach. Register today with your Eventbrite ticket! If you have group of 10 or more attending, please email the Volunteer Coordinator at outreach@4ocean.com to ensure proper sign up. Cleanup supplies will be provided for everyone.',
   location: 'Lighthouse Self Storage - Cooper City 11060 Griffin Road Cooper City, FL 33328',
   category: 'People',
   city_state: 'Miami',
+  instagram: 'https://www.instagram.com/4ocean/?hl=en',
+  facebook: 'https://www.facebook.com/4oceanBracelets/',
+  mainphoto: "https://bettertogetherbucket.s3.us-east-2.amazonaws.com/Adopt+a+Dog.jpg",
+  photo1: 's3://bettertogetherbucket/GettyImages-1145403089.jpg',
+  photo2: 's3://bettertogetherbucket/GettyImages-1038239732.jpg',
+  photo3: 's3://bettertogetherbucket/GettyImages-1143084022.jpg',
   organization_id: 2
 )
 event.save
@@ -92,9 +106,16 @@ event = Event.new(
   name: "Clean-up N' Gro",
   date: '2020-14-04 10:00:00 -0500',
   about: "With our mutual mission of thinking global and acting local, Gro and Cerveza Patagonia are proud to team up with local organizations HandsOn Miami and Debris Free Oceans in hosting our fourth Clean Up N' GRO. We must protect what unites us- our common home. Together, we can take a stand against pollution and make an impact on our home.",
+  moreinfo: 'Please a reusable water bottle to help keep single-use plastic off beach. Register today with your Eventbrite ticket! If you have group of 10 or more attending, please email the Volunteer Coordinator at outreach@4ocean.com to ensure proper sign up. Cleanup supplies will be provided for everyone.',
   location: 'The Wynwood Marketplace: 2250 NW 2nd Ave, Miami 33127',
   category: 'Environment',
   city_state: 'Miami',
+  instagram: 'https://www.instagram.com/4ocean/?hl=en',
+  facebook: 'https://www.facebook.com/4oceanBracelets/',
+  mainphoto: 's3://bettertogetherbucket/KeyBiscayne 6.jpg',
+  photo1: 's3://bettertogetherbucket/GettyImages-1145403089.jpg',
+  photo2: 's3://bettertogetherbucket/GettyImages-1038239732.jpg',
+  photo3: 's3://bettertogetherbucket/GettyImages-1143084022.jpg',
   organization_id: 4
 )
 event.save
