@@ -5,7 +5,7 @@ class Gallery extends Component {
 
   render() {
 
-    var data = [{
+    const data = [{
       url: 'https://news.miami.edu/rsmas/_assets/images/images-stories/2018/09/ocean-clean-up-940x529.jpg',
       title: 'OCEAN CLEANUP',
       thumbUrl: 'https://news.miami.edu/rsmas/_assets/images/images-stories/2018/09/ocean-clean-up-940x529.jpg',
