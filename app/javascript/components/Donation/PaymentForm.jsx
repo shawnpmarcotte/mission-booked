@@ -88,82 +88,83 @@ const PaymentForm = ({ results, handleChange, term }) => {
       !errors.firstName &&
       !errors.donation ? (
         <ThankYou valid={valid} />
-      ) : (<><Cards
+      ) : (
+        <> 
+        <Cards
         cvc={formData.cvc}
         expiry={formData.expiry}
         focus={formData.focus}
         name={formData.name}
         number={formData.number}
-      />
-      <div className={classes.paper}>
-     <Container component='main' maxWidth='xs'>
-      <form onSubmit={handleSubmit} className={classes.form}> 
-        <TextField id="outlined-basic" label="Card Number" variant="outlined" 
-          type="number"
-          name="number"
-          placeholder="xxxx-xxxx-xxxx-4142"
-          onChange={handleInputChange}
-          onFocus={handleInputFocus}
-          error={errors.number ? true : false}
-          helperText={errors.number}
-          fullWidth
-          style={{marginBottom: "20px"}}
-          
-          />
-             <TextField id="outlined-basic" label="Full Name" variant="outlined" 
-           type="text"
-           name="name"
-           placeholder="Full Name"
-           onChange={handleInputChange}
-           onFocus={handleInputFocus}
-        
-           error={errors.name ? true : false}
-           helperText={errors.name}
-          fullWidth
-          style={{marginBottom: "20px"}}
-          
-          />
-            <TextField id="outlined-basic" label="Expiration Date" variant="outlined" 
-               type="text"
-               name="expiry"
-               placeholder="Valid thru"
-               error={errors.expiry ? true : false}
-               helperText={errors.expiry}
-               onChange={handleInputChange}
-               onFocus={handleInputFocus}
-          fullWidth
-          style={{marginBottom: "20px"}}
-          
-          />
-   
-
-        <input
-          type="number"
-          name="cvc"
-          placeholder="CVC"
-          onChange={handleInputChange}
-          onFocus={handleInputFocus}
         />
-        <br />
-        {errors.cvc && <p>{errors.cvc}</p>}
-        <input
-          type="text"
-          name="firstName"
-          placeholder="First Name"
-          onChange={handleInputChange}
-          value={formData.firstName}
-        />
-        <br />
-        {errors.firstName && <p>{errors.firstName}</p>}
-        <br />
-        <input
-          type="text"
-          name="lastName"
-          placeholder="Last Name"
-          onChange={handleInputChange}
-          value={formData.lastName}
-        />
-        <br />
+        <div className={classes.paper}>
+          <Container component='main' maxWidth='xs'>
+             <form onSubmit={handleSubmit} className={classes.form}> 
+              <TextField id="outlined-basic" label="Card Number" variant="outlined" 
+              type="number"
+              name="number"
+              placeholder="xxxx-xxxx-xxxx-4142"
+              onChange={handleInputChange}
+              onFocus={handleInputFocus}
+              error={errors.number ? true : false}
+              helperText={errors.number}
+              fullWidth
+              style={{marginBottom: "20px"}}
+              />
+              <TextField id="outlined-basic" label="Full Name" variant="outlined" 
+              type="text"
+              name="name"
+              placeholder="John Doe"
+              onChange={handleInputChange}
+              onFocus={handleInputFocus}
+              error={errors.name ? true : false}
+              helperText={errors.name}
+              fullWidth
+              style={{marginBottom: "20px"}}
+              />
+              <TextField id="outlined-basic" label="Expiration Date" variant="outlined" 
+              type="text"
+              name="expiry"
+              placeholder="12/22"
+              error={errors.expiry ? true : false}
+              helperText={errors.expiry}
+              onChange={handleInputChange}
+              onFocus={handleInputFocus}
+              fullWidth
+              style={{marginBottom: "20px"}}
+              />
+              <TextField id="outlined-basic" label="CVC" variant="outlined" 
+              type="number"
+              name="cvc"
+              placeholder="123"
+              onChange={handleInputChange}
+              onFocus={handleInputFocus}
+              fullWidth
+              style={{marginBottom: "20px"}}
+              />
+              <br />
+              {errors.cvc && <p>{errors.cvc}</p>}
+              <TextField id="outlined-basic" label="First Name" variant="outlined" 
+              type="text"
+              name="firstName"  
+              value={formData.firstName}
+              placeholder="First Name"
+              onChange={handleInputChange}
+              onFocus={handleInputFocus}
+              fullWidth
+              style={{marginBottom: "20px"}}
+              />
+              <br />
+              {errors.firstName && <p>{errors.firstName}</p>}
+              <br />
+              <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              onChange={handleInputChange}
+              value={formData.lastName}
+              />
+              <br />
         {errors.lastName && <p>{errors.lastName}</p>}
         <br />
         <input
