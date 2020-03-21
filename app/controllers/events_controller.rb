@@ -9,32 +9,25 @@ class EventsController < ApplicationController
     p 'terms'
     p params
     @events = Event.order(:date)
-
-    if current_user
-      @user = current_user
-    else
-      @user = {id: nil}
-    end
-
+    @user = current_user || { id: nil }
     if params[:term]
-      @events = Event.where('about ilike ?', "%#{params[:term]}%").filter_by_date.page(params[:page]).per(15)
+      @events = @events.where('about ilike ?', "%#{params[:term]}%").filter_by_date.page(params[:page]).per(15)
     end
     # above, the if statement goes at the end because that's a rails thing
     if params[:city_state]
-      @events = Event.filter_by_city_state(params[:city_state])
+      @events = @events.filter_by_city_state(params[:city_state])
     end
-    @events = Event.filter_by_category(params[:category]) if params[:category]
-
+    @events = @events.filter_by_category(params[:category]) if params[:category]
     respond_to do |format|
       format.html do
       end
-        format.json { render json: {all_data: {user: @user, events: @events}}}
+      format.json { render json: { all_data: { user: @user, events: @events } } }
     end
   end
 
   # GET /events/1
   # GET /events/1.json
-  def show 
+  def show
     @event = Event.find(params[:id])
   end
 

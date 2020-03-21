@@ -48,13 +48,18 @@ const Events = () => {
   }
   // partial applycation = type of function
   // curried = partial application + the other partial application aka double rockets
+
   const handleFilterSelect = filterType => event => {
-    const updatedFilter = { ...filters, [filterType]: event.target.value }
+    const { value } = event.target;
+    const updatedFilter = { ...filters, [filterType]: value }
+    if (!value) delete updatedFilter[filterType]
     setFilters(updatedFilter)
     const queryParams = getQueryParams(updatedFilter)
     axios
+
+
       .get(`/events.json?${queryParams}`)
-      .then(response => setResults(response.data))
+      .then(response => setResults(response.data.all_data.events))
   }
   const handleThumbnailView = () => {
     setCalendarView(false)
@@ -67,12 +72,13 @@ const Events = () => {
   //"" [filterType]: "" this is known as a dynamic property, you can pass a string or number
   // and it will assign that property on the object aka first argument on the rocket train
   // and the value of that property would be whatever we selected on the select tag.
+  console.log(results)
   return (
     <>
       {calendarView === false ? (
         <>
-          <div class="hero_image">
-            <div class="filters_bar">
+          <div className="hero_image">
+            <div className="filters_bar">
               {/* {' '} */}
               <>
                 <Filters
@@ -82,47 +88,47 @@ const Events = () => {
                 />
               </>
               {/* {' '} */}
-              <div class="viewTypes">
+              <div className="viewTypes">
                 <button id="thumbnailView" onClick={handleThumbnailView}>
-                  <h2 class="view_button">Thumbnail View</h2>
+                  <h2 className="view_button">Thumbnail View</h2>
                 </button>
                 <button onClick={handleCalendarView} id="calendarView">
-                  <h2 class="view_button">Calendar View </h2>
+                  <h2 className="view_button">Calendar View </h2>
                 </button>
               </div>
             </div>
           </div>
-          <div class="cards_container">
+          <div className="cards_container">
             {results.map(result => (
               <div
-                class="card"
+                className="card"
                 key={result.id}
                 data-toggle="modal"
                 data-target="#exampleModal"
                 onClick={() => openModalToggle(result)}
               >
-                <div class="flip-card">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <div class="event-card-photo">
+                <div className="flip-card">
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
+                      <div className="event-card-photo">
                         <img
                           src={volunteer_placeholder}
                           className="volunteer_placeholder"
                         />
                       </div>
-                      <div class="card_text">
-                        <div class="card_event_date">{result.date}</div>
-                        <div class="card_event_name">{result.name}</div>
-                        <div class="card_footer">
-                          <div class="card_event_city">{result.city_state}</div>
+                      <div className="card_text">
+                        <div className="card_event_date">{result.date}</div>
+                        <div className="card_event_name">{result.name}</div>
+                        <div className="card_footer">
+                          <div className="card_event_city">{result.city_state}</div>
                         </div>
                       </div>
                     </div>
 
-                    <div class="flip-card-back">
-                      <div class="card-back-text">
-                        <p class="card_event_about">{result.about} </p>
-                        <div class="card_back_footer">Read More</div>
+                    <div className="flip-card-back">
+                      <div className="card-back-text">
+                        <p className="card_event_about">{result.about} </p>
+                        <div className="card_back_footer">Read More</div>
                       </div>
                     </div>
                   </div>
@@ -140,8 +146,8 @@ const Events = () => {
         </>
       ) : (
           <>
-            <div class="hero_image">
-              <div class="filters_bar">
+            <div className="hero_image">
+              <div className="filters_bar">
                 {' '}
                 <>
                   <Filters
@@ -150,12 +156,12 @@ const Events = () => {
                     setFilters={setFilters}
                   />
                 </>{' '}
-                <div class="viewTypes">
+                <div className="viewTypes">
                   <button id="thumbnailView" onClick={handleThumbnailView}>
-                    <h2 class="view_button">Thumbnail View</h2>
+                    <h2 className="view_button">Thumbnail View</h2>
                   </button>
                   <button onClick={handleCalendarView} id="calendarView">
-                    <h2 class="view_button">Calendar View </h2>
+                    <h2 className="view_button">Calendar View </h2>
                   </button>
                 </div>
               </div>
