@@ -8,6 +8,7 @@ const Events = () => {
   const initalQueryParams = new URLSearchParams(location.search)
   const [user, setUser] = useState({})
   const [results, setResults] = useState([]) // order matters in arrays
+  const [user, setUser] = useState({})
   const [filters, setFilters] = useState({
     ...(initalQueryParams.get('location') && {
       city_state: initalQueryParams.get('location')
@@ -141,7 +142,7 @@ const Events = () => {
               name={modalInfo.name}
               about={modalInfo.about}
               id={modalInfo.id}
-              user_id = {user.id}
+              user_id={user.id}
               handleViewMore={() => handleViewMore(modalInfo)}
               closeModalToggle={closeModalToggle}
             />
