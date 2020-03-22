@@ -98,15 +98,18 @@ const EventModal = props => {
           </div>
           <div className="modal-body">
             <div className="modal-col-1">
-              <div class="modal_about_event">About this Event:</div>
-              <div class="modal_about_event_text">{props.about}</div>
+              <div className="modal-col1-text">
+                <div class="modal_about_event">About this Event:</div>
+                <div class="modal_about_event_text">{props.about}</div>
+              </div>
             </div>
-
             <div className="modal-col-2">
-              <div class="modal_more_info">Location</div>
-              <div class="modal_more_info_text">{props.location}</div>
-              <div class="modal_more_info">How To Prepare:</div>
-              <div class="modal_more_info_text">{props.moreinfo}</div>
+              <div className="modal-col2-text">
+                <div class="modal_more_info">Location</div>
+                <div class="modal_more_info_text">{props.location}</div>
+                <div class="modal_more_info">How To Prepare:</div>
+                <div class="modal_more_info_text">{props.moreinfo}</div>
+              </div>
             </div>
           </div>
           <div className="modal-footer">

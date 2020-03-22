@@ -148,9 +148,14 @@ event = Event.new(
   date: '2020-10-04 10:00:00 -0500',
   displaydate: 'Tuesday, April 10th, 2020 10:00am',
   about: "Spring is a particular time; we are reminded of nature's resiliency as everything seems to bloom once again. With Ms. Spring, we celebrate our resident's resiliency with an event that allows them to blossom as well into beautiful misses.  Residential Plaza at Blue Lagoon is the largest assisted living facility in Florida, with 350 residents. We host monthly events to engage our residents socially and give them a sense of purpose. Join us in making the difference in the lives of low-income older adults in our community.",
+  moreinfo: "RSVP ahead of time!",
   location: 'Contact Luisana Hung Salazar (305)267-2700 x219',
   category: 'People',
   city_state: 'Miami',
+  mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/olderadults_main.png',
+  photo1: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/olderadults_photo1.jpeg',
+  photo2: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/olderadults_photo2.jpg',
+  photo3: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/olderadults_photo3.jpg',
   organization_id: 6
 )
 event.save
@@ -159,7 +164,8 @@ event = Event.new(
   name: 'Baynanza: Shake-a-Leg Cleanup Day',
   date: '2020-12-04 09:00:00 -0500',
   displaydate: 'Thursday, April 12th, 2020 9:00am',
-  about: "Environmental concerns that affect Biscayne Bay have reached dangerous levels and the health of the marine environment is in a steep decline. Baynanza continues to be an important community-wide effort to save the Bay, and as a Bay Saver sponsor, United Way will host a clean-up through Shake-a-Leg. Shake-a-Leg is a boat-launch location located in Coconut Grove where volunteers will be taking off from the marina in a group in order to clean up the islands in Biscayne Bay. During National Volunteer week, join our 9500 for 95 challenge as part of United Way of Miami-Dade's yearlong communitywide celebration of volunteerism. You play a key role in shaping our community and your involvement is essential to our mission. Enlist your team, friends, family, neighbors, and colleagues, and join us in our fight for a stronger Miami. We highly recommend volunteers to bring the following items: Work gloves, water and snacks, insect repellent, sunscreen, hat, and comfortable closed-toe shoes.",
+  about: "Environmental concerns that affect Biscayne Bay have reached dangerous levels and the health of the marine environment is in a steep decline. Baynanza continues to be an important community-wide effort to save the Bay, and as a Bay Saver sponsor, United Way will host a clean-up through Shake-a-Leg. Shake-a-Leg is a boat-launch location located in Coconut Grove where volunteers will be taking off from the marina in a group in order to clean up the islands in Biscayne Bay. ge as part of United Way of Miami-Dade's yearlong communitywide celebration of volunteerism.",
+  moreinfo: "We highly recommend volunteers to bring the following items: Work gloves, water and snacks, insect repellent, sunscreen, hat, and comfortable closed-toe shoes.",
   location: '2600 S. Bayshore Drive Coconut Grove,FL 33133',
   category: 'Environment',
   city_state: 'Miami',
@@ -175,7 +181,8 @@ event = Event.new(
   name: 'Inspire305 Garden Day Volunteer Project',
   date: '2020-18-04 08:30:00 -0500',
   displaydate: 'April 18th, 2020 8:30am',
-  about: "Join Inspire305 and 2019 Grand Innovator Strong Girls Inc. during National Volunteer Week for a Garden Day at Eneida M. Hartner Elementary, part of our 9500 for 95 challenge, United Way of Miami-Dade's yearlong communitywide celebration of volunteerism. You play a key role in shaping our community and your involvement is essential to our mission. Enlist your team, friends, family, neighbors, and colleagues, and join us in our fight for a stronger Miami. Volunteers will help build an edible garden at the school by creating vegetable garden beds, building a micro nursery and seedling station, creating a seating area for students and more! Please wear closed-toe, comfortable shoes and outdoor clothing. Street parking is available.",
+  about: "Join Inspire305 and 2019 Grand Innovator Strong Girls Inc. during National Volunteer Week for a Garden Day at Eneida M. Hartner Elementary, part of our 9500 for 95 challenge, United Way of Miami-Dade's yearlong communitywide celebration of volunteerism. You play a key role in shaping our community and your involvement is essential to our mission. Enlist your team, friends, family, neighbors, and colleagues, and join us in our fight for a stronger Miami. Volunteers will help build an edible garden at the school by creating vegetable garden beds, building a micro nursery and seedling station, creating a seating area for students and more!",
+  moreinfo: "Please wear closed-toe, comfortable shoes and outdoor clothing. Street parking is available.",
   location: 'Eneida M. Hartner Elementary School 401 Northwest 29th Street Miami,FL 33127',
   category: 'Environment',
   city_state: 'Miami',
@@ -187,7 +194,8 @@ event = Event.new(
   name: 'Volunteers ROCK with Branches',
   date: '2020-25-04 09:00:00 -0500',
   displaydate: 'Wednesday, April 25th, 2020 9:00am',
-  about: "Branches provides life-changing opportunities to help working families and their children break the cycle of generational poverty. Branches has embarked on developing and implementing programs that address the root causes of poverty and address immediate and critical needs. Today, Branches' menu of services provides a continuum of support to community members to empower them to pursue life changing opportunities. During National Volunteer Week, join our 9500 for 95 challenge as part of United Way of Miami-Dade's yearlong communitywide celebration of volunteerism. You play a key role in shaping our community and your involvement is essential to our mission. Enlist your team, friends, family, neighbors, and colleagues, and join us in our fight for a stronger Miami. Volunteers will replenish the mulch in the after-school playground and help restore rocking chairs for students at the Branches Florida City campus.",
+  about: "Branches provides life-changing opportunities to help working families and their children break the cycle of generational poverty. Branches has embarked on developing and implementing programs that address the root causes of poverty and address immediate and critical needs. Today, Branches' menu of services provides a continuum of support to community members to empower them to pursue life changing opportunities. During National Volunteer Week, join our 9500 for 95 challenge as part of United Way of Miami-Dade's yearlong communitywide celebration of volunteerism",
+  moreinfo: 'Volunteers will replenish the mulch in the after-school playground and help restore rocking chairs for students at the Branches Florida City campus.',
   location: 'Branches Florida City 129 Southwest 5 Avenue Florida City, FL 33034',
   category: 'People',
   city_state: 'Miami',
@@ -199,10 +207,15 @@ event = Event.new(
   name: 'ReadingPals',
   date: '2020-01-05 10:00:00 -0500',
   displaydate: 'Friday, May 1st, 2020 10:00am',
-  about: 'Volunteering just 60 minutes of your time a week to read to a child makes a lifelong impact ? in their life and yours. ReadingPals is a statewide early literacy initiative that provides volunteer mentors for students from Voluntary Prekindergarten (VPK) to 3rd grade who may need extra help, utilizing one-on-one or small group settings. In Miami-Dade, ReadingPals offers volunteers an opportunity to build meaningful relationships with preschool children. ReadingPals volunteers help children improve their social-emotional development and early literacy skills through interactions with two children 3 ? 5 years old. WHY IS READINGPALS IMPORTANT? 45% of children in Florida are not ready for Kindergarten and 43% of Florida students cannot read at a minimally proficient level by the end of third grade. Additionally, studies show that children with mentors are more confident and have fewer behavioral problems. Early intervention and individualized attention gives students the best likelihood of success. For more information, please visit https://unitedwaymiami.org/what-we-do/our-take-on-education/readingpals/',
+  about: 'Volunteering just 60 minutes of your time a week to read to a child makes a lifelong impact in their life and yours.',
+  moreinfo: 'For more information, please visit https://unitedwaymiami.org/what-we-do/our-take-on-education/readingpals/',
   location: 'The Ansin Building 3250 SW 3rd Ave Miami,FL 33129',
-  category: 'People',
+  category: 'Youth',
   city_state: 'Miami',
+  mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/readingpals_main.jpg',
+  photo1: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/readingpals_photo1.jpg',
+  photo2: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/readingpals_photo2.jpg',
+  photo3: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/readingpals_photo3.jpg',
   organization_id: 6
 )
 event.save
@@ -211,10 +224,15 @@ event = Event.new(
   name: 'Simpson Park Clean Up',
   date: '2020-02-05 10:00:00 -0500',
   displaydate: 'Saturday, May 2nd, 2020 10:00am',
-  about: 'Join the City of Miami Parks and Recreation Department during this service learning program mobilizing student to restore the endangered ecosystem! Volunteers will clean up the park and remove debris and exotic invasive plants. Simpson Park contains one of the remnant fragments of historical Brickell Hammock, one the largest and most diverse Rockland hammocks on the South Florida mainland. These upland hardwood forests occur only in south Florida and along the Florida coastlines. Once wide spread, today tropical hardwood hammocks occur primarily as remnant habitats in extreme South Florida and in small preserves along the southern Atlantic coast. There are multiple opportunities to support our beautiful Simpson Park. Please see below for various dates. Volunteers under 17 years of age must be accompanied by an adult.',
+  about: 'Join the City of Miami Parks and Recreation Department during this service learning program mobilizing student to restore the endangered ecosystem! Volunteers will clean up the park and remove debris and exotic invasive plants. Simpson Park contains one of the remnant fragments of historical Brickell Hammock, one the largest and most diverse Rockland hammocks on the South Florida mainland.',
+  moreinfo: 'Volunteers under 17 years of age must be accompanied by an adult.',
   location: '5 Southwest 17th Road Miami, FL 33129',
   category: 'Environment',
   city_state: 'Miami',
+  mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/park_main.jpg',
+  photo1: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/park_photo1.jpg',
+  photo2: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/park_photo2.jpg',
+  photo3: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/park_photo3.jpg',
   organization_id: 6
 )
 event.save
@@ -235,10 +253,15 @@ event = Event.new(
   name: 'Alice Wainwright Park Clean Up',
   date: '2020-06-06 10:00:00 -0500',
   displaydate: 'Saturday, June 6th, 2020 10:00am',
-  about: 'Join the City of Miami Parks and Recreation Department during this service learning program mobilizing students to restore the endangered ecosystem! Volunteers will clean up the park and remove debris and exotic invasive plants. Please be on time, registration begins 15 minutes before the workday starts. Stay hydrated and be prepared to work outside! Alice Wainwright Park contains one of the remnant fragments of historic Brickell Hammock, one of the largest and most diverse Rockland hammocks on the South Florida mainland. These upland hardwood forests occur only in south Florida and along the Florida coastlines. Once wide spread, today tropical hardwood hammocks occur primarily as remnant habitats in extreme South Florida and in small preserves along the southern Atlantic coast. Volunteers under 17 years of age must be accompanied by an adult. Please bring a refillable water bottle. Closed-toe shoes are required and long-sleeved shirts and long pants are recommended. A hat, sun block, and insect repellent are recommended.',
+  about: 'Join the City of Miami Parks and Recreation Department during this service learning program mobilizing students to restore the endangered ecosystem! Volunteers will clean up the park and remove debris and exotic invasive plants.',
+  moreinfo: 'Stay hydrated and be prepared to work outside! Please bring a refillable water bottle. Closed-toe shoes are required and long-sleeved shirts and long pants are recommended. A hat, sun block, and insect repellent are recommended.',
   location: '52845 Brickell Avenue Miami, FL 33129',
   category: 'Environment',
   city_state: 'Miami',
+  photo1: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/park_main.jpg',
+  mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/park_photo1.jpg',
+  photo2: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/park_photo2.jpg',
+  photo3: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/park_photo3.jpg',
   organization_id: 6
 )
 event.save
@@ -248,9 +271,14 @@ event = Event.new(
   date: '2020-04-04 11:00:00 -0500',
   displaydate: 'Saturday, April 4th, 2020 11:00am',
   about: 'Meet some of our adoptable PAWS4you dogs every Saturday at PetSmart! Be ready to fall in love with each and every one of them.',
+  moreinfo: 'Come find your forever friend!',
   location: 'PetSmart 13621 S Dixie Hwy Miami, FL 33176',
   category: 'Animals',
   city_state: 'Miami',
+  photo1: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/petsmart_main.jpg',
+  mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/pet_photo1.jpg',
+  photo2: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/pet_photo2.jpg',
+  photo3: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/pet_photo3.jpg',
   organization_id: 7
 )
 event.save
@@ -260,9 +288,14 @@ event = Event.new(
   date: '2020-14-04 11:00:00 -0500',
   displaydate: 'Tuesday, April 14th, 2020 11:00am',
   about: 'Meet some of our adoptable PAWS4you dogs every Saturday at PetSmart! Be ready to fall in love with each and every one of them.',
+  moreinfo: 'Come find your forever friend!',
   location: 'PetSmart 13621 S Dixie Hwy Miami, FL 33176',
   category: 'Animals',
   city_state: 'Miami',
+  mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/petsmart_main.jpg',
+  photo1: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/pet_photo1.jpg',
+  photo2: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/pet_photo2.jpg',
+  photo3: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/pet_photo3.jpg',
   organization_id: 7
 )
 event.save
@@ -272,9 +305,14 @@ event = Event.new(
   date: '2020-21-04 11:00:00 -0500',
   displaydate: 'Tuesday, April 21st, 2020 11:00am',
   about: 'Meet some of our adoptable PAWS4you dogs every Saturday at PetSmart! Be ready to fall in love with each and every one of them.',
+  moreinfo: 'Come find your forever friend!',
   location: 'PetSmart 13621 S Dixie Hwy Miami, FL 33176',
   category: 'Animals',
   city_state: 'Miami',
+  photo1: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/petsmart_main.jpg',
+  photo2: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/pet_photo1.jpg',
+  mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/pet_photo2.jpg',
+  photo3: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/pet_photo3.jpg',
   organization_id: 7
 )
 event.save
@@ -284,9 +322,14 @@ event = Event.new(
   date: '2020-28-04 11:00:00 -0500',
   displaydate: 'Tuesday, April 28th, 2020 11:00am',
   about: 'Meet some of our adoptable PAWS4you dogs every Saturday at PetSmart! Be ready to fall in love with each and every one of them.',
+  moreinfo: 'Come find your forever friend!',
   location: 'PetSmart 13621 S Dixie Hwy Miami, FL 33176',
   category: 'Animals',
   city_state: 'Miami',
+  mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/pet_main.png',
+  photo1: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/pet_photo1.jpg',
+  photo2: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/pet_photo2.jpg',
+  photo3: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/pet_photo3.jpg',
   organization_id: 7
 )
 event.save
