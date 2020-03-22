@@ -464,6 +464,10 @@ footer {
   overflow: hidden;
 }
 
+.modal-footer {
+  border-top: 1px solid grey;
+}
+
 .modal_main_photo {
   height: 300px;
   width: 300px;
@@ -516,6 +520,7 @@ footer {
   border-left: 1px solid grey;
   padding: 10px;
   margin-right: 10px;
+  height: 100%;
 }
 .modal_about_event {
   font-size: 16px;
