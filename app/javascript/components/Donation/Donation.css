@@ -2,12 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-color: pink;
-    /* border: solid 3px; */
-  }
-
-.placehoderForImage{
-    background-color: red ;
     height: 400px;
     width: 400px;
+    
+    /* border: solid 3px; */
+}
+
+.img{
+    height: 50px;
+    width: 50px;
 }

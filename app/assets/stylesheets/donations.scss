@@ -1,3 +1,15 @@
 // Place all the styles related to the donate controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.content_donation {
+    display: flex;
+    justify-content: center;
+}
+.donation_text {
+width: 35rem;
+}
+.img{
+    height: 30rem;
+    width: 35rem;
+}
