@@ -1,75 +1,63 @@
 import React from 'react'
-import ActiveFilterButton from './ActiveFilterButton'
+import SmartSearch from './SmartSearch';
 
-const Filters = props => {
-  //we came here to type props after we typed line 35 in Events
+const DATES = [
+  { value: 'Today', label: 'Today' },
+  { value: 'This Week', label: 'This Week' },
+  { value: 'This Month', label: 'This Month' },
+]
 
-  return (
+const CATEGORIES = [
+  { value: "Animals", label: "Animals" },
+  { value: "Environment", label: "Environment" },
+  { value: "Youth", label: "Youth" },
+  { value: "People", label: "People" },
+  { value: "Rebuild", label: "Rebuild" }
+]
+
+const LOCATIONS = [
+  { value: "Miami", label: "Miami" },
+  { value: "Doral", label: "Doral" },
+  { value: "Key Biscayne", label: "Key Biscayne" },
+  { value: "Boca Raton", label: "Boca Raton" },
+  { value: "Miramar", label: "Miramar" },
+  { value: "Homestead", label: "Homestead" }
+]
+
+const Filters = props =>  (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <div className="filter_button">
-        {props.filters.date ? (
-          <ActiveFilterButton
-            display={props.filters.date}
-            filters={props.filters}
-            onClear={props.handleFilterSelect('date')}
+      <div className="filter_button"> 
+          <SmartSearch
+            className='event-select'
+            classNamePrefix="event-select"
+            placeholder='Date'
+            options={DATES}
+            value={props.filters.date}
+            onChange={props.handleFilterSelect('date')}
           />
-        ) : (
-          <>
-            <select onChange={props.handleFilterSelect('date')}>
-              <option>Date</option>
-              <option value="Today">Today</option>
-              <option value="This Week">This Week</option>
-              <option value="This Month">This Month</option>
-            </select>
-          </>
-        )}
       </div>
 
       <div className="filter_button">
-        {props.filters.category ? (
-          <ActiveFilterButton
-            display={props.filters.category}
-            onClear={props.handleFilterSelect('category')}
-          />
-        ) : (
-          <>
-            <select
-              onChange={props.handleFilterSelect('category')}
-              className="filter_select"
-            >
-              <option>Category</option>
-              <option value="Animals">Animals</option>
-              <option value="Environment">Environment</option>
-              <option value="Homelessness">Homelessness</option>
-              <option value="Rebuilding">Rebuilding</option>
-              <option value="Youth">Youth</option>
-            </select>
-          </>
-        )}
+        <SmartSearch
+          className='event-select'
+          classNamePrefix="event-select"
+          placeholder='Category'
+          options={CATEGORIES}
+          value={props.filters.category}
+          onChange={props.handleFilterSelect('category')}
+        />
       </div>
       <div className="filter_button">
-        {props.filters.city_state ? (
-          <ActiveFilterButton
-            display={props.filters.city_state}
-            onClear={props.handleFilterSelect('city_state')}
-          />
-        ) : (
-          <>
-            <select
-              onChange={props.handleFilterSelect('city_state')}
-              className="filter_select"
-            >
-              <option>Location</option>
-              <option value="Miami">Miami</option>
-              <option value="Doral">Doral</option>
-              <option value="Ft. Lauderdale">Ft. Lauderdale</option>
-              <option value="Key Bisayne">Key Bisayne</option>
-            </select>
-          </>
-        )}
+        <SmartSearch
+          className='event-select'
+          classNamePrefix="event-select"
+          placeholder='Location'
+          options={LOCATIONS}
+          value={props.filters.city_state}
+          onChange={props.handleFilterSelect('city_state')}
+        />
       </div>
     </div>
   )
-}
 
 export default Filters
