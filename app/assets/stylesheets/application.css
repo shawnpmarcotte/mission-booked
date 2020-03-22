@@ -51,6 +51,10 @@ body {
   height: 70px;
 }
 
+.field-name {
+  justify-content: right;
+}
+
 .navbar-expand-lg a {
   color: black;
 }
@@ -618,12 +622,39 @@ a {
   font-weight: bold;
 }
 
+.signup-header {
+  padding-top: 10;
+}
+
+.signup-user-edit {
+  margin-top: 10;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .content-user-edit {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-color: pink;
-  /* border: solid 3px; */
+}
+
+.signup-two-user-edit {
+  font-size: large; 
+  /* font-style: bold; */
+  font-weight: 50%;
+  border-radius: 8%;
+  opacity: 90%;
+  background-color: #CA9CC6;
+ /* display: flex; */
+ justify-content: center;
+ align-items: center;
+ border-color: pink;
+ height: 490px;
+ width: 400px;
+ padding: 40px;
+ margin: 30px 50px 40px 0px;
 }
 
 .left-user-edit {
@@ -638,7 +669,15 @@ a {
   margin: 30px 50px 40px 0px;
   box-shadow: 20px 20px 50px 4px grey;
 }
-
+.box-pic {
+  border-color: pink;
+  /* border: solid 3px; */
+  height: 490px;
+  width: 400px;
+  padding: 40px;
+  margin: 30px 50px 40px 0px;
+  box-shadow: 20px 20px 50px 4px grey;
+}
 .right-user-edit {
   /* display: flex;
   justify-content: center;
