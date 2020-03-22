@@ -205,7 +205,10 @@ const PaymentForm = ({ results, handleChange, term }) => {
                     name="term"
                     value={term}
                     onChange={handleChange}
-                  />
+                  /> 
+                  <button type="submit" className={classes.submit}>
+                      Submit
+                  </button>
                   <br />
                   <div>
                     {results &&
@@ -222,9 +225,7 @@ const PaymentForm = ({ results, handleChange, term }) => {
                             </div>
                           );
                         })}
-                    <button type="submit" className={classes.submit}>
-                      Submit
-                    </button>
+                  
                     {errors.term && <p>{errors.term}</p>}
                   </div>
                 </div>
