@@ -90,7 +90,7 @@ const Events = () => {
               </>
               {/* {' '} */}
               <div className="viewTypes">
-                <button id="thumbnailView" onClick={handleThumbnailView}>
+                <button id="thumbnailView_select" onClick={handleThumbnailView}>
                   <h2 className="view_button">Thumbnail View</h2>
                 </button>
                 <button onClick={handleCalendarView} id="calendarView">
@@ -172,7 +172,7 @@ const Events = () => {
                 <button id="thumbnailView" onClick={handleThumbnailView}>
                   <h2 className="view_button">Thumbnail View</h2>
                 </button>
-                <button onClick={handleCalendarView} id="calendarView">
+                <button onClick={handleCalendarView} id="calendarView_select">
                   <h2 className="view_button">Calendar View </h2>
                 </button>
               </div>
