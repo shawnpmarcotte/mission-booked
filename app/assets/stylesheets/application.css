@@ -715,7 +715,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-color: pink;
   /* border: solid 3px; */
 }
 
@@ -723,26 +722,24 @@ footer {
   /* display: flex; */
   justify-content: center;
   align-items: center;
-  border-color: pink;
-  /* border: solid 3px; */
   height: 490px;
   width: 400px;
   padding: 40px;
   margin: 30px 50px 40px 0px;
-  box-shadow: 20px 20px 50px 4px grey;
+  border: 2px solid #5FA0F8;
+  border-radius: 4%;
+  font-size: medium;
 }
 
+
 .right-user-edit {
-  /* display: flex;
-    justify-content: center;
-    align-items: center; */
-  border-color: pink;
-  /* border: solid 3px; */
   height: 490px;
   width: 400px;
   padding: 40px;
   margin: 30px 50px 40px 0px;
-  box-shadow: 20px 20px 50px 4px grey;
+  border: 2px solid ;
+  border-radius: 4%;  
+  border: 2px solid #5FA0F8;
 }
 
 .notices-user-edit {
