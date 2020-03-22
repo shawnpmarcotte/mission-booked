@@ -5,7 +5,7 @@
 
         <h3 style="font-size:15px;">EDIT MY PASSWORD</h3>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
+        <%= render "devise/shared/error_messages", resource: resource %> <br />
 
         <div class="field" style="margin-top:20px">
             <%= f.label :email %><br />
@@ -18,27 +18,25 @@
         <br />
 
         <div class="field" style="margin:15px,15px">
-            <%= f.label :password %> <br /> <i class="notices-user-edit">leave blank if you don't want to change it</i><br />
+            <%= f.label :password %> <br />
             <%= f.password_field :password, autocomplete: "new-password" %>
             <% if @minimum_password_length %>
             <br />
-            <em><%= @minimum_password_length %><i class="notices-user-edit"> characters minimum </i></em>
             <% end %>
         </div>
-
+        <br />
         <div class="field">
             <%= f.label :password_confirmation %><br />
             <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
         </div>
-
+        <br />
         <div class="field">
             <%= f.label :current_password %>
             <br />
-
             <%= f.password_field :current_password, autocomplete: "current-password" %><br />
-            <i class="notices-user-edit">(we need your current password to confirm your changes)</i>
-        </div>
 
+        </div>
+        <br />
         <div class="actions">
             <%= f.submit "Update" %>
         </div>
@@ -49,7 +47,7 @@
     <div class="right-user-edit">
 
         <h3 style="font-size:15px" ;>UNHAPPY?</h3>
-
+        <br />
         <p>Cancel My Account<%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
         <%= link_to "Back", :back %>
