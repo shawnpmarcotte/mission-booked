@@ -1,23 +1,21 @@
-import React from "react";
-import ActiveFilterButton from "./ActiveFilterButton";
+import React from 'react'
+import ActiveFilterButton from './ActiveFilterButton'
 
 const Filters = props => {
   //we came here to type props after we typed line 35 in Events
 
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
-      <div>
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <div className="filter_button">
         {props.filters.date ? (
           <ActiveFilterButton
             display={props.filters.date}
             filters={props.filters}
-            onClear={props.handleFilterSelect("date")}
+            onClear={props.handleFilterSelect('date')}
           />
         ) : (
           <>
-            <label>Date</label>
-
-            <select onChange={props.handleFilterSelect("date")}>
+            <select onChange={props.handleFilterSelect('date')}>
               <option>Date</option>
               <option value="Today">Today</option>
               <option value="This Week">This Week</option>
@@ -27,20 +25,19 @@ const Filters = props => {
         )}
       </div>
 
-      <div>
+      <div className="filter_button">
         {props.filters.category ? (
           <ActiveFilterButton
             display={props.filters.category}
-            onClear={props.handleFilterSelect("category")}
+            onClear={props.handleFilterSelect('category')}
           />
         ) : (
           <>
-            <label>Category</label>
             <select
-              onChange={props.handleFilterSelect("category")}
+              onChange={props.handleFilterSelect('category')}
               className="filter_select"
             >
-              <option>Select</option>
+              <option>Category</option>
               <option value="Animals">Animals</option>
               <option value="Environment">Environment</option>
               <option value="Homelessness">Homelessness</option>
@@ -50,20 +47,19 @@ const Filters = props => {
           </>
         )}
       </div>
-      <div>
+      <div className="filter_button">
         {props.filters.city_state ? (
           <ActiveFilterButton
             display={props.filters.city_state}
-            onClear={props.handleFilterSelect("city_state")}
+            onClear={props.handleFilterSelect('city_state')}
           />
         ) : (
           <>
-            <label>Locations</label>
             <select
-              onChange={props.handleFilterSelect("city_state")}
+              onChange={props.handleFilterSelect('city_state')}
               className="filter_select"
             >
-              <option>Select</option>
+              <option>Location</option>
               <option value="Miami">Miami</option>
               <option value="Doral">Doral</option>
               <option value="Ft. Lauderdale">Ft. Lauderdale</option>
@@ -73,7 +69,7 @@ const Filters = props => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Filters;
+export default Filters

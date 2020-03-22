@@ -347,8 +347,9 @@ footer {
 
 .filters_bar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 20px;
+  align-items: center;
   position: absolute;
   width: 800px;
   height: 100px;
@@ -356,6 +357,8 @@ footer {
   z-index: 0;
   -webkit-box-shadow: 0px 3px 5px -3px rgba(0, 0, 0, 0.64);
   box-shadow: 0px 3px 5px -3px rgba(0, 0, 0, 0.64);
+  padding-right: 20px;
+  padding-left: 20px;
 }
 /* Event cards */
 
@@ -432,6 +435,7 @@ footer {
 
 .view_button {
   font-size: 12px;
+  padding-right: 10px;
 }
 
 .event-card-photo {
@@ -444,7 +448,47 @@ footer {
   height: 100%;
   object-fit: cover;
 }
+.filter_button {
+  padding: 10px;
+}
+.button {
+  border: none;
+}
 
+#thumbnailView {
+  background: none;
+  border: none;
+}
+#thumbnailView:active {
+  border-bottom: 4px solid #5aad8d;
+  outline: none;
+  padding-bottom: 0px;
+}
+#thumbnailView:hover {
+  outline: none;
+}
+#calendarView:hover {
+  outline: none;
+}
+#calendarView {
+  background: none;
+  border: none;
+}
+#calendarView_select {
+  border: none;
+  border-bottom: 4px solid#5aad8d;
+  padding-bottom: 0px;
+}
+#thumbnailView_select {
+  border: none;
+  border-bottom: 4px solid#5aad8d;
+  padding-bottom: 0px;
+}
+#calendarView:active {
+  border-bottom: 4px solid#5aad8d;
+  outline: none;
+  padding-bottom: 0px;
+}
 /* modal */
 .modal-header {
   display: flex;
