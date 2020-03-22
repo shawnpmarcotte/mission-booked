@@ -143,6 +143,7 @@ const Events = () => {
               id={modalInfo.id}
               mainphoto={modalInfo.mainphoto}
               displaydate={modalInfo.displaydate}
+              location={modalInfo.location}
               moreinfo={modalInfo.moreinfo}
               instagram={modalInfo.instagram}
               facebook={modalInfo.facebook}
