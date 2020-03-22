@@ -6,7 +6,7 @@ import ThankYou from "./ThankPage";
 import TextField from "@material-ui/core/TextField";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
-
+import Paper from "@material-ui/core/Paper";
 const useStyles = makeStyles(theme => ({
   form: {
     textAlign: "center",
@@ -38,10 +38,8 @@ const useStyles = makeStyles(theme => ({
     position: "absolute"
   }
 }));
-
 const PaymentForm = ({ results, handleChange, term }) => {
   const classes = useStyles();
-
   const INITIAL_STATE = {
     cvc: "",
     expiry: "",
@@ -55,23 +53,18 @@ const PaymentForm = ({ results, handleChange, term }) => {
   const [formData, setFormData] = useState(INITIAL_STATE);
   const [errors, setErrors] = useState({});
   const [valid, setValid] = useState(false);
-
   const handleInputFocus = field => e => {
     setFormData({ ...formData, [field]: e.target.name });
   };
-
   const handleInputChange = e => {
     const { name, value } = e.target;
-
     setFormData({ ...formData, [name]: value });
   };
-
   const handleSubmit = event => {
     event.preventDefault();
     setErrors(validators(formData, term));
     setValid(true);
   };
-
   return (
     <div id="PaymentForm">
       {valid === true &&
@@ -85,7 +78,7 @@ const PaymentForm = ({ results, handleChange, term }) => {
       !errors.donation ? (
         <ThankYou valid={valid} />
       ) : (
-        <>
+        <Paper elevation={0} style={{ width: "450px" }}>
           <Cards
             cvc={formData.cvc}
             expiry={formData.expiry}
@@ -205,13 +198,14 @@ const PaymentForm = ({ results, handleChange, term }) => {
                     name="term"
                     value={term}
                     onChange={handleChange}
-                  /> 
+                  />
                   <button type="submit" className={classes.submit}>
-                      Submit
+                    Submit
                   </button>
                   <br />
                   <div>
                     {results &&
+                      term &&
                       results
                         .filter(result =>
                           result.name.toLowerCase().includes(term.toLowerCase())
@@ -225,17 +219,15 @@ const PaymentForm = ({ results, handleChange, term }) => {
                             </div>
                           );
                         })}
-                  
                     {errors.term && <p>{errors.term}</p>}
                   </div>
                 </div>
               </form>
             </Container>
           </div>
-        </>
+        </Paper>
       )}
     </div>
   );
 };
-
 export default PaymentForm;
