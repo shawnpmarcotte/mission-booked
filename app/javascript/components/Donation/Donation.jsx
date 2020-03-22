@@ -46,9 +46,10 @@ const Organizations = () => {
                 No gift is too small to make an impact on your community.
               </p>
             </div>
+            <PaymentForm results={results} handleChange={handleChange} term={term} />
           </div>
 
-          <PaymentForm results={results} handleChange={handleChange} term={term} />
+          
 
         </div>
 
