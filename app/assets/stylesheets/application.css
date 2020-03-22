@@ -115,7 +115,7 @@ video {
 }
 
 .search_submit {
-  background-color: black;
+  background-color: #5aad8d;
   color: white;
   border-radius: 0px 100px 100px 0px;
   padding-left: 20px;
@@ -123,11 +123,16 @@ video {
   border: none;
   margin-right: 0px;
   float: right;
-  height: 40px;
+  height: 38px;
   box-shadow: black 2px;
 }
 
+.search_submit:hover {
+  outline: none;
+}
+
 .search_form {
+  border-radius: 0px;
   border: 1px solid grey;
   border-right: none;
   margin: none;
@@ -136,24 +141,46 @@ video {
   width: 150px;
 }
 
-.search_form_city {
+.search_form_cty {
   border: 1px solid grey;
   border-right: none;
   margin: none;
   float: left;
-  border-radius: 100px 0 0 100px;
+  border-radius: 0px;
   height: 40px;
   width: 120px;
 }
 
-.search_form_city:focus {
+.search_form_cty:focus {
   outline: none;
+}
+
+.css-2b097c-container {
+  border-radius: 0px !important;
+  border: none !important;
+}
+
+.css-yk16xz-control {
+  border-radius: 0px !important;
+}
+.css-yk16xz-control:focus {
+  outline: none !important;
+}
+
+.css-1wa3eu0-placeholder:focus {
+  outline: none !important;
 }
 
 .search_form:focus {
-  outline: none;
+  outline: none !important;
 }
 
+.search_form_cty:active {
+  outline: none !important;
+}
+.search_form:active {
+  outline: none !important;
+}
 .types_volunteering_container {
   display: flex;
   justify-content: space-between;
