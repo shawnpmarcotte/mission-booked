@@ -2585,6 +2585,11 @@ css-declaration-sorter@^4.0.1:
     postcss "^7.0.1"
     timsort "^0.3.0"
 
+css-element-queries@^1.0.2:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/css-element-queries/-/css-element-queries-1.2.3.tgz#e14940b1fcd4bf0da60ea4145d05742d7172e516"
+  integrity sha512-QK9uovYmKTsV2GXWQiMOByVNrLn2qz6m3P7vWpOR4IdD6I3iXoDw5qtgJEN3Xq7gIbdHVKvzHjdAtcl+4Arc4Q==
+
 css-has-pseudo@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/css-has-pseudo/-/css-has-pseudo-0.10.0.tgz#3c642ab34ca242c59c41a125df9105841f6966ee"
@@ -6869,6 +6874,14 @@ react-calendar@^3.0.0:
     merge-class-names "^1.1.1"
     prop-types "^15.6.0"
 
+react-compare-image@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/react-compare-image/-/react-compare-image-2.0.4.tgz#d1c6d64cc61852404df538792fb1ee138de38919"
+  integrity sha512-kuYtu+qOF07XhY0/cJCqXgM26yqXRKtqZS9YLNi18Cd9tE27sqDe/LZCxoMTDiPA3gfq8uM82Q56nzkZMWBJhg==
+  dependencies:
+    css-element-queries "^1.0.2"
+    prop-types "^15.7.2"
+
 react-credit-cards@^0.8.0:
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/react-credit-cards/-/react-credit-cards-0.8.0.tgz#5a568d01cb440275adf2d4cda29c0fb1bf97248a"
@@ -6895,6 +6908,11 @@ react-dom@^16.13.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.19.0"
+
+react-image-comparison-slider@^1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/react-image-comparison-slider/-/react-image-comparison-slider-1.8.3.tgz#424286618047ac56b0949106bf92ce32a00f26ab"
+  integrity sha512-cgyo6FNVZ8lhKl0jZCO0Se/2f2W+LQOJisfM0SsBO7Gvs2Qcmgnh/Timr8GwSHjR53P64BSEzz0W2wYrkUtJWA==
 
 react-image-gallery@^1.0.6:
   version "1.0.6"
