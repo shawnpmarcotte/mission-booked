@@ -1,12 +1,12 @@
+# frozen_string_literal: true
+
 class FavoritesController < ApplicationController
   before_action :set_event, only: [:create]
 
   def create
     @favorite = current_user.favorites.find_or_create_by(event: @event)
     respond_to do |format|
-      if @favorite.save
-        format.html { redirect_to events_path }
-      end
+      format.html { redirect_to events_path } if @favorite.save
     end
   end
 
@@ -20,6 +20,7 @@ class FavoritesController < ApplicationController
   end
 
   private
+
   def set_event
     @event = Event.find(params[:event_id])
   end
