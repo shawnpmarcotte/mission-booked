@@ -1,32 +1,33 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import bookmark from "../../assets/images/bookmark";
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import bookmark from '../../assets/images/bookmark'
 
 const EventModal = props => {
-  const [added, setAdded] = useState(false);
+  const [added, setAdded] = useState(false)
   const token = document
     .querySelector('meta[name="csrf-token"]')
-    .getAttribute("content");
+    .getAttribute('content')
 
   const csrfHeaders = {
-    "X-Requested-With": "XMLHttpRequest",
-    "X-CSRF-Token": token
-  };
+    'X-Requested-With': 'XMLHttpRequest',
+    'X-CSRF-Token': token
+  }
 
   const takeToLogin = event => {
-    event.preventDefault();
-    axios.get("/users/sign_in");
-  };
+    event.preventDefault()
+    axios.get('/users/sign_in')
+  }
   const handleAddFavorite = event => {
-    const event_id = props.id;
-    event.preventDefault();
+    const event_id = props.id
+    event.preventDefault()
 
     axios
-      .post("/favorites", { event_id }, { headers: csrfHeaders })
+      .post('/favorites', { event_id }, { headers: csrfHeaders })
       .then(response => {
-        setAdded(true);
-      });
-  };
+        console.log('favorite added')
+        setAdded(true)
+      })
+  }
 
   return (
     <div
@@ -44,11 +45,10 @@ const EventModal = props => {
             <div className="modal-header-top">
               <h5 className="modal-title" id="exampleModalLabel">
                 {props.name}
-                {props.displaydate}
               </h5>
               <button
                 type="button"
-                className="close"
+                className="close_symbol"
                 data-dismiss="modal"
                 aria-label="Close"
                 onClick={(props.closeModalToggle, () => setAdded(false))}
@@ -58,44 +58,58 @@ const EventModal = props => {
             </div>
             <div className="modal-header-mid">
               <div className="modal_main_photo">
-                <img src={props.mainphoto} />
+                <img src={props.mainphoto} className="resized-photo" />
               </div>
               <div className="modal_body_photos">
                 <div className="modal_photo_1">
-                  <img src={props.photo1} />
+                  <img src={props.photo1} className="resized-photo" />
                 </div>
                 <div className="modal_photo_2">
-                  <img src={props.photo2} />
+                  <img src={props.photo2} className="resized-photo" />
                 </div>
                 <div className="modal_photo_3">
-                  <img src={props.photo3} />
+                  <img src={props.photo3} className="resized-photo" />
                 </div>
               </div>
             </div>
-            {props.user_id ? (
-              <button
-                type="button"
-                aria-label="Add to Favorites"
-                onClick={handleAddFavorite}
-              >
-                Add to Favorites
-              </button>
-            ) : (
-              <a href="/users/sign_in">
-                <button type="button" aria-label="Sign In / UP">
-                  Log in or Sign Up to bookmark events!
+            <div className="bookmark_container">
+              <div className="modal_date">{props.displaydate}</div>
+              {props.user_id ? (
+                <button
+                  type="button"
+                  aria-label="Add to Favorites"
+                  className="bookmark_button"
+                  onClick={handleAddFavorite}
+                >
+                  Bookmark Event
                 </button>
-              </a>
-            )}
+              ) : (
+                <a href="/users/sign_in">
+                  <button
+                    type="button"
+                    aria-label="Sign In / UP"
+                    className="bookmark_button"
+                  >
+                    Bookmark Event
+                  </button>
+                </a>
+              )}
+            </div>
           </div>
           <div className="modal-body">
             <div className="modal-col-1">
-              {props.about}
-              {props.facebook}
+              <div className="modal-col1-text">
+                <div class="modal_about_event">About this Event:</div>
+                <div class="modal_about_event_text">{props.about}</div>
+              </div>
             </div>
             <div className="modal-col-2">
-              {props.displaydate}
-              {props.moreinfo}
+              <div className="modal-col2-text">
+                <div class="modal_more_info">Location</div>
+                <div class="modal_more_info_text">{props.location}</div>
+                <div class="modal_more_info">How To Prepare:</div>
+                <div class="modal_more_info_text">{props.moreinfo}</div>
+              </div>
             </div>
           </div>
           <div className="modal-footer">
@@ -114,7 +128,7 @@ const EventModal = props => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default EventModal;
+export default EventModal
