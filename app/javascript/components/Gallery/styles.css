@@ -5,8 +5,8 @@
 .styles_gridItem__nPXhF figcaption {
     display: block;
     padding: .625rem .5rem;
-    background: #0D47A1;
-    color: ghostwhite;
+    background: #5AAD8D;
+    color: black;
 }
 
 @media only screen and (max-width: 1024px) {
