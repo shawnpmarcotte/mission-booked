@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+##################
+# ORGANIZATIONS
+#################
+
 organization = Organization.new(
   name: '4Ocean',
   about: "We're here to clean the ocean and coastlines while working to stop the inflow of plastic by changing consumption habits.",
@@ -55,7 +59,9 @@ organization = Organization.new(
   contact: 'paws4you.org'
 )
 organization.save
-
+###############
+# EVENTS
+###############
 event = Event.new(
   name: '4Ocean Beach Cleanup',
   date: '2020-04-08 11:00:00 -0500',
@@ -73,7 +79,7 @@ event = Event.new(
   photo3: 's3://bettertogetherbucket/GettyImages-1143084022.jpg',
   organization_id: 1
 )
-
+# ##############################################
 event = Event.new(
   name: 'Food Drive',
   date: '2020-04-06 08:00:00 -0500',
@@ -82,17 +88,17 @@ event = Event.new(
   moreinfo: 'Please a reusable water bottle to help keep single-use plastic off beach. Register today with your Eventbrite ticket! If you have group of 10 or more attending, please email the Volunteer Coordinator at outreach@4ocean.com to ensure proper sign up. Cleanup supplies will be provided for everyone.',
   location: 'Lighthouse Self Storage - Cooper City 11060 Griffin Road Cooper City, FL 33328',
   category: 'People',
-  city_state: 'Miami',
+  city_state: 'Miramar',
   instagram: 'https://www.instagram.com/4ocean/?hl=en',
   facebook: 'https://www.facebook.com/4oceanBracelets/',
-  mainphoto: "https://bettertogetherbucket.s3.us-east-2.amazonaws.com/Adopt+a+Dog.jpg",
-  photo1: 's3://bettertogetherbucket/GettyImages-1145403089.jpg',
-  photo2: 's3://bettertogetherbucket/GettyImages-1038239732.jpg',
-  photo3: 's3://bettertogetherbucket/GettyImages-1143084022.jpg',
+  mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/Hands-on-connect.jpeg',
+  photo1: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/Hands-on-connect.jpeg',
+  photo2: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/Hands-on-connect.jpeg',
+  photo3: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/Hands-on-connect.jpeg',
   organization_id: 2
 )
 event.save
-
+# ##############################################
 event = Event.new(
   name: 'BEE-cause Flea',
   date: Time.new(2020, 4, 12, 2, 2, 2, '+02:00'),
@@ -101,10 +107,16 @@ event = Event.new(
   location: 'Tropical Audubon Society, 5530 Sunset Drive, Miami, FL 33143',
   category: 'Animals',
   city_state: 'Miami',
+  instagram: 'https://www.instagram.com/4ocean/?hl=en',
+  facebook: 'https://www.facebook.com/4oceanBracelets/',
+  mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/cleanup_main.jpg',
+  photo1: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/cleanup_main.jpg',
+  photo2: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/cleanup_main.jpg',
+  photo3: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/cleanup_main.jpg',
   organization_id: 3
 )
 event.save
-
+# ##############################################
 event = Event.new(
   name: "Clean-up N' Gro",
   date: '2020-14-04 10:00:00 -0500',
@@ -116,20 +128,20 @@ event = Event.new(
   city_state: 'Miami',
   instagram: 'https://www.instagram.com/4ocean/?hl=en',
   facebook: 'https://www.facebook.com/4oceanBracelets/',
-  mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/cleanup_main.jpg',
-  photo1: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/cleanup_main.jpg',
-  photo2: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/cleanup_main.jpg',
-  photo3: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/cleanup_main.jpg',
+  mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/hands-on-miami.jpg',
+  photo1: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/hands-on-miami.jpg',
+  photo2: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/hands-on-miami.jpg',
+  photo3: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/hands-on-miami.jpg',
   organization_id: 4
 )
 event.save
-
+###############################################
 event = Event.new(
   name: 'Serve Food: at the Pisgah Pantry',
   date: '2020-25-03 10:30:00 -0500',
   displaydate: 'Wednesday, March 25th, 2020 10:30am',
   about: "The Pisgah Food Pantry is a 'Choice Pantry' and volunteers are needed to help with serving donated foods, stocking the shelves, and helping clients to collect thier food items.  The items supplied to the clients are picked up from partner agencies.   Volunteers are needed to help with final preparations for, and serving pantry clients, on distribution day.",
-  moreinfo: " Closed-toe shoes are required for safety! Please wear long pants or jeans, a t-shirt (no strapless shirts or tank tops), and sneakers are preferred (NO Flip Flops, sandals or slippers). Please plan to arrive a few minutes early for a brief orientation about the volunteer opportunity from the Project Leader.",
+  moreinfo: ' Closed-toe shoes are required for safety! Please wear long pants or jeans, a t-shirt (no strapless shirts or tank tops), and sneakers are preferred (NO Flip Flops, sandals or slippers). Please plan to arrive a few minutes early for a brief orientation about the volunteer opportunity from the Project Leader.',
   location: 'Miami Gardens, FL',
   category: 'People',
   city_state: 'Doral',
@@ -142,16 +154,16 @@ event = Event.new(
   organization_id: 5
 )
 event.save
-
+###############################################
 event = Event.new(
   name: 'Celebrate Ms.Spring with Older Adults',
   date: '2020-10-04 10:00:00 -0500',
   displaydate: 'Tuesday, April 10th, 2020 10:00am',
   about: "Spring is a particular time; we are reminded of nature's resiliency as everything seems to bloom once again. With Ms. Spring, we celebrate our resident's resiliency with an event that allows them to blossom as well into beautiful misses.  Residential Plaza at Blue Lagoon is the largest assisted living facility in Florida, with 350 residents. We host monthly events to engage our residents socially and give them a sense of purpose. Join us in making the difference in the lives of low-income older adults in our community.",
-  moreinfo: "RSVP ahead of time!",
+  moreinfo: 'RSVP ahead of time!',
   location: 'Contact Luisana Hung Salazar (305)267-2700 x219',
   category: 'People',
-  city_state: 'Miami',
+  city_state: 'Homestead',
   mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/olderadults_main.png',
   photo1: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/olderadults_photo1.jpeg',
   photo2: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/olderadults_photo2.jpg',
@@ -159,13 +171,13 @@ event = Event.new(
   organization_id: 6
 )
 event.save
-
+###############################################
 event = Event.new(
   name: 'Baynanza: Shake-a-Leg Cleanup Day',
   date: '2020-12-04 09:00:00 -0500',
   displaydate: 'Thursday, April 12th, 2020 9:00am',
   about: "Environmental concerns that affect Biscayne Bay have reached dangerous levels and the health of the marine environment is in a steep decline. Baynanza continues to be an important community-wide effort to save the Bay, and as a Bay Saver sponsor, United Way will host a clean-up through Shake-a-Leg. Shake-a-Leg is a boat-launch location located in Coconut Grove where volunteers will be taking off from the marina in a group in order to clean up the islands in Biscayne Bay. ge as part of United Way of Miami-Dade's yearlong communitywide celebration of volunteerism.",
-  moreinfo: "We highly recommend volunteers to bring the following items: Work gloves, water and snacks, insect repellent, sunscreen, hat, and comfortable closed-toe shoes.",
+  moreinfo: 'We highly recommend volunteers to bring the following items: Work gloves, water and snacks, insect repellent, sunscreen, hat, and comfortable closed-toe shoes.',
   location: '2600 S. Bayshore Drive Coconut Grove,FL 33133',
   category: 'Environment',
   city_state: 'Miami',
@@ -176,20 +188,26 @@ event = Event.new(
   organization_id: 6
 )
 event.save
-
+# ##############################################
 event = Event.new(
   name: 'Inspire305 Garden Day Volunteer Project',
   date: '2020-18-04 08:30:00 -0500',
   displaydate: 'April 18th, 2020 8:30am',
   about: "Join Inspire305 and 2019 Grand Innovator Strong Girls Inc. during National Volunteer Week for a Garden Day at Eneida M. Hartner Elementary, part of our 9500 for 95 challenge, United Way of Miami-Dade's yearlong communitywide celebration of volunteerism. You play a key role in shaping our community and your involvement is essential to our mission. Enlist your team, friends, family, neighbors, and colleagues, and join us in our fight for a stronger Miami. Volunteers will help build an edible garden at the school by creating vegetable garden beds, building a micro nursery and seedling station, creating a seating area for students and more!",
-  moreinfo: "Please wear closed-toe, comfortable shoes and outdoor clothing. Street parking is available.",
+  moreinfo: 'Please wear closed-toe, comfortable shoes and outdoor clothing. Street parking is available.',
   location: 'Eneida M. Hartner Elementary School 401 Northwest 29th Street Miami,FL 33127',
   category: 'Environment',
   city_state: 'Miami',
+  instagram: 'https://www.instagram.com/4ocean/?hl=en',
+  facebook: 'https://www.facebook.com/4oceanBracelets/',
+  mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/garden-day.jpeg',
+  photo1: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/garden-day.jpeg',
+  photo2: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/garden-day.jpeg',
+  photo3: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/garden-day.jpeg',
   organization_id: 6
 )
 event.save
-
+# ##############################################
 event = Event.new(
   name: 'Volunteers ROCK with Branches',
   date: '2020-25-04 09:00:00 -0500',
@@ -198,11 +216,17 @@ event = Event.new(
   moreinfo: 'Volunteers will replenish the mulch in the after-school playground and help restore rocking chairs for students at the Branches Florida City campus.',
   location: 'Branches Florida City 129 Southwest 5 Avenue Florida City, FL 33034',
   category: 'People',
-  city_state: 'Miami',
+  city_state: 'Homestead',
+  instagram: 'https://www.instagram.com/4ocean/?hl=en',
+  facebook: 'https://www.facebook.com/4oceanBracelets/',
+  mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/people-work.jpeg',
+  photo1: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/people-work.jpeg',
+  photo2: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/people-work.jpeg',
+  photo3: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/people-work.jpeg',
   organization_id: 6
 )
 event.save
-
+###############################################
 event = Event.new(
   name: 'ReadingPals',
   date: '2020-01-05 10:00:00 -0500',
@@ -219,7 +243,7 @@ event = Event.new(
   organization_id: 6
 )
 event.save
-
+###############################################
 event = Event.new(
   name: 'Simpson Park Clean Up',
   date: '2020-02-05 10:00:00 -0500',
@@ -236,7 +260,7 @@ event = Event.new(
   organization_id: 6
 )
 event.save
-
+# ##############################################
 event = Event.new(
   name: "Celebrate Mother's Day",
   date: '2020-08-05 10:00:00 -0500',
@@ -245,10 +269,16 @@ event = Event.new(
   location: '5617 NW 7th Street Miami, FL 33126',
   category: 'People',
   city_state: 'Miami',
+  instagram: 'https://www.instagram.com/4ocean/?hl=en',
+  facebook: 'https://www.facebook.com/4oceanBracelets/',
+  mainphoto: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/women-work.jpeg',
+  photo1: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/women-work.jpeg',
+  photo2: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/women-work.jpeg',
+  photo3: 'https://bettertogetherbucket.s3.us-east-2.amazonaws.com/women-work.jpeg',
   organization_id: 6
 )
 event.save
-
+###############################################
 event = Event.new(
   name: 'Alice Wainwright Park Clean Up',
   date: '2020-06-06 10:00:00 -0500',
@@ -265,7 +295,7 @@ event = Event.new(
   organization_id: 6
 )
 event.save
-
+###############################################
 event = Event.new(
   name: 'PetSmart Adoption Event',
   date: '2020-04-04 11:00:00 -0500',
@@ -282,7 +312,7 @@ event = Event.new(
   organization_id: 7
 )
 event.save
-
+###############################################
 event = Event.new(
   name: 'PetSmart Adoption Event',
   date: '2020-14-04 11:00:00 -0500',
@@ -299,7 +329,7 @@ event = Event.new(
   organization_id: 7
 )
 event.save
-
+###############################################
 event = Event.new(
   name: 'PetSmart Adoption Event',
   date: '2020-21-04 11:00:00 -0500',
@@ -316,7 +346,7 @@ event = Event.new(
   organization_id: 7
 )
 event.save
-
+###############################################
 event = Event.new(
   name: 'PetSmart Adoption Event',
   date: '2020-28-04 11:00:00 -0500',
@@ -333,40 +363,8 @@ event = Event.new(
   organization_id: 7
 )
 event.save
-
+###############################################
 User.create(email: 'admin@admin.com', password: 'password', admin: true)
 User.create(email: 'some@guy.com', password: 'password')
 
 p 'seeded'
-
-# 300.times do
-#   organization = Organization.new(
-#     name: Faker::Company.name,
-#     about: Faker::Lorem.paragraph,
-#     location: Faker::Address.full_address,
-#     contact: Faker::Internet.email
-#   )
-#   organization.save
-# end
-
-# 600.times do
-#   event = Event.new(
-#     name: Faker::Company.name,
-#     date: Faker::Date.between(from: 3.months.ago, to: 3.months.from_now),
-#     about: Faker::Lorem.paragraph,
-#     location: Faker::Address.full_address,
-#     category: Faker::Lorem.sentence,
-#     organization_id: rand(1..300)
-#   )
-#   event.save
-# end
-
-# frozen_string_literal: true
-
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
