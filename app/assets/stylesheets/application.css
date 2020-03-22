@@ -75,7 +75,16 @@ video {
   position: fixed;
   z-index: -999;
 }
+.vol_home_button {
+  background-color: #5aad8d;
+  padding: 5px;
+  border: none;
+  border-radius: 50px;
+}
 
+.vol_home_button:hover {
+  background-color: grey;
+}
 .events-container {
   display: flex;
   justify-content: space-between;
@@ -181,20 +190,62 @@ video {
   outline: none !important;
 }
 .types_volunteering_container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  direction: row;
   width: 100%;
-  margin-right: 2%;
-  margin-left: 2%;
+  margin-right: 15%;
+  margin-left: 15%;
+}
+.vol_container_row1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.vol_container_row2 {
+  padding-top: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .vol_images {
-  background-color: grey;
-  height: 100px;
-  width: 100px;
+  max-height: 200px;
+  max-width: 200px;
 }
+
+.animals_vol_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.environment_vol_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.youth_vol_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.people_vol_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.rebuild_vol_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.all_vol_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .vol_text {
   display: flex;
   justify-content: space-between;
@@ -203,6 +254,16 @@ video {
   margin-right: 2%;
   margin-left: 2%;
   text-align: center;
+  font-size: 14px;
+  padding-top: 5px;
+
+  color: white;
+  font-weight: bold;
+}
+
+.vol_text a {
+  text-decoration: none;
+  color: white;
 }
 
 .vol {

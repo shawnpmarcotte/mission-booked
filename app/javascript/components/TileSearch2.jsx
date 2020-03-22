@@ -1,6 +1,6 @@
 import React from 'react'
 
-class TitleSearch extends React.Component {
+class TitleSearch2 extends React.Component {
   constructor(props) {
     super(props)
     localStorage.setItem('userId', props.userId)
@@ -32,18 +32,18 @@ class TitleSearch extends React.Component {
       <div className="vol_text_container">
         <div className="vol_text">
           <button className="vol_home_button">
-            <a href="/events?category=Animals">
-              <div className="vol">Animals</div>
+            <a href="/events?category=People">
+              <div className="vol">People</div>
             </a>
           </button>
           <button className="vol_home_button">
-            <a href="/events?category=Environment">
-              <div className="vol">Environment</div>
+            <a href="/events?category=Rebuild">
+              <div className="vol">Rebuild</div>
             </a>
           </button>
           <button className="vol_home_button">
-            <a href="/events?category=Youth">
-              <div className="vol">Youth</div>
+            <a href="/events?category=">
+              <div className="vol">View All</div>
             </a>
           </button>
         </div>
@@ -52,4 +52,4 @@ class TitleSearch extends React.Component {
   }
 }
 
-export default TitleSearch
+export default TitleSearch2
