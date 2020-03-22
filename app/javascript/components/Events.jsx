@@ -4,23 +4,24 @@ import Filters from './Filters'
 import EventModal from './EventModal'
 import EventCalendar from './EventCalendar'
 import volunteer_placeholder from '../../assets/images/volunteer_placeholder'
+
 const Events = () => {
   const initalQueryParams = new URLSearchParams(location.search)
+  const [initialLocation, initialCategory] = [initalQueryParams.get('location'), initalQueryParams.get('category')]
+
   const [results, setResults] = useState([]) // order matters in arrays
   const [user, setUser] = useState({})
   const [filters, setFilters] = useState({
-    ...(initalQueryParams.get('location') && {
-      city_state: initalQueryParams.get('location')
+    ...(initialLocation && {
+      city_state: { label: initialLocation, value: initialLocation }
     }),
-    ...(initalQueryParams.get('category') && {
-      category: initalQueryParams.get('category')
+    ...(initialCategory && {
+      category: { label: initialCategory, value: initialCategory }
     })
   }) //Object BC it holds a lot of keys and orders don't matter
   const [calendarView, setCalendarView] = useState(false)
   const [modalInfo, setModalInfo] = useState({})
-  useEffect(() => {
-    fetchEventData()
-  }, []) //the empty brakets are dependency arrays, used to break the infinite loop, and only make axios run one
+
   const openModalToggle = result => {
     setModalInfo(result)
   }
@@ -29,51 +30,60 @@ const Events = () => {
   }
   const getQueryParams = filters =>
     Object.keys(filters).reduce(
-      (acc, param) =>
-        acc
-          ? `${acc}&${param}=${filters[param]}`
-          : `${param}=${filters[param]}`,
+      (acc, param) => {
+        const paramValue = filters[param]
+        if (!paramValue) return acc;
+
+        const queryParams = `${param}=${paramValue.value}`
+        return acc
+          ? `${acc}&${queryParams}`
+          : `${queryParams}`
+      },
       ''
     )
-  const fetchEventData = () => {
-    const queryParams = getQueryParams(filters)
-    axios
-      .get(`/events.json?${queryParams}`)
-      .then(response => {
-        console.log('response data', response.data)
-        setResults(response.data.all_data.events)
-        setUser(response.data.all_data.user)
-      })
-      .catch(error => {
-        console.log(error.response)
-      })
-  }
+
+  const fetchEvents = filterParams => axios
+    .get(`/events.json?${filterParams}`)
+    .then(response => {
+      console.log('fetched events', { filterParams, response })
+      setResults(response.data.all_data.events)
+      setUser(response.data.all_data.user)
+    })
+    .catch(error => {
+      console.log(error.response)
+    })
+  
   // partial applycation = type of function
   // curried = partial application + the other partial application aka double rockets
 
-  const handleFilterSelect = filterType => event => {
-    const { value } = event.target
-    const updatedFilter = { ...filters, [filterType]: value }
-    if (!value) delete updatedFilter[filterType]
+  const handleFilterSelect = filterType => selectedFilter => {
+    console.log('selected filter', selectedFilter);
+    const updatedFilter = { ...filters, [filterType]: selectedFilter }
+    if (!selectedFilter) delete updatedFilter[filterType]
     setFilters(updatedFilter)
     const queryParams = getQueryParams(updatedFilter)
-    axios
-
-      .get(`/events.json?${queryParams}`)
-      .then(response => setResults(response.data.all_data.events))
+    fetchEvents(queryParams)
   }
+
   const handleThumbnailView = () => {
     setCalendarView(false)
   }
+
   const handleCalendarView = () => {
     setCalendarView(true)
   }
+
   const handleViewMore = event => Turbolinks.visit(`/events/${event.id}`)
+
+  useEffect(() => {
+    const filterParams = getQueryParams(filters)
+    fetchEvents(filterParams)
+  }, []) //the empty brakets are dependency arrays, used to break the infinite loop, and only make axios run one
   // spread opperator to map through the filters and maintain them
   //"" [filterType]: "" this is known as a dynamic property, you can pass a string or number
   // and it will assign that property on the object aka first argument on the rocket train
   // and the value of that property would be whatever we selected on the select tag.
-  console.log(results)
+
   return (
     <>
       {calendarView === false ? (

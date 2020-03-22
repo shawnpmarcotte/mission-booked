@@ -2,7 +2,7 @@ import React from "react";
 
 const ActiveFilterButton = props => {
   const handleResetFilter = () => {
-    props.onClear({ target: { value: "" } });
+    props.onClear();
   };
 
   return (

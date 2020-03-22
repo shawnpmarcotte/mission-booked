@@ -23,7 +23,8 @@ const SmartSearch = ({
   value,
   options,
   className,
-  onChange
+  onChange,
+  classNamePrefix
 }) => {
   const handleChange = selected => {
     onChange(selected);
@@ -33,7 +34,9 @@ const SmartSearch = ({
     <>
       {label && <label>{label}</label>}
       <ReactSelect
+        menuContainerStyle={{ 'zIndex': 999 }}
         {...customizeSearch()}
+        classNamePrefix={classNamePrefix}
         placeholder={placeholder}
         noOptionsMessage={EmptyOptions}
         options={[]}
