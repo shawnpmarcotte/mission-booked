@@ -48,7 +48,7 @@ const EventModal = props => {
               </h5>
               <button
                 type="button"
-                className="close"
+                className="close_symbol"
                 data-dismiss="modal"
                 aria-label="Close"
                 onClick={(props.closeModalToggle, () => setAdded(false))}
@@ -72,21 +72,29 @@ const EventModal = props => {
                 </div>
               </div>
             </div>
-            {props.user_id ? (
-              <button
-                type="button"
-                aria-label="Add to Favorites"
-                onClick={handleAddFavorite}
-              >
-                Add to Favorites
-              </button>
-            ) : (
-              <a href="/users/sign_in">
-                <button type="button" aria-label="Sign In / UP">
-                  Log in or Sign Up to bookmark events!
+            <div className="bookmark_container">
+              <div className="modal_date">{props.displaydate}</div>
+              {props.user_id ? (
+                <button
+                  type="button"
+                  aria-label="Add to Favorites"
+                  className="bookmark_button"
+                  onClick={handleAddFavorite}
+                >
+                  Bookmark Event
                 </button>
-              </a>
-            )}
+              ) : (
+                <a href="/users/sign_in">
+                  <button
+                    type="button"
+                    aria-label="Sign In / UP"
+                    className="bookmark_button"
+                  >
+                    Bookmark Event
+                  </button>
+                </a>
+              )}
+            </div>
           </div>
           <div className="modal-body">
             <div className="modal-col-1">
