@@ -37,7 +37,6 @@ class Search extends React.Component {
   };
 
   render() {
-    console.log(localStorage.getItem("userId"));
     return (
       <div>
         <SmartSearch
