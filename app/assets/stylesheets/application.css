@@ -346,6 +346,7 @@ footer {
   height: 500px;
   background-color: grey;
   margin-right: 2%;
+  background-image: url('../images/MiamiTurkeyTrot.jpg');
 }
 .authentication_container {
   margin-left: 2%;
