@@ -97,14 +97,8 @@ const EventModal = props => {
             </div>
           </div>
           <div className="modal-body">
-            <div className="modal-col-1">
-              {props.about}
-              {props.facebook}
-            </div>
-            <div className="modal-col-2">
-              {props.displaydate}
-              {props.moreinfo}
-            </div>
+            <div className="modal-col-1">{props.about}</div>
+            <div className="modal-col-2">{props.moreinfo}</div>
           </div>
           <div className="modal-footer">
             <button

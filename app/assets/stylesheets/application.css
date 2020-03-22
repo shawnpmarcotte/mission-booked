@@ -501,15 +501,20 @@ footer {
   display: flex;
   flex-direction: row;
   margin: 0;
+  padding: 0;
 }
 .modal-col-1 {
   width: 50%;
   font-size: 10px;
+  padding: 10px;
+  margin-left: 10px;
 }
 .modal-col-2 {
   background-color: none;
-  padding: 0px;
   width: 50%;
+  border-left: 1px solid grey;
+  padding: 10px;
+  margin-right: 10px;
 }
 
 .close_symbol {
