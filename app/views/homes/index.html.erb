@@ -25,16 +25,9 @@
             <div class="vol_images"></div>
         </div>
     </div>
-    <div class="vol_text_container">
-        <div class="vol_text">
-            <div class="vol">Youth</div>
-            <div class="vol">Environment</div>
-            <div class="vol">Rebuilding</div>
-            <div class="vol">Animals</div>
-            <div class="vol">Homelessness</div>
-        </div>
-    </div>
-    <%# <div class="events_list"></div> %>
+
+    <%= react_component("TileSearch", { userId: (current_user && current_user.id) }, prerender: false) %>
+
 </div>
 <div class="did_you_know">
     <h1 class="fact_title">Did you know?</h1>
