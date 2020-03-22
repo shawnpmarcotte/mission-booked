@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PaymentForm from "./PaymentForm";
-import "./Donation.css"
+import miami_hero from "../../../assets/images/miami_hero.jpg"
 
 const Organizations = () => {
   const [results, setResults] = useState(null);
@@ -28,11 +28,12 @@ const Organizations = () => {
     setTerm(fieldTerm);
   };
   return (
-    <div class="content-donation">
-      <div>
-      <div id="placehoderForImage"></div>
+    <div class="content_donation">
+      
+      <div> <img className="img" src={miami_hero} /> </div>
+
+      <div class="donation_text">
       <h1>Donate</h1>
-      <div class="donation-text">
         <p>
           "No time to spare? You can still make a difference!
           <br />
@@ -42,7 +43,7 @@ const Organizations = () => {
           No gift is too small to make an impact on your community."
         </p>
       </div>
-      </div>
+    
       <PaymentForm results={results} handleChange={handleChange} term={term} />
     </div>
   );
