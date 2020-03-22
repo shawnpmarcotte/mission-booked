@@ -18,21 +18,20 @@
 
     <div class="main_vol">
         <div class="types_volunteering_container">
-        <div class="vol_container_row1">
-            <div class="vol_images"><%= image_tag "animals.jpg", :class => "animals_vol_image" %></div>
-            <div class="vol_images"><%= image_tag "environment.jpg", :class => "environment_vol_image" %></div>
-            <div class="vol_images"><%= image_tag "youth.jpg", :class => "youth_vol_image" %></div>
-        </div>
+            <div class="vol_container_row1">
+                <div class="vol_images"><%= image_tag "animals.jpg", :class => "animals_vol_image" %></div>
+                <div class="vol_images"><%= image_tag "environment.jpg", :class => "environment_vol_image" %></div>
+                <div class="vol_images"><%= image_tag "youth.jpg", :class => "youth_vol_image" %></div>
+            </div>
             <%= react_component("TileSearch", { userId: (current_user && current_user.id) }, prerender: false) %>
 
-        <div class="vol_container_row2">
-            <div class="vol_images"><%= image_tag "people.jpg", :class => "people_vol_image" %></div>
-            <div class="vol_images"><%= image_tag "rebuild.jpg", :class => "rebuild_vol_image" %></div>
-            <div class="vol_images"><%= image_tag "all.jpg", :class => "all_vol_image" %></div>
+            <div class="vol_container_row2">
+                <div class="vol_images"><%= image_tag "people.jpg", :class => "people_vol_image" %></div>
+                <div class="vol_images"><%= image_tag "rebuild.jpg", :class => "rebuild_vol_image" %></div>
+                <div class="vol_images"><%= image_tag "all.jpg", :class => "all_vol_image" %></div>
 
-        </div>
+            </div>
             <%= react_component("TileSearch2", { userId: (current_user && current_user.id) }, prerender: false) %>
-
         </div>
     </div>
 
@@ -48,9 +47,8 @@
         <div class="stat_box3">Statistic goes here</div>
         <div class="stat_box4"></div>
     </div>
-
-
-    <%= react_component("Slider", { userId: (current_user && current_user.id) }, prerender: false) %>
-
+    <div>
+        <%= react_component("Slider", props: {}, prerender: false) %>
+    </div>
 
     <footer></footer>
