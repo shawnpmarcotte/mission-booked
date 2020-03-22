@@ -1,5 +1,4 @@
 const validators = (formData, term) => {
-  console.log(term);
   let errors = {};
   if (!formData.number) {
     errors.number = "Card Number is required";

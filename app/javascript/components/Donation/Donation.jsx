@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PaymentForm from "./PaymentForm";
-import miami_hero from "../../../assets/images/miami_hero.jpg"
+import miami_hero from "../../../assets/images/miami_hero.jpg";
 
 const Organizations = () => {
   const [results, setResults] = useState(null);
@@ -15,7 +15,6 @@ const Organizations = () => {
     axios
       .get(`/donations.json`)
       .then(response => {
-        console.log(response);
         setResults(response.data);
       })
       .catch(error => {
@@ -28,12 +27,14 @@ const Organizations = () => {
     setTerm(fieldTerm);
   };
   return (
-    <div class="content_donation">
-      
-      <div> <img className="img" src={miami_hero} /> </div>
+    <div className="content_donation">
+      <div>
+        {" "}
+        <img className="img" src={miami_hero} />{" "}
+      </div>
 
-      <div class="donation_text">
-      <h1>Donate</h1>
+      <div className="donation_text">
+        <h1>Donate</h1>
         <p>
           "No time to spare? You can still make a difference!
           <br />
@@ -43,7 +44,7 @@ const Organizations = () => {
           No gift is too small to make an impact on your community."
         </p>
       </div>
-    
+
       <PaymentForm results={results} handleChange={handleChange} term={term} />
     </div>
   );

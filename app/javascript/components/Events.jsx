@@ -1,79 +1,77 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import Filters from './Filters'
-import EventModal from './EventModal'
-import EventCalendar from './EventCalendar'
-import volunteer_placeholder from '../../assets/images/volunteer_placeholder'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Filters from "./Filters";
+import EventModal from "./EventModal";
+import EventCalendar from "./EventCalendar";
+import volunteer_placeholder from "../../assets/images/volunteer_placeholder";
 const Events = () => {
-  const initalQueryParams = new URLSearchParams(location.search)
-  const [results, setResults] = useState([]) // order matters in arrays
-  const [user, setUser] = useState({})
+  const initalQueryParams = new URLSearchParams(location.search);
+  const [results, setResults] = useState([]); // order matters in arrays
+  const [user, setUser] = useState({});
   const [filters, setFilters] = useState({
-    ...(initalQueryParams.get('location') && {
-      city_state: initalQueryParams.get('location')
+    ...(initalQueryParams.get("location") && {
+      city_state: initalQueryParams.get("location")
     }),
-    ...(initalQueryParams.get('category') && {
-      category: initalQueryParams.get('category')
+    ...(initalQueryParams.get("category") && {
+      category: initalQueryParams.get("category")
     })
-  }) //Object BC it holds a lot of keys and orders don't matter
-  const [calendarView, setCalendarView] = useState(false)
-  const [modalInfo, setModalInfo] = useState({})
+  }); //Object BC it holds a lot of keys and orders don't matter
+  const [calendarView, setCalendarView] = useState(false);
+  const [modalInfo, setModalInfo] = useState({});
   useEffect(() => {
-    fetchEventData()
-  }, []) //the empty brakets are dependency arrays, used to break the infinite loop, and only make axios run one
+    fetchEventData();
+  }, []); //the empty brakets are dependency arrays, used to break the infinite loop, and only make axios run one
   const openModalToggle = result => {
-    setModalInfo(result)
-  }
+    setModalInfo(result);
+  };
   const closeModalToggle = () => {
-    setModalInfo({})
-  }
+    setModalInfo({});
+  };
   const getQueryParams = filters =>
     Object.keys(filters).reduce(
       (acc, param) =>
         acc
           ? `${acc}&${param}=${filters[param]}`
           : `${param}=${filters[param]}`,
-      ''
-    )
+      ""
+    );
   const fetchEventData = () => {
-    const queryParams = getQueryParams(filters)
+    const queryParams = getQueryParams(filters);
     axios
       .get(`/events.json?${queryParams}`)
       .then(response => {
-        console.log('response data', response.data)
-        setResults(response.data.all_data.events)
-        setUser(response.data.all_data.user)
+        setResults(response.data.all_data.events);
+        setUser(response.data.all_data.user);
       })
       .catch(error => {
-        console.log(error.response)
-      })
-  }
+        console.log(error.response);
+      });
+  };
   // partial applycation = type of function
   // curried = partial application + the other partial application aka double rockets
 
   const handleFilterSelect = filterType => event => {
-    const { value } = event.target
-    const updatedFilter = { ...filters, [filterType]: value }
-    if (!value) delete updatedFilter[filterType]
-    setFilters(updatedFilter)
-    const queryParams = getQueryParams(updatedFilter)
+    const { value } = event.target;
+    const updatedFilter = { ...filters, [filterType]: value };
+    if (!value) delete updatedFilter[filterType];
+    setFilters(updatedFilter);
+    const queryParams = getQueryParams(updatedFilter);
     axios
 
       .get(`/events.json?${queryParams}`)
-      .then(response => setResults(response.data.all_data.events))
-  }
+      .then(response => setResults(response.data.all_data.events));
+  };
   const handleThumbnailView = () => {
-    setCalendarView(false)
-  }
+    setCalendarView(false);
+  };
   const handleCalendarView = () => {
-    setCalendarView(true)
-  }
-  const handleViewMore = event => Turbolinks.visit(`/events/${event.id}`)
+    setCalendarView(true);
+  };
+  const handleViewMore = event => Turbolinks.visit(`/events/${event.id}`);
   // spread opperator to map through the filters and maintain them
   //"" [filterType]: "" this is known as a dynamic property, you can pass a string or number
   // and it will assign that property on the object aka first argument on the rocket train
   // and the value of that property would be whatever we selected on the select tag.
-  console.log(results)
   return (
     <>
       {calendarView === false ? (
@@ -112,7 +110,7 @@ const Events = () => {
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
                       <div className="event-card-photo">
-                        <img src={result.mainphoto} class="resized-photo" />
+                        <img src={result.mainphoto} className="resized-photo" />
                       </div>
                       <div className="card_text">
                         <div className="card_event_date">
@@ -159,14 +157,14 @@ const Events = () => {
         <>
           <div className="hero_image">
             <div className="filters_bar">
-              {' '}
+              {" "}
               <>
                 <Filters
                   handleFilterSelect={handleFilterSelect}
                   filters={filters}
                   setFilters={setFilters}
                 />
-              </>{' '}
+              </>{" "}
               <div className="viewTypes">
                 <button id="thumbnailView" onClick={handleThumbnailView}>
                   <h2 className="view_button">Thumbnail View</h2>
@@ -179,10 +177,10 @@ const Events = () => {
           </div>
           <div
             style={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center'
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
             }}
           >
             <EventCalendar modal={modalInfo} />
@@ -190,6 +188,6 @@ const Events = () => {
         </>
       )}
     </>
-  )
-}
-export default Events
+  );
+};
+export default Events;

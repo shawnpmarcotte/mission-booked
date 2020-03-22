@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const ThankYou = props => {
-  console.log(props);
   return (
     <>
       <div>Your donation was successfully submitted!</div>
