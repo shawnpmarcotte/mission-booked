@@ -346,10 +346,7 @@ footer {
   color: white;
   margin-top: 15px;
 }
-.field {
-  padding-top: 55px;
-  margin: 40px;
-}
+
 .input-user {
   font-size: 25px;
   margin: 15px;
@@ -651,7 +648,7 @@ a {
  justify-content: center;
  align-items: center;
  border-color: pink;
- height: 490px;
+ height: 575px;
  width: 400px;
  padding: 40px;
  margin: 30px 50px 40px 0px;
