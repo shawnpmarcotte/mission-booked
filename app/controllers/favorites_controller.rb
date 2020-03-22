@@ -12,7 +12,7 @@ class FavoritesController < ApplicationController
 
   def destroy
     current_user.favorites.where(event_id: params[:id]).destroy_all
-    redirect_to favorites_path, notice: 'Favorite was successfully removed.'
+    redirect_to favorites_path, notice: 'Bookmark was successfully removed.'
   end
 
   def index
