@@ -744,3 +744,35 @@ footer {
   color: grey;
   font-size: 10px;
 }
+
+.blossom {
+  height: 490px;
+ width: 400px;
+ padding: 40px;
+ margin: 30px 50px 40px 0px;
+}
+
+.signup-user-edit {
+  margin-top: 10;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-two-user-edit {
+  font-size: large; 
+  /* font-style: bold; */
+  font-weight: 50%;
+  border-radius: 8%;
+  opacity: 90%;
+  background-color: cornflowerblue;
+ /* display: flex; */
+ justify-content: center;
+ align-items: center;
+ border-color: pink;
+ height: 490px;
+ width: 400px;
+ padding: 40px;
+ margin: 30px 50px 40px 0px;
+}
