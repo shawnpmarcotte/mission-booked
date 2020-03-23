@@ -33,7 +33,7 @@ body {
 }
 
 .Shawn:hover {
-  box-shadow: 0px 30px 100px -10px rgba(243, 212, 39, 0.4);
+  box-shadow: 0px 30px 100px -10px #5aad8d;
 }
 
 .Rene-text {
@@ -56,7 +56,7 @@ body {
 }
 
 .Rene:hover {
-  box-shadow: 0px 30px 100px -10px rgba(243, 212, 39, 0.4);
+  box-shadow: 0px 30px 100px -10px #5aad8d;
 }
 .Jose {
   width: 45ch;
@@ -73,7 +73,7 @@ body {
 }
 
 .Jose:hover {
-  box-shadow: 0px 30px 100px -10px rgba(243, 212, 39, 0.4);
+  box-shadow: 0px 30px 100px -10px #5aad8d;
 }
 .Carolina {
   width: 45ch;
@@ -90,7 +90,7 @@ body {
 }
 
 .Carolina:hover {
-  box-shadow: 0px 30px 100px -10px rgba(243, 212, 39, 0.4);
+  box-shadow: 0px 30px 100px -10px #5aad8d;
 }
 
 .linkedin-logo {

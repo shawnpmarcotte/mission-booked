@@ -5,8 +5,8 @@ import ReactCompareImage from "react-compare-image";
 
 const Slider = () => {
   return (
-    <div>
-      <div style={{ maxWidth: "640px" }}>
+    <div style={{ marginLeft: "25rem", padding: "20px" }}>
+      <div style={{ maxWidth: "60rem" }}>
         <ReactCompareImage leftImage={img1} rightImage={img2} hover />
       </div>
     </div>
