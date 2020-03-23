@@ -14,12 +14,12 @@ Mission Booked is an app that allows user to experience a whole new way to regis
 
 ## Getting started
 
-3. `yarn install` to setup the required packages.
-4. `bundle install` to setup required gems.
-5. `rails db:create` to create your local database.
-6. `rails db:migrate`
-7. `rails db:seed` to generate the quizzes in your local database.
-8. `rails s` to start the server on `localhost:3000`
+1. `yarn install` to setup the required packages.
+2. `bundle install` to setup required gems.
+3. `rails db:create` to create your local database.
+4. `rails db:migrate`
+5. `rails db:seed` to generate the quizzes in your local database.
+6. `rails s` to start the server on `localhost:3000`
 
 ### Author's
 
