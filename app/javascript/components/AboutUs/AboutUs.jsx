@@ -90,9 +90,10 @@ const AboutUs = () => {
           <div className="Jose-pic">
             <h1>Jose Rangel</h1>
             <p className="about_bio">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et serunt mollit anim id est
-              laborum."
+              "I started working from a young age and I had developed many
+              skills that had help me overcome my problems through out the
+              years. I am passionate about my work and I am ambitious. I
+              graduated from Wyncode Academy as Full-stack developer."
             </p>
             <a href="https://github.com/josedani08200">
               <img src={github} alt="GitHub" className="github-logo" />
