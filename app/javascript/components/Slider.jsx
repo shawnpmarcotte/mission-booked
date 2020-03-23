@@ -4,6 +4,7 @@ import img2 from '../../assets/images/pollutionslider_after.jpg'
 import ReactCompareImage from 'react-compare-image'
 const Slider = () => {
   return (
+
     <div
       style={{
         margin: 'auto',

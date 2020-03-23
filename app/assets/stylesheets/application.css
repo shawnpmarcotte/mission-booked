@@ -28,7 +28,7 @@
   */
 
 * {
-  font-family: 'Baloo Chettan 2', cursive;
+  font-family: "Baloo Chettan 2", cursive;
 }
 html,
 body {
@@ -56,6 +56,7 @@ body {
 .nav_logo_image {
   width: 250px;
 }
+
 .events_button {
   border-radius: 50px 50px 50px 50px;
   width: 100px;
@@ -115,7 +116,7 @@ video {
   justify-self: flex-start;
   margin-top: 100px;
   color: white;
-  font-family: 'Bree Serif', serif;
+  font-family: "Bree Serif", serif;
   font-size: 3.5rem;
   z-index: -1;
   position: absolute;
@@ -296,7 +297,7 @@ video {
   background: white;
 }
 .search_form_city {
-  background-image: url('map_icon');
+  background-image: url("map_icon");
   background-repeat: no-repeat;
   background-size: 10%;
   background-position: 10pt;
@@ -340,7 +341,7 @@ input.search_form {
 }
 
 .account_button:hover {
-  transform: image-url('account_icon_hover');
+  transform: image-url("account_icon_hover");
 }
 
 .navbar-toggler {
@@ -397,7 +398,7 @@ input.search_form {
   width: 120px;
   height: 30px;
   border-radius: 20px;
-  background: url('close') no-repeat;
+  background: url("close") no-repeat;
 }
 
 /* Event page */
@@ -406,7 +407,7 @@ input.search_form {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  background-image: url('events_hero');
+  background-image: url("events_hero");
   background-repeat: no-repeat;
   background-position: center;
   height: 500px;
