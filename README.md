@@ -9,16 +9,24 @@ Mission Booked is an app that allows user to experience a whole new way to regis
 - Javascript packages: axios 0.19
 - Ruby gems: administrate, kaminari, react-rails, devise
 - Postgres 12.0
+- Style: CSS, BootStrap
+- Hosted: Heroku
 
 ## Getting started
 
-- `bundle`
-- `rails db:create`
-- `rails db:migrate`
-- `rails db:seed`
-- `rails devise:install`
-- `rails s`
-- Go to https://localhost:3000
+3. `yarn install` to setup the required packages.
+4. `bundle install` to setup required gems.
+5. `rails db:create` to create your local database.
+6. `rails db:migrate`
+7. `rails db:seed` to generate the quizzes in your local database.
+8. `rails s` to start the server on `localhost:3000`
+
+### Author's
+
+- Shawn Marcotte
+- Rene Bleslauer
+- Jose Rangel
+- Carolina Klein
 
 ## Deployment instructions
 
@@ -35,3 +43,7 @@ heroku run rake db:seed
 ```
 
 ## Screenshots
+
+![image](https://user-images.githubusercontent.com/59977158/77278456-c6d50e80-6c95-11ea-893c-1493b9197d4b.png)
+
+![image](https://user-images.githubusercontent.com/59977158/77278491-db190b80-6c95-11ea-83c6-32135dd3d7d4.png)
