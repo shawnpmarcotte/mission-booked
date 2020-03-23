@@ -13,7 +13,7 @@
 </div>
 <div class="mid-container">
     <div class="call-to-action">
-        <h1> Let's find the right event for you.</h1>
+        <h1 class="action_text"> Let's find the right event for you.</h1>
     </div>
 
     <div class="main_vol">
@@ -38,15 +38,17 @@
 
 </div>
 <div class="did_you_know">
-    <h1 class="fact_title">Did you know?</h1>
+    <h1 class="action_text">Did you know?</h1>
     <div class="stats1">
-        <div class="stat_box1"></div>
-        <div class="stat_box2">Statistic goes here</div>
+
+        <div class="stat_box1"><%= image_tag "stats.png", :class => "stats_image" %></div>
+    
     </div>
-    <div class="stats2">
-        <div class="stat_box3">Statistic goes here</div>
-        <div class="stat_box4"></div>
-    </div>
-    <div>
+  </div>
+
+    <div class="slider_container">
+              <h1 class="action_text">Our Impact</h1>
         <%= react_component("Slider", props: {}, prerender: false) %>
-    </div>
+   
+</div>
+

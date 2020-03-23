@@ -122,7 +122,10 @@ video {
   position: absolute;
   margin-left: 10%;
 }
-
+.action_text {
+  font-family: 'Bree Serif', serif;
+  padding-bottom: 30px;
+}
 .search_submit {
   background-color: #5aad8d;
   color: white;
@@ -278,6 +281,7 @@ video {
 .main_vol {
   display: flex;
   justify-self: center;
+  padding-bottom: 40px;
 }
 .events_list {
   background-color: white;
@@ -347,7 +351,11 @@ input.search_form {
 
 .did_you_know {
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
 .fact_title {
   padding-top: 50px;
   padding-bottom: 30px;
@@ -356,53 +364,16 @@ input.search_form {
 .stats1 {
   display: flex;
   justify-self: center;
+  max-height: 500px;
 }
-.stat_box1 {
-  height: 300px;
-  background-color: grey;
-  width: 50%;
-  margin-left: 2%;
-}
-.stat_box2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  background-color: white;
-  width: 50%;
-  margin-left: 2%;
-}
-.stats2 {
-  display: flex;
-  justify-self: center;
-  margin-top: 20px;
-}
-.stat_box3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  background-color: white;
-  width: 50%;
-  margin-left: 2%;
-}
-.stat_box4 {
-  height: 300px;
-  background-color: grey;
-  width: 50%;
-  margin-right: 2%;
+
+.stats_image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .our_impact_text {
   margin-right: 100px;
-}
-
-footer {
-  width: 100%;
-  height: 50px;
-  background-color: grey;
-  margin-right: 2%;
-  margin-left: 2%;
-  align-items: baseline;
 }
 
 /* users/sign-in */
@@ -412,6 +383,10 @@ footer {
   justify-content: center;
   flex-direction: row;
   align-self: baseline;
+}
+.slider_container {
+  background-color: white;
+  padding-bottom: 20px;
 }
 
 .authentication_container {
