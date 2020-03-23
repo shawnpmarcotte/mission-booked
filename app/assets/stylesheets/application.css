@@ -402,10 +402,7 @@ footer {
   flex-direction: row;
   align-self: baseline;
 }
-.authentication_image {
-  width: 500px;
-  height: 430px;
-}
+
 .authentication_container {
   margin-left: 2%;
 }
@@ -815,25 +812,43 @@ footer {
 
 .signup-user-edit {
   margin-top: 10;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+}
+
+.signup-two-user-edit {
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 590px;
+  margin-top: 40px;
+  width: 400px;
+  padding: 40px;
+  border: 2px solid #5FA0F8;
+  border-radius: 4%;
+  font-size: medium;
+}
+
+.authentication_body {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.signup-two-user-edit {
-  font-size: large; 
-  /* font-style: bold; */
-  font-weight: 50%;
-  border-radius: 8%;
-  opacity: 90%;
-  background-color: cornflowerblue;
- /* display: flex; */
- justify-content: center;
- align-items: center;
- border-color: pink;
- height: 490px;
- width: 400px;
- padding: 40px;
- margin: 30px 50px 40px 0px;
+.authentication_container{
+  height: 490px;
+  width: 400px;
+  padding: 40px;
+  margin: 30px 50px 40px 0px;
+  border: 2px solid;
+  border-radius: 4%;
+  border: 2px solid #5FA0F8;
+}
+
+field_sign_up {
+  font-size: larger;
+  height: 800px;
 }
