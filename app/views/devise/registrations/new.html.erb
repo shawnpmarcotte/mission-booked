@@ -16,14 +16,14 @@
             </div>
             <br />
             <div class="field">
-                <p>Email</p><br />
+                <p>Email</p>
                 <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
             </div>
             <br />
             <div class="field">
                 <p>Password</p>
                 <% if @minimum_password_length %>
-                <% end %><br />
+                <% end %>
                 <%= f.password_field :password, autocomplete: "new-password" %>
             </div>
             <br />

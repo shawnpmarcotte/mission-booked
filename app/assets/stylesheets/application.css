@@ -826,7 +826,8 @@ footer {
   -webkit-box-pack: center;
   -webkit-box-align: center;
   align-items: center;
-  height: 625px;
+  height: 590px;
+  margin-top: 40px;
   width: 400px;
   padding: 40px;
   border: 2px solid #5FA0F8;
