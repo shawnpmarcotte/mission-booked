@@ -1,15 +1,14 @@
-<div class="bookmark">
- <h1>Bookmarks</h1>
-  <ul>
-   <% @favorites.each do |favorite|%>
-   <li>
-     <div class="bookmark-list">
-       <%= link_to favorite.event.name, event_path(favorite.event.id)%>
-     </div>
-     <div class="bookmark-list">
-       <%= link_to "❌", favorite_path(favorite.event.id), method: :delete, data: { confirm: "Are you sure?" } %>
-     </div>
-   </li>
-  <% end %>
- </ul>
-</div>
+ <div>
+     <h1>Bookmarks</h1>
+ </div>
+ <div class="bookmark">
+     <ul>
+         <% @favorites.each do |favorite|%>
+         <li>
+             <div class="bookmark-list">
+                 <%= link_to "❌", favorite_path(favorite.event.id), method: :delete, data: { confirm: "Are you sure?" } %> <div class="padding"></div> <%= link_to favorite.event.name, event_path(favorite.event.id)%>
+             </div>
+         </li>
+         <% end %>
+     </ul>
+ </div>
