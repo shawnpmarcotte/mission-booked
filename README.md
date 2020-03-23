@@ -1,67 +1,49 @@
-# Final Project: Before You Can Start!
+# Mission Booked
 
-## TODO: Submit your wireframes in the form of a pull request
+Mission Booked is an app that allows user to experience a whole new way to register for Volunteer work. The flow of the page give access to every single person who is willing to volunteer, the home page would let you filter by the they of event and the location of the event, once inside the events page the user would have the option to bookmark an event but only if the current user is sign in. The app will updating to guarantee a good service and to help the planet one Mission at the time.
 
-This example wireframe lives in `readme_assets/wireframe_example.jpg`
+## Technology being used
 
-Swap it out with your actual wireframes...
+- Ruby 2.6.3
+- React 16.13
+- Javascript packages: axios 0.19
+- Ruby gems: administrate, kaminari, react-rails, devise
+- Postgres 12.0
+- Style: CSS, BootStrap
+- Hosted: Heroku
 
-![Wireframe Example](readme_assets/wireframe_example.jpg)
+## Getting started
 
-## TODO: Submit your ERD in the form of a pull request
+3. `yarn install` to setup the required packages.
+4. `bundle install` to setup required gems.
+5. `rails db:create` to create your local database.
+6. `rails db:migrate`
+7. `rails db:seed` to generate the quizzes in your local database.
+8. `rails s` to start the server on `localhost:3000`
 
-This example Entity Relational Diagram lives in `readme_assets/erd_example.png`
+### Author's
 
-![ERD Example](readme_assets/erd_example.png)
+- Shawn Marcotte
+- Rene Bleslauer
+- Jose Rangel
+- Carolina Klein
 
-Swap it out with your actual ERD...
+## Deployment instructions
 
-# README
+To deploy, we use Heroku as a web platform:
 
-This is a boilerplate Rails project that uses:
+```
+heroku create
+git remote -v
+heroku buildpacks:set heroku/ruby
+heroku buildpacks:add --index 1 heroku/nodejs
+git push heroku master
+heroku run rake db:migrate
+heroku run rake db:seed
+```
 
-* `ruby ~> 2.7`
-* `postgresql` as the database
-* `webpacker` with `react`
-* the `react_on_rails` gem
+## Screenshots
 
-## Instructor Setup
+![image](https://user-images.githubusercontent.com/59977158/77278456-c6d50e80-6c95-11ea-893c-1493b9197d4b.png)
 
-* `git clone git@github.com:wyncode/final_project_template.git`
-* `cd final_project_template`
-* `git remote remove origin`
-* Create a repo on GitHub that matches the project name
-* `git remote add origin that-repo-name` && `git push origin -u master`
-* Make `master` a [protected branch](https://help.github.com/articles/configuring-protected-branches/)
-* Pull Requests should only be mergeable after 2 reviews
-* At least 1 review needs to be from a [CODEOWNER](https://help.github.com/articles/about-codeowners/)
-* Invite team members as collaborators with write access
-* Create a Slack Channel, invite team members and TAs
-* in Slack: `/github subscribe wyncode/repo_name issues,reviews,comments`
-
-## Student Setup
-
-* `rails db:create` (with your Postgres server up and running)
-* `bundle`
-* `yarn`
-* `rails s`
-
-## Collaboration
-
-* Talk to an instructor about the next feature / enhancement / bugfix you would like to address
-* Create an issue with a User Story and Acceptance Criteria
-* Create a branch that corresponds with your issue
-* Submit a pull request into master
-* Request a code review from one of your teammates
-* Once it's approved, request a code review from one or more of the project's [CODEOWNERS](CODEOWNERS)
-
-## Deployment
-
-### The Node.js buildback must be added first or precompiling of assets may fail on Heroku: [See this issue](https://github.com/rails/webpacker/issues/1164#issuecomment-443474860)
-
-* `heroku create your-app-name`
-* `heroku buildpacks:set --index 1 heroku/nodejs`
-* `heroku buildpacks:add heroku/ruby`
-* `git push heroku master`
-* `heroku run rails db:migrate`
-* _optional_: `heroku run rails db:seed`
+![image](https://user-images.githubusercontent.com/59977158/77278491-db190b80-6c95-11ea-83c6-32135dd3d7d4.png)
