@@ -402,10 +402,7 @@ footer {
   flex-direction: row;
   align-self: baseline;
 }
-.authentication_image {
-  width: 500px;
-  height: 430px;
-}
+
 .authentication_container {
   margin-left: 2%;
 }
@@ -838,15 +835,20 @@ footer {
 .authentication_body {
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  align-self: baseline;
+  align-items: center;
+}
+
+.authentication_container{
+  height: 490px;
+  width: 400px;
+  padding: 40px;
+  margin: 30px 50px 40px 0px;
+  border: 2px solid;
+  border-radius: 4%;
+  border: 2px solid #5FA0F8;
 }
 
 field_sign_up {
   font-size: larger;
   height: 800px;
-}
-
-.field-name {
-  margin:0;
 }
