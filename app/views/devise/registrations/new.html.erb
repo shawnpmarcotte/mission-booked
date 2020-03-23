@@ -6,34 +6,32 @@
         <%= render "devise/shared/error_messages", resource: resource %>
         <div class="field_sign_up">
             <div class="field-name">
-                <%= f.label :first_name %>
+                <p>First Name</p>
                 <%= f.text_field :first_name, autocomplete: "off" %>
             </div>
-
+            <br />
             <div class="field">
-                <%= f.label :last_name %>
+                <p>Last Name</p>
                 <%= f.text_field :last_name, autocomplete: "off" %>
             </div>
-
+            <br />
             <div class="field">
-                <%= f.label :email %><br />
+                <p>Email</p>
                 <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
             </div>
-
+            <br />
             <div class="field">
-                <%= f.label :password %>
+                <p>Password</p>
                 <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em>
-                <% end %><br />
+                <% end %>
                 <%= f.password_field :password, autocomplete: "new-password" %>
             </div>
-
+            <br />
             <div class="field">
-                <%= f.label :password_confirmation %><br />
+                <%= f.label :password_confirmation %>
                 <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
             </div>
-
-
+            <br />
             <div class="field">
                 <%= f.submit "Sign up" %>
             </div>
