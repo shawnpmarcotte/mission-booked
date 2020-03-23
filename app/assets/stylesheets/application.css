@@ -28,7 +28,7 @@
   */
 
 * {
-  font-family: 'Baloo Chettan 2', cursive;
+  font-family: "Baloo Chettan 2", cursive;
 }
 html,
 body {
@@ -56,6 +56,7 @@ body {
 .nav_logo_image {
   width: 250px;
 }
+
 .events_button {
   border-radius: 50px 50px 50px 50px;
   width: 100px;
@@ -115,7 +116,7 @@ video {
   justify-self: flex-start;
   margin-top: 100px;
   color: white;
-  font-family: 'Bree Serif', serif;
+  font-family: "Bree Serif", serif;
   font-size: 3.5rem;
   z-index: -1;
   position: absolute;
@@ -292,7 +293,7 @@ video {
   background: white;
 }
 .search_form_city {
-  background-image: url('map_icon');
+  background-image: url("map_icon");
   background-repeat: no-repeat;
   background-size: 10%;
   background-position: 10pt;
@@ -336,7 +337,7 @@ input.search_form {
 }
 
 .account_button:hover {
-  transform: image-url('account_icon_hover');
+  transform: image-url("account_icon_hover");
 }
 
 .navbar-toggler {
@@ -422,7 +423,7 @@ footer {
   width: 120px;
   height: 30px;
   border-radius: 20px;
-  background: url('close') no-repeat;
+  background: url("close") no-repeat;
 }
 
 /* Event page */
@@ -431,7 +432,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  background-image: url('events_hero');
+  background-image: url("events_hero");
   background-repeat: no-repeat;
   background-position: center;
   height: 500px;
@@ -836,7 +837,7 @@ footer {
   margin-top: 40px;
   width: 400px;
   padding: 40px;
-  border: 2px solid #5FA0F8;
+  border: 2px solid #5fa0f8;
   border-radius: 4%;
   font-size: medium;
 }
@@ -847,12 +848,12 @@ footer {
   align-items: center;
 }
 
-.authentication_container{
+.authentication_container {
   height: 490px;
   width: 400px;
   padding: 40px;
   margin: 30px 50px 40px 0px;
-   border: 2px solid;
+  border: 2px solid;
   border-radius: 4%;
-  border: 2px solid #5FA0F8;
+  border: 2px solid #5fa0f8;
 }

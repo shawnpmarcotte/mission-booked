@@ -64,11 +64,10 @@ const AboutUs = () => {
           <div className="Rene-pic">
             <h1>Rene Breslauer</h1>
             <p className="about_bio">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam,ugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum."
+              "I graduated from FSU with a degree in design and had a career as
+              a retail manager. I looks forward to becoming a software
+              developer, where I can utilize my creativity and problem solving
+              skills on a daily basis."
             </p>
             <a href="https://github.com/renebreslauer">
               <img src={github} alt="GitHub" className="github-logo" />
@@ -115,13 +114,10 @@ const AboutUs = () => {
           <div className="Carolina-pic">
             <h1>Carolina Klein</h1>
             <p className="about_bio">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum."
+              "I have significant experience in maritime navigation and leading
+              teams of men out at sea. My prior experience prepared me to make
+              effective split-second decisions, have unparalleled attention to
+              detail, and GRIT.
             </p>
             <a href="https://github.com/CarolinaKlein">
               <img src={github} alt="GitHub" className="github-logo" />
