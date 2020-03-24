@@ -23,7 +23,6 @@ Rails.application.routes.draw do
   root 'homes#index'
   resources :events
   resources :organizations
-  resources :events_page
   resources :donations
   resources :gallery
   resources :about
